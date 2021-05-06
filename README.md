@@ -8,6 +8,6 @@ Hra je kreslená a je orientovaná na boj s bossy. Hra je má různé levely.
   * Version Control - Mode - Visible Meta Files
   * Asset Serialization - Mode - Force Text
 
-## Pokyny k práci##
+## Pokyny k práci ##
 * Pokud odevzdáváte nějakou práci, vždy pečlivě okomentujte změny, které jste dělali (pak se v tom budeme všichni lépe orientovat a budou se lépe opravovat chyby).
 * Pokud píšete kód, tak taky komentujte pokud možno všechno, co napíšete. (Nechci prudit, ale je to potřeba)
