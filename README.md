@@ -1,5 +1,5 @@
 # School Conqueror: Revolution
-Toto je uložiště maturitního projektu. Je to 2D hra. Maturitní ročník SSPŠ 2022
+Toto je uložiště maturitního projektu. Je to 2D hra s názvem School Conqueror: Revolution. Maturitní ročník SSPŠ 2022
 Hra je kreslená a je orientovaná na boj s bossy. Hra má různé levely.
 
 ## Unity ##
