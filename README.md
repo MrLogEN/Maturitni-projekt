@@ -2,7 +2,7 @@
 Toto je uložiště maturitního projektu. Je to 2D hra s názvem School Conqueror: Revolution. Maturitní ročník SSPŠ 2022
 Hra je kreslená a je orientovaná na boj s bossy. Hra má různé levely.
 
-## Unity ##
+##Unity##
 * Projekt v Unity je na verzi 2019.4.14f1
 * V Unity v záložce Project Setting>Editor je potřeba nastavit:
   * Version Control>Mode>Visible Meta Files
