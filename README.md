@@ -1,5 +1,5 @@
-# Název #
-//popis
+# Plant Outbreak #
+Vědkyně vyrobila virus, který mění lidi na rostliny. Hlavní hrdina se jako její bratr rozhodl svoji sestru zastavit.
 
 ## Unity ##
 * Projekt v Unity je na verzi 2020.3.12f1
