@@ -4,28 +4,46 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private LayerMask platformLayerMask;
+    private Rigidbody2D rb;
+    private float moveSpeed = 5f;
+    private KeyCode pressedKey;
+    private BoxCollider2D boxCollider;
 
-    Rigidbody2D rb;
+   
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position -= transform.right * (Time.deltaTime * moveSpeed);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position += transform.right * (Time.deltaTime * moveSpeed);
+        }
+
     }
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        bool isGrounded = ChechGroundStatus();
+        Debug.Log(isGrounded);
+        if (Input.GetKey(KeyCode.Z)&&isGrounded)
         {
-
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-
+            rb.AddForce(new Vector2(0, 12f), ForceMode2D.Impulse);
         }
     }
+    private bool ChechGroundStatus()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.1f,platformLayerMask);
+        return raycastHit;
+    }
+
+   
 }
