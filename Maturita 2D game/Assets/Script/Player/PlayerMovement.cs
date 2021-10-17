@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private KeyCode pressedKey;
     private BoxCollider2D boxCollider;
     private bool _hasDoubleJump;
+    private bool isGrounded;
+    private int extraJump = 1;
+    public float jumpForce = 10f;
 
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
@@ -18,10 +21,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        
+        Speed = 5f;
+        HasDoubleJump = true;
     }
     void Update()
     {
+        #region Left and right movement
         if (Input.GetKey(KeyCode.LeftArrow)) //Moving to the left
         {
             transform.position -= transform.right * (Time.deltaTime * _moveSpeed);
@@ -30,16 +35,33 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         {
             transform.position += transform.right * (Time.deltaTime * _moveSpeed);
         }
+        #endregion
+
+        #region jump
+        isGrounded = CheckGroundStatus(); //Calling CheckGroundStatus()
+        if (isGrounded)
+        {
+            extraJump = 2;
+        }
+        if (_hasDoubleJump) //Checking if the player has Double jump skill unlocked
+        {
+            if (Input.GetKeyDown(KeyCode.Z) && extraJump > 0) //Checking for extra jumps
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                extraJump--;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Z) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
+            {
+                rb.velocity = Vector2.up * jumpForce;
+            }
+        }
+        #endregion
 
     }
-    private void FixedUpdate()
-    {
-        bool isGrounded = CheckGroundStatus(); //Calling CheckGroundStatus()
-        if (Input.GetKey(KeyCode.Z)&&isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
-        {
-            rb.AddForce(new Vector2(0, 12f), ForceMode2D.Impulse);
-        }
-    }
+
     private bool CheckGroundStatus()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.1f,platformLayerMask);
