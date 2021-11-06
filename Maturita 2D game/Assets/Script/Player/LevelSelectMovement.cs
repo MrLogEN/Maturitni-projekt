@@ -13,23 +13,23 @@ public class LevelSelectMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.LeftArrow)) //Moving to the left
         {
-            transform.position -= transform.right * (Time.deltaTime * moveSpeed);
+            transform.position -= transform.right * (Time.fixedDeltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.RightArrow)) //Moving to ther right
         {
-            transform.position += transform.right * (Time.deltaTime * moveSpeed);
+            transform.position += transform.right * (Time.fixedDeltaTime * moveSpeed); 
         }
         if (Input.GetKey(KeyCode.UpArrow)) //Moving up
         {
-            transform.position += transform.up * (Time.deltaTime * moveSpeed);
+            transform.position += transform.up * (Time.fixedDeltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.DownArrow)) //Moving down
         {
-            transform.position -= transform.up * (Time.deltaTime * moveSpeed);
+            transform.position -= transform.up * (Time.fixedDeltaTime * moveSpeed);
         }
     }
 }

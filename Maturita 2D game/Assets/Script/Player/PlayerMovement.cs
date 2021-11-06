@@ -39,9 +39,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
 
         #region jump
         isGrounded = CheckGroundStatus(); //Calling CheckGroundStatus()
+        //Debug.Log(isGrounded);
         if (isGrounded)
         {
-            extraJump = 2;
+            extraJump = 1;
         }
         if (_hasDoubleJump) //Checking if the player has Double jump skill unlocked
         {

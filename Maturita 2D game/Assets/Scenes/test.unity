@@ -576,6 +576,7 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  jumpForce: 10
 --- !u!114 &1148037968
 MonoBehaviour:
   m_ObjectHideFlags: 0
