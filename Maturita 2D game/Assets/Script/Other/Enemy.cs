@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, ICollisonHandler
     {
         if (colliderName == "BossAttack" && other.layer == 7)
         {
-            other.GetComponent<PlayerTakeDamage>().TakeHit();
+            other.GetComponent<PlayerActions>().TakeHit();
         }
     }
 }
