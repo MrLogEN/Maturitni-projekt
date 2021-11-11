@@ -12,6 +12,6 @@ public class CollisionTrigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        handler.CollisionEnter(gameObject.name, collision.gameObject);
+        handler.CollisionEnter(gameObject.tag, collision.gameObject);
     }
 }
