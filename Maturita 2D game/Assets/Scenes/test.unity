@@ -350,8 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b706ddbe6683499007c7d556d7b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInvincible: 0
-  invincibilityTime: 2
   bullet: {fileID: 1064487732038298866, guid: 3c5198bc875c0514ba8436ad315a25ab, type: 3}
 --- !u!114 &890243520
 MonoBehaviour:
@@ -671,8 +669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b706ddbe6683499007c7d556d7b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInvincible: 0
-  invincibilityTime: 2
   bullet: {fileID: 0}
 --- !u!1 &1371506025
 GameObject:
@@ -688,7 +684,7 @@ GameObject:
   - component: {fileID: 1371506029}
   m_Layer: 0
   m_Name: BossAttack
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,7 +840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020591689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3534, y: -3.084, z: 0}
+  m_LocalPosition: {x: 2.3534, y: -3.17, z: 0}
   m_LocalScale: {x: 1.2375013, y: 0.18964174, z: 1}
   m_Children:
   - {fileID: 1371506026}
