@@ -12,11 +12,12 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     public int Damage { get => _damage; set => _damage = value; }
     public bool IsDead { get => _isDead; set => _isDead = value;  }
 
-    public bool isInvincible = false;
-    public float invincibilityTime = 2f;
+    private bool isInvincible = false;
+    private float invincibilityTime = 2f;
 
     private float fireRate = .5f;
     private float nextFire = 0f;
+    private float bulletVelocity = 30f;
 
     public GameObject bullet;
 
@@ -32,7 +33,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             //Changes the state isDead to true;
             IsDead = true;
-            Debug.Log("You are dead");
+            //Debug.Log("You are dead");
         }
         
         if (Input.GetKey(KeyCode.X) && Time.time > nextFire)
@@ -60,57 +61,46 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     public void Shoot()
     {
         GameObject go;
-        
-
-
-
         if (Input.GetKey(KeyCode.UpArrow)&&!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) //up
         {
-            go = Instantiate(bullet, transform.position + new Vector3(-0, 1f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,1f)*50f, ForceMode2D.Impulse);
+            go = Instantiate(bullet, transform.position + new Vector3(-0, 1f, 0),Quaternion.Euler(0,0,90));
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,1f)*bulletVelocity, ForceMode2D.Impulse);
 
         }
-
-
-
         else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) //left diagonal
         {
-            go = Instantiate(bullet, transform.position + new Vector3(-0, 1f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 1f) * 50f, ForceMode2D.Impulse);
+            go = Instantiate(bullet, transform.position + new Vector3(-0, 1f, 0), Quaternion.Euler(0,0,135));
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 1f) * bulletVelocity, ForceMode2D.Impulse);
+            
 
         }
         else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)) //right diagonal
         {
-            go = Instantiate(bullet, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 1f) * 50f, ForceMode2D.Impulse);
+            go = Instantiate(bullet, transform.position + new Vector3(0, 1f, 0), Quaternion.Euler(0,0,45));
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 1f) * bulletVelocity, ForceMode2D.Impulse);
+            
         }
-
-
-
-
         else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)) //right not pressed
         {
             go = Instantiate(bullet, transform.position + new Vector3(1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 0) * 50f, ForceMode2D.Impulse);
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 0) * bulletVelocity, ForceMode2D.Impulse);
 
         }
         else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)) //left not pressed
         {
             go = Instantiate(bullet, transform.position + new Vector3(-1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 0) * 50f, ForceMode2D.Impulse);
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 0) * bulletVelocity, ForceMode2D.Impulse);
         }
-
-
         else if (Input.GetKey(KeyCode.RightArrow)&&!Input.GetKey(KeyCode.UpArrow)) //right pressed
         {
             go = Instantiate(bullet, transform.position + new Vector3(1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f,0) *50f, ForceMode2D.Impulse);
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f,0) *bulletVelocity, ForceMode2D.Impulse);
 
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)) //left pressed
         {
             go = Instantiate(bullet, transform.position + new Vector3(-1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f,0) * 50f, ForceMode2D.Impulse);
+            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f,0) * bulletVelocity, ForceMode2D.Impulse);
         }
 
 

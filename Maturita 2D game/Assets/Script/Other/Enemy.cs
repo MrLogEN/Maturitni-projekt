@@ -16,9 +16,9 @@ public class Enemy : MonoBehaviour, ICollisonHandler
 
 
 
-    public void CollisionEnter(string colliderName, GameObject other)
+    public void CollisionEnter(string colliderTag, GameObject other)
     {
-        if (colliderName == "BossAttack" && other.layer == 7)
+        if (colliderTag == "BossAttack" && other.layer == 7)
         {
             other.GetComponent<PlayerActions>().TakeHit();
         }

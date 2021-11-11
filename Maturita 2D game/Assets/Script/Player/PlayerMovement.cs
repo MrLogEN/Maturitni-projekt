@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     [SerializeField] private LayerMask platformLayerMask; //Getting specific layer mask
     private Rigidbody2D rb;
     private float _moveSpeed;
-    private KeyCode pressedKey;
+    //private KeyCode pressedKey;
     private BoxCollider2D boxCollider;
     private bool _hasDoubleJump;
     private bool isGrounded;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         Speed = 5f;
-        HasDoubleJump = false;
+        HasDoubleJump = true;
     }
     void Update()
     {
@@ -36,6 +36,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         if (Input.GetKey(KeyCode.RightArrow)&& !Input.GetKey(KeyCode.UpArrow)) //Moving to ther right
         {
             transform.position += transform.right * (Time.deltaTime * _moveSpeed);
+            characterScale.x = 1;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow)) //Moving to the left
+        {
+            characterScale.x = -1;
+        }
+        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow)) //Moving to ther right
+        {
             characterScale.x = 1;
         }
         transform.localScale = characterScale;
@@ -62,12 +71,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
             }
         }
         #endregion
-
+        //Debug.DrawRay(boxCollider.bounds.center, Vector2.down, Color.red);
     }
 
     private bool CheckGroundStatus()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.1f,platformLayerMask);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.15f,platformLayerMask);
         return raycastHit;
     } //Function checking if the player is on the ground via BoxCast
 

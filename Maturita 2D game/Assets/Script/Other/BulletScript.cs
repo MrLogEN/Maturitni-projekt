@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    //public Vector3 scale;
     private float ttl = 3f;
     void Start()
     {
 
         ttl = Time.time+ttl;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (Time.time > ttl )
@@ -21,6 +17,8 @@ public class BulletScript : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(this.gameObject);
+    }
 }
