@@ -7,8 +7,10 @@ public class PlayerTakeDamage : MonoBehaviour, IPlayerStats
 
     private int _health;
     private int _damage;
+    private bool _isDead;
     public int Health { get => _health; set => _health = value; }
     public int Damage { get => _damage; set => _damage = value; }
+    public bool IsDead { get => _isDead; set => _isDead = value;  }
 
     void Start()
     {
@@ -20,8 +22,14 @@ public class PlayerTakeDamage : MonoBehaviour, IPlayerStats
     {
         if (Health <= 0)
         {
-           //An action executed upon death
+            //An action executed upon death
+            IsDead = true;
+            Debug.Log("You are dead");
         }
-
+    }
+    public void TakeHit()
+    {
+        Health--;
+        Debug.Log(Health);
     }
 }

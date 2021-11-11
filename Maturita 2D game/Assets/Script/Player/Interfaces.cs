@@ -7,10 +7,15 @@ public interface IPlayerStats //Basic player's stats
     public int Health { get; set; }
     
     public int Damage { get; set; }
+    public bool IsDead { get; set; }
     
 }
 public interface IPlayerSkills //skill tree related to movement
 {
     public float Speed { get; set; }
     public bool HasDoubleJump { get; set; }
+}
+public interface ICollisonHandler //Collision handling structure
+{
+    public void CollisionEnter(string colliderName, GameObject other);
 }

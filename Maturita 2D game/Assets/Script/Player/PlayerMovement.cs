@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         Speed = 5f;
-        HasDoubleJump = true;
+        HasDoubleJump = false;
     }
     void Update()
     {
@@ -40,10 +40,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         }
         transform.localScale = characterScale;
         #endregion
-
         #region jump
         isGrounded = CheckGroundStatus(); //Calling CheckGroundStatus()
-        //Debug.Log(isGrounded);
         if (isGrounded)
         {
             extraJump = 1;
