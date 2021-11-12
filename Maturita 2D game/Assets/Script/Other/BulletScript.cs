@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class BulletScript : MonoBehaviour,ICollisonHandler
 {
     private float ttl = 3f;
     void Start()
@@ -19,6 +19,21 @@ public class BulletScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+       
+        if (collision.tag == "Boss")
+        {
+            CollisionEnter(gameObject.name, collision.gameObject);
+            Destroy(this.gameObject);
+        }
+        else if (collision.tag != "Player")
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
+    public void CollisionEnter(string colliderName, GameObject other)
+    {
+            other.GetComponent<BossCommonFeatures>().TakeDamage();
     }
 }

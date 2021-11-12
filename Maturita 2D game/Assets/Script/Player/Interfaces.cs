@@ -19,3 +19,11 @@ public interface ICollisonHandler //Collision handling structure
 {
     public void CollisionEnter(string colliderName, GameObject other);
 }
+public interface IBoss
+{
+    int Health { get; set; }
+    int Damage { get; }
+    int Phases { get; set; }
+    void TakeDamage();
+}
+

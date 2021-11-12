@@ -49,6 +49,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         }
         transform.localScale = characterScale;
         #endregion
+
+    }
+
+
+    private void FixedUpdate()
+    {
         #region jump
         isGrounded = CheckGroundStatus(); //Calling CheckGroundStatus()
         if (isGrounded)
@@ -65,13 +71,13 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         }
         else
         {
+
             if (Input.GetKeyDown(KeyCode.Z) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
             {
                 rb.velocity = Vector2.up * jumpForce;
             }
         }
         #endregion
-        //Debug.DrawRay(boxCollider.bounds.center, Vector2.down, Color.red);
     }
 
     private bool CheckGroundStatus()
