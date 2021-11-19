@@ -50,11 +50,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         transform.localScale = characterScale;
         #endregion
 
-    }
-
-
-    private void FixedUpdate()
-    {
         #region jump
         isGrounded = CheckGroundStatus(); //Calling CheckGroundStatus()
         if (isGrounded)
@@ -78,6 +73,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
             }
         }
         #endregion
+
     }
 
     private bool CheckGroundStatus()
