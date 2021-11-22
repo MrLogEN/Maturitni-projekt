@@ -6,17 +6,32 @@ public class BalloonMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject balloon;
+    private bool ds;
+    private Camera mCamera;
+    private Vector2 screenBounds;
     void Start()
     {
+
+        mCamera = Camera.main;
         
+        screenBounds = mCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mCamera.transform.position.z));
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (!balloon.GetComponent<BalloonScript>().isDestroyed)
+        if (balloon != null)
         {
-            transform.position += new Vector3(10, 0, 0);
+            ds = balloon.GetComponent<BalloonScript>().isDestroyed;
+        }
+        if (ds == false)
+        {
+            transform.position += new Vector3(-2f, 0, 0) * Time.deltaTime;
+        }
+        if (gameObject.transform.position.x < -(screenBounds.x+2f))
+        {
+            Destroy(this.gameObject);
+            //Debug.Log(gameObject.transform.position.x);
         }
     }
 }
