@@ -6,8 +6,9 @@ public class BalloonSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject balloon;
-    private float spawnRate = 5f;
+    private float spawnRate = 15f;
     private float t;
+    public GameObject boss;
     void Start()
     {
         t = Time.time;
@@ -16,11 +17,14 @@ public class BalloonSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= t)
+        if (boss.GetComponent<Boss3Script>().isInvincible)
         {
-            Instantiate(balloon, transform.position,Quaternion.identity);
-            t = Time.time + spawnRate;
+            if (Time.time >= t)
+            {
+                Instantiate(balloon, transform.position, Quaternion.identity);
+                t = Time.time + spawnRate;
+            }
         }
-        
+
     }
 }

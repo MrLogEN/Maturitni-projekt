@@ -1,8 +1,9 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossCommonFeatures : MonoBehaviour, IBoss
+public class BossCommonFeatures : IBoss
 {
     private int _health;
     private int _damage = 1;
@@ -12,14 +13,12 @@ public class BossCommonFeatures : MonoBehaviour, IBoss
     public int Damage => _damage;
 
     public int Phases { get => _phases; set => _phases = value; }
+    public int CurrentPhase { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
-    private void Start()
-    {
-        _health = 20;
-    }
     public void TakeDamage()
     {
         Health--;
         Debug.Log("Boss health: "+ Health);
     }
 }
+*/

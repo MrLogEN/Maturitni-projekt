@@ -23,7 +23,8 @@ public interface IBoss
 {
     int Health { get; set; }
     int Damage { get; }
-    int Phases { get; set; }
+    int Phases { get;}
+    int CurrentPhase { get; set; }
     void TakeDamage();
 }
 
