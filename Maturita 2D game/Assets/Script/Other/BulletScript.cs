@@ -34,6 +34,6 @@ public class BulletScript : MonoBehaviour,ICollisonHandler
 
     public void CollisionEnter(string colliderName, GameObject other)
     {
-            other.GetComponent<BossCommonFeatures>().TakeDamage();
+            other.GetComponent<IBoss>().TakeDamage();
     }
 }

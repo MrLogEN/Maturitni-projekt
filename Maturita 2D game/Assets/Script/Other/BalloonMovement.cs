@@ -26,12 +26,11 @@ public class BalloonMovement : MonoBehaviour
         }
         if (ds == false)
         {
-            transform.position += new Vector3(-2f, 0, 0) * Time.deltaTime;
+            transform.position += new Vector3(-2f, 0, 0) * Time.deltaTime; //movement of the balloon
         }
-        if (gameObject.transform.position.x < -(screenBounds.x+2f))
+        if (gameObject.transform.position.x < -(screenBounds.x+2f)) //despawning the balloon
         {
             Destroy(this.gameObject);
-            //Debug.Log(gameObject.transform.position.x);
         }
     }
 }

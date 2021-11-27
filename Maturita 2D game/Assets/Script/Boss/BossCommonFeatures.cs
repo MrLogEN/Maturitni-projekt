@@ -1,9 +1,9 @@
-/*
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossCommonFeatures : IBoss
+public class BossCommonFeatures : MonoBehaviour, IBoss
 {
     private int _health;
     private int _damage = 1;
@@ -21,4 +21,3 @@ public class BossCommonFeatures : IBoss
         Debug.Log("Boss health: "+ Health);
     }
 }
-*/
