@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, ICollisonHandler
 {
-    void Start()
-    {
+    //void Start()
+    //{
         
-    }
+    //}
 
-    void Update()
-    {
+    //void Update()
+    //{
         
-    }
+    //}
 
 
 

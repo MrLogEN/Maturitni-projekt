@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private bool _hasDoubleJump;
     private bool isGrounded;
     private int extraJump = 1;
-    public float jumpForce = 10f;
+    public float jumpForce = 15f;
+
 
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
