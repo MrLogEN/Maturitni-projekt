@@ -39,6 +39,7 @@ public class ProjectileLauncher : MonoBehaviour
         projectile.velocity = CalculateLaunchVelocity(); // přiřazení vypočítané rychlosti komponentě Rigidbody2D
         print(CalculateLaunchVelocity());
     }
+
     // metoda na výpočet trajektorie pohybu
     Vector2 CalculateLaunchVelocity()
     {
