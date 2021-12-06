@@ -19,8 +19,9 @@ public class DetectCollisions : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            collision.gameObject.GetComponent<PlayerActions>().TakeHit();
         }
+        Destroy(gameObject);
 
     }
 }
