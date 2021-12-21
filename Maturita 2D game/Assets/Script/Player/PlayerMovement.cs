@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private int extraJump = 1;
     public float jumpForce = 15f;
 
-
+    private bool isJumping = false;
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
 
@@ -61,8 +61,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         {
             if (Input.GetKeyDown(KeyCode.Z) && extraJump > 0) //Checking for extra jumps
             {
-                rb.velocity = Vector2.up * jumpForce;
+                //rb.velocity = Vector2.up * jumpForce;
+                isJumping = true;
                 extraJump--;
+                //isJumping = false;
             }
         }
         else
@@ -70,11 +72,21 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
 
             if (Input.GetKeyDown(KeyCode.Z) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
             {
-                rb.velocity = Vector2.up * jumpForce;
+                isJumping = true;
+                //rb.velocity = Vector2.up * jumpForce;
             }
         }
         #endregion
 
+    }
+    private void FixedUpdate()
+    {
+        if (isJumping)
+        {
+            rb.velocity = Vector2.up * jumpForce;
+            isJumping = false;
+        }
+        
     }
 
     private bool CheckGroundStatus()

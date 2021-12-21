@@ -7,7 +7,7 @@ public class ArrowScript : MonoBehaviour
     private float velocity = 4f; 
     private void Start()
     {
-        Debug.Log(transform.rotation.eulerAngles.z);
+        //Debug.Log(transform.rotation.eulerAngles.z);
     }
     void Update()
     {
@@ -24,6 +24,13 @@ public class ArrowScript : MonoBehaviour
         if (transform.rotation.eulerAngles.z == 355f)
         {
             transform.position -= new Vector3(1, -0.1f, 0) * velocity * Time.deltaTime;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.transform.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerActions>().TakeHit();
         }
     }
 }
