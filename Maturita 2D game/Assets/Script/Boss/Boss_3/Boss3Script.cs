@@ -30,12 +30,12 @@ public class Boss3Script : MonoBehaviour, IBoss
         
         if (isInvincible)
         {
-            CurrentPhase = 1;
+            //CurrentPhase = 1;
             Debug.Log("Boss is invincible, health: " + Health);
         }
         if (!isInvincible)
         {
-            CurrentPhase = 2;
+            //CurrentPhase = 2;
 
             Health--;
             Debug.Log("Boss health: " + Health);
@@ -53,6 +53,15 @@ public class Boss3Script : MonoBehaviour, IBoss
     // Update is called once per frame
     void Update()
     {
+        if (isInvincible)
+        {
+            CurrentPhase = 1;
+        }
+        if (!isInvincible)
+        {
+            CurrentPhase = 2;
+        }
+
         if (CurrentPhase == 1)
         {
             //actions for phase 1

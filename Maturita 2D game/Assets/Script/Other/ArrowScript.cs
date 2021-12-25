@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
 {
-    private float velocity = 4f; 
+    private float velocity = 5f;
+    float ttl = 5f;
+    float startTime;
+    public Vector3 dir;
     private void Start()
     {
         //Debug.Log(transform.rotation.eulerAngles.z);
+        startTime = Time.time;
     }
     void Update()
     {
@@ -25,6 +29,10 @@ public class ArrowScript : MonoBehaviour
         {
             transform.position -= new Vector3(1, -0.1f, 0) * velocity * Time.deltaTime;
         }
+        if (Time.time > startTime + ttl)
+        {
+            Destroy(this.gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,5 +40,9 @@ public class ArrowScript : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerActions>().TakeHit();
         }
+    }
+    public Vector3 GetDirection(Vector3 direction)
+    {
+        return direction;
     }
 }
