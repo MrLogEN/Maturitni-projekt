@@ -42,5 +42,15 @@ public class SaveLoad
 }
 public class SaveObject
 {
-    public Vector3 position;
+    public Vector3 position; // For position save in lvlSelect - stores the actual position when exiting the level select or fixed positions when entering a level.
+    public bool lvl1IsCompleted; //Storing the status of level 1
+    public bool lvl2IsCompleted; //Storing the status of level 2
+    public bool lvl3IsCompleted; //Storing the status of level 3
+    public bool lvl4IsCompleted; //Storing the status of level 4
+    public bool lvl5IsCompleted; //Storing the status of level 5
+
+    /*
+     * All of these variables will be stored on exit of a scene
+     * and loaded when entering a scene
+     */
 }
