@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager gameManager = new GameManager();
     public Transform player;
     // Start is called before the first frame update
-    SaveLoad sv;
+    //SaveLoad sv;
     void Start()
     {
-        sv = new SaveLoad();
-        SaveObject so = sv.Load();
+        //sv = new SaveLoad();
+        SaveObject so = SaveLoad.Load();
         player.position = so.position;
     }
 
@@ -19,11 +21,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            sv.Save(player);
+            SaveLoad.Save(player);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            SaveObject so = sv.Load();
+            SaveObject so = SaveLoad.Load();
             player.position = so.position;
         }
     }

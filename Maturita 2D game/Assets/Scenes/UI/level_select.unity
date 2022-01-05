@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sc: 0
+  player: {fileID: 914957116}
 --- !u!212 &1209533660
 SpriteRenderer:
   m_ObjectHideFlags: 0

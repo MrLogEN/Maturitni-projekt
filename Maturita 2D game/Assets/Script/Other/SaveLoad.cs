@@ -1,11 +1,11 @@
 using System.IO;
 using UnityEngine;
 
-public class SaveLoad
+public static class SaveLoad
 {
-    string filePath = Application.dataPath + "/saves/save.json";
-    string directoryPath = Application.dataPath + "/saves";
-    public void Save(Transform player)
+    private static string filePath = Application.dataPath + "/saves/save.json";
+    private static string directoryPath = Application.dataPath + "/saves";
+    public static void Save(Transform player)
     {
 
         SaveObject so = new SaveObject
@@ -25,7 +25,7 @@ public class SaveLoad
 
 
     }
-    public SaveObject Load()
+    public static SaveObject Load()
     {
         SaveObject so;
         if (File.Exists(filePath))

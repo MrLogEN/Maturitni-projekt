@@ -7,6 +7,7 @@ public class LevelSelectScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public int sc;
+    public Transform player;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -23,27 +24,35 @@ public class LevelSelectScript : MonoBehaviour
                 switch (sc)
                 {
                     case 0:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("main_menu");
                         break;
                     case 1:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("level_select");
                         break;
                     case 2:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("level_tutorial");
                         break;
                     case 3:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("level_1");
                         break;
                     case 4:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("level_2");
                         break;
                     case 5:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("level_3");
                         break;
                     case 6:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("level_4");
                         break;
                     case 7:
+                        SaveLoad.Save(player);
                         SceneManager.LoadScene("level_5");
                         break;
                     default:

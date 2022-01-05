@@ -17,19 +17,19 @@ public class LevelSelectMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow)) //Moving to the left
         {
-            transform.position -= transform.right * (Time.fixedDeltaTime * moveSpeed);
+            transform.position -= transform.right.normalized * (Time.fixedDeltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.RightArrow)) //Moving to ther right
         {
-            transform.position += transform.right * (Time.fixedDeltaTime * moveSpeed); 
+            transform.position += transform.right.normalized * (Time.fixedDeltaTime * moveSpeed); 
         }
         if (Input.GetKey(KeyCode.UpArrow)) //Moving up
         {
-            transform.position += transform.up * (Time.fixedDeltaTime * moveSpeed);
+            transform.position += transform.up.normalized * (Time.fixedDeltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.DownArrow)) //Moving down
         {
-            transform.position -= transform.up * (Time.fixedDeltaTime * moveSpeed);
+            transform.position -= transform.up.normalized * (Time.fixedDeltaTime * moveSpeed);
         }
     }
 }
