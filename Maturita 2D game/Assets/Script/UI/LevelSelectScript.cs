@@ -7,13 +7,12 @@ public class LevelSelectScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public int sc;
-    ControlBinding co;
     BindingObject bo;
     private void Awake()
     {
-        co = new ControlBinding();
+        
         bo = new BindingObject();
-        bo = co.Load();
+        bo = ControlBinding.Load();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

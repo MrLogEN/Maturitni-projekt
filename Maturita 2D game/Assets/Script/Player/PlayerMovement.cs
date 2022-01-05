@@ -14,13 +14,11 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
 
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
-    ControlBinding co;
     BindingObject bo;
     private void Awake()
     {
-        co = new ControlBinding();
         bo = new BindingObject();
-        bo = co.Load();
+        bo = ControlBinding.Load();
     }
     void Start()
     {
@@ -78,24 +76,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
             }
         }
         #endregion
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            BindingObject newB = new BindingObject();
-            newB.jump = (int)KeyCode.Z;
-            newB.right = (int)KeyCode.RightArrow;
-            newB.left = (int)KeyCode.LeftArrow;
-            newB.crouch = (int)KeyCode.DownArrow;
-            newB.up = (int)KeyCode.UpArrow;
-            newB.shoot = (int)KeyCode.X;
-            newB.specialAbility = (int)KeyCode.V;
-
-            newB.selectDown = (int)KeyCode.DownArrow;
-            newB.selectLeft = (int)KeyCode.LeftArrow;
-            newB.selectRight = (int)KeyCode.RightArrow;
-            newB.selectSelect = (int)KeyCode.X;
-            newB.selectUp = (int)KeyCode.UpArrow;
-            co.Save(newB);
-        }
     }
 
     private bool CheckGroundStatus()

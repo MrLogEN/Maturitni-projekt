@@ -1,20 +1,20 @@
 using System.IO;
 using UnityEngine;
 
-public class ControlBinding
+public static class ControlBinding
 {
-    string directoryPath = Application.dataPath + "/defaults";
-    string filePath = Application.dataPath + "/defaults/binding.json";
-    public BindingObject Load()
+    static string directoryPath = Application.dataPath + "/defaults";
+    static string filePath = Application.dataPath + "/defaults/binding.json";
+    public static BindingObject Load()
     {
         BindingObject bo;
         if (File.Exists(filePath))
         {
-            string[] str = File.ReadAllLines(filePath);
+            string str = File.ReadAllText(filePath);
             if (str.Length > 0)
             {
                 Debug.Log(File.ReadAllText(filePath));
-                bo = JsonUtility.FromJson<BindingObject>(filePath);
+                bo = JsonUtility.FromJson<BindingObject>(str);
                 Debug.Log("Loaded from file");
             }
             else
@@ -32,7 +32,7 @@ public class ControlBinding
         Debug.Log(bo.left);
         return bo;
     }
-    public void Save(BindingObject bo)
+    public static void Save(BindingObject bo)
     {
         if (!Directory.Exists(directoryPath))
         {

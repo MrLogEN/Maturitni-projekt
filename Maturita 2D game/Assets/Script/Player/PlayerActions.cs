@@ -20,13 +20,11 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     private float bulletVelocity = 30f;
 
     public GameObject bullet;
-    ControlBinding co;
     BindingObject bo;
     private void Awake()
     {
-        co = new ControlBinding();
         bo = new BindingObject();
-        bo = co.Load();
+        bo = ControlBinding.Load();
     }
     void Start()
     {

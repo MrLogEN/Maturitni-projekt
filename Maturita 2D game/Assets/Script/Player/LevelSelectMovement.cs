@@ -6,13 +6,11 @@ public class LevelSelectMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     private float moveSpeed = 5f;
-    ControlBinding co;
     BindingObject bo;
     private void Awake()
     {
-        co = new ControlBinding();
         bo = new BindingObject();
-        bo = co.Load();
+        bo = ControlBinding.Load();
     }
     void Start()
     {
