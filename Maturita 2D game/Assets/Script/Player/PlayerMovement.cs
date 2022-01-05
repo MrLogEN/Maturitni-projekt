@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IPlayerSkills
@@ -25,7 +26,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         Speed = 5f;
         HasDoubleJump = true;
     }
-    void Update()
+    async void Update()
     {
         Vector3 characterScale = transform.localScale;
         #region Left and right movement
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         #endregion
 
         #region jump
-        isGrounded = CheckGroundStatus(); //Calling CheckGroundStatus()
+        isGrounded = await CheckGroundStatus(); //Calling CheckGroundStatus()
         if (isGrounded)
         {
             extraJump = 1;
@@ -89,10 +90,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         
     }
 
-    private bool CheckGroundStatus()
+    private async Task<bool> CheckGroundStatus()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.15f,platformLayerMask);
-        return raycastHit;
+         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.15f,platformLayerMask);
+        //await return raycastHit;
+        Task.Yield();
+         //Task.Yield();
     } //Function checking if the player is on the ground via BoxCast
 
    
