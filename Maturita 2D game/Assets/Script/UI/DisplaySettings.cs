@@ -7,17 +7,17 @@ public class DisplaySettings : MonoBehaviour
 {
 	public Dropdown dropDown;
     
-    
     public void SetQuality(int qualityValue)
     {
         QualitySettings.SetQualityLevel(qualityValue);
         Debug.Log(qualityValue);
     }
 
-    public void valueChanged(int screenValue)
+    public void ValueChanged(int screenValue)
     {
+         
         screenValue = dropDown.value;
-        switch (dropDown.value)
+        switch (screenValue)
         {
             case 0:
                 Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
@@ -38,9 +38,15 @@ public class DisplaySettings : MonoBehaviour
 
 
         }
+        
        
     }
-    
+     
+
+
+
+
+
 
 
 
