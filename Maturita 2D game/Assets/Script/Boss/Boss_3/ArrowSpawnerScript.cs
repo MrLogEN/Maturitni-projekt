@@ -9,6 +9,22 @@ public class ArrowSpawnerScript : MonoBehaviour
     private float t;
     public Transform player;
 
+    public GameObject projectileGameobject;
+    private GameObject projectileClone; // instance objektu 
+    private Rigidbody2D projectile; // Rigidbody2D komponent objektu
+    public Transform target; // cíl, na který se støílí
+    public float height = 10f;  // maximální výška trajektorie støely
+    public float gravity = -18f; // hodnota gravitace
+    public float timeToLive = 3f; // èas, po kterém se odstraní instance objektu ze scény
+    public float fireRate = 2f; // èas, za který se jednou vystøelí
+    private float nextFire = 0; // èas, ve který probìhne další výstøel
+
+
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,10 +63,7 @@ public class ArrowSpawnerScript : MonoBehaviour
     }
     void SpawnArrow(int num)
     {
-        Vector3 dir = CalculateDirection(player);
-        float dif = CalculateAngle(dir);
-        Debug.Log(dir);
-        Debug.Log("Direction is: "+ dir + "Odchylka: " + dif + (char)0176);
+        //Debug.Log("Direction is: "+ dir + "Odchylka: " + dif + (char)0176);
         if (num == 1)
         {
             GameObject go;
@@ -59,45 +72,38 @@ public class ArrowSpawnerScript : MonoBehaviour
         if (num == 3)
         {
 
-            GameObject go, go1, go2;
-            go = Instantiate(arrow, transform.position, Quaternion.Euler(0, 0, 5f),this.gameObject.transform);
-            go1 = Instantiate(arrow, transform.position, Quaternion.Euler(0, 0, 0), this.gameObject.transform);
+            Vector3 pos1 = target.position - new Vector3(4, 0, 0);
+            Vector3 pos2 = target.position + new Vector3(4, 0, 0);
 
-            go2 = Instantiate(arrow, transform.position, Quaternion.Euler(0, 0, -5f), this.gameObject.transform);
-
+            Launch(pos1);
+            Launch(target.position);
+            Launch(pos2);
         }
 
     }
 
-    private float CalculateAngle(Vector3 dir)
+  
+    private void Launch(Vector3 target)
     {
-        Vector3 defaulVector = new Vector3(1, 0, 0);
-
-        float uv = defaulVector.x * dir.x + defaulVector.y * dir.y + defaulVector.z*dir.z;
-
-        float uSize = Mathf.Sqrt(Mathf.Pow(defaulVector.x, 2f) + Mathf.Pow(defaulVector.y, 2f) + Mathf.Pow(defaulVector.z,2f));
-
-        float vSize = Mathf.Sqrt(Mathf.Pow(dir.x, 2f) + Mathf.Pow(dir.y, 2f) + Mathf.Pow(dir.z,2f));
-        float rad = uv / (uSize * vSize);
-        float angle = Mathf.Acos(rad);
-        Debug.Log($"The angle is: {uv} / ({uSize} * {vSize}) in rad {rad}");
-        return angle;
+        Vector2 Vo = CalculateLaunchVelocity(target, transform.position, 3f);
+        GameObject go = Instantiate(projectileGameobject, transform.position, Quaternion.identity);
+        go.GetComponent<Rigidbody2D>().velocity = Vo;
     }
-
-    private Vector3 CalculateDirection(Transform player)
+    private Vector2 CalculateLaunchVelocity(Vector2 target, Vector2 origin, float time)
     {
-        Vector3 spawnerPosition = gameObject.transform.position;
-        float x = player.position.x - spawnerPosition.x;
-        float y = player.position.y - spawnerPosition.y;
-        float z = player.position.z - spawnerPosition.z;
-        float[] arr = new float[2] {x,y};
-        for (int i = 0; i < arr.Length; i++)
-        {
-            arr[i] = Mathf.Abs(arr[i]);
-        }
-        float highest = arr.Max();
-        Debug.Log("Max value: " + highest);
-        Vector3 output = new Vector3(x/highest, y/highest, z/highest);
-        return output;
+        //target.y = -4.8f;
+        Vector2 distance = target - origin;
+        Vector2 distanceX = new Vector2(distance.x,0);
+
+        float Sy = distance.y;
+        float Sx = distanceX.magnitude;
+
+        float Vx = Sx / time;
+        float Vy = Sy / time + 0.5f * Mathf.Abs(Physics2D.gravity.y) * time;
+
+        Vector2 result = distanceX.normalized;
+        result *= Vx;
+        result.y = Vy;
+        return result;
     }
 }
