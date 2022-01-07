@@ -5,9 +5,11 @@ using UnityEngine;
 public class ArrowRigid : MonoBehaviour
 {
     // Start is called before the first frame update
+    private float estTime;
+    private float ttl = 6f;
     void Start()
     {
-        
+        estTime = Time.time+ttl;
     }
 
     // Update is called once per frame
@@ -26,5 +28,9 @@ public class ArrowRigid : MonoBehaviour
         }
         
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(0,0,z));
+        if (Time.time > estTime)
+        {
+            Destroy(gameObject);
+        }
     }
 }

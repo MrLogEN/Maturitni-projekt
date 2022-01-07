@@ -5,19 +5,13 @@ public class ArrowSpawnerScript : MonoBehaviour
 {
     public GameObject arrow;
     private System.Random rn;
-    private float spawnRate = 5f;
+    private float spawnRate = 2.5f;
     private float t;
     public Transform player;
 
     public GameObject projectileGameobject;
-    private GameObject projectileClone; // instance objektu 
-    private Rigidbody2D projectile; // Rigidbody2D komponent objektu
     public Transform target; // cíl, na který se støílí
-    public float height = 10f;  // maximální výška trajektorie støely
-    public float gravity = -18f; // hodnota gravitace
-    public float timeToLive = 3f; // èas, po kterém se odstraní instance objektu ze scény
-    public float fireRate = 2f; // èas, za který se jednou vystøelí
-    private float nextFire = 0; // èas, ve který probìhne další výstøel
+    
 
 
 
