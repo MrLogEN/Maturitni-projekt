@@ -431,10 +431,6 @@ MonoBehaviour:
   projectileGameobject: {fileID: 5993761659260105541, guid: 5bd75561e20f431429bc575474b8f213,
     type: 3}
   target: {fileID: 654920021}
-  height: 7
-  gravity: -50
-  timeToLive: 3
-  fireRate: 2
 --- !u!1 &1883245097
 GameObject:
   m_ObjectHideFlags: 0
