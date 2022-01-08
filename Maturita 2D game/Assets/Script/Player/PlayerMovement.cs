@@ -28,25 +28,27 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     void Update()
     {
         Vector3 characterScale = transform.localScale;
+        float sc = Mathf.Abs(characterScale.x);
         #region Left and right movement
         if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)) //Moving to the left
         {
             transform.position -= transform.right * (Time.deltaTime * _moveSpeed);
-            characterScale.x = -1;
+            
+            characterScale.x = -sc;
         }
         if (Input.GetKey(KeyCode.RightArrow)&& !Input.GetKey(KeyCode.UpArrow)) //Moving to ther right
         {
             transform.position += transform.right * (Time.deltaTime * _moveSpeed);
-            characterScale.x = 1;
+            characterScale.x = sc;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow)) //Moving to the left
         {
-            characterScale.x = -1;
+            characterScale.x = -sc;
         }
         if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow)) //Moving to ther right
         {
-            characterScale.x = 1;
+            characterScale.x = sc;
         }
         transform.localScale = characterScale;
         #endregion
