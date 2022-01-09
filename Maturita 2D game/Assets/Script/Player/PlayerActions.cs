@@ -69,7 +69,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
 
     void Update()
     {
-        Debug.Log(rb.velocity);
+        //Debug.Log(rb.velocity);
         if (Health <= 0)
         {
             //Changes the state isDead to true;
@@ -77,13 +77,13 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             //Debug.Log("You are dead");
         }
         CheckInputs();
-        if (Input.GetKey(KeyCode.X) )
+        if (Input.GetKey(KeyCode.X) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             handAnim.SetBool("isFiring", true);
             playerAnim.SetBool("isShooting", true);
             
-            //Shoot();
+            Shoot();
             //Boolich();
         }
         else
@@ -230,50 +230,29 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     }
     public void Shoot()
     {
-        GameObject go;
-        if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) //up
+        float sc = gameObject.transform.localScale.x;
+        if (spawnerPlayer.active)
         {
-            go = Instantiate(bullet, transform.position + new Vector3(-0, 1f, 0), Quaternion.Euler(0, 0, 90));
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1f) * bulletVelocity, ForceMode2D.Impulse);
-
+            //GameObject bulletInstace = Instantiate(bullet, spawnerPlayer.transform.position, Quaternion.identity);
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) //left diagonal
+        else if (spawnerHand.active)
         {
-            go = Instantiate(bullet, transform.position + new Vector3(-0, 1f, 0), Quaternion.Euler(0, 0, 135));
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 1f) * bulletVelocity, ForceMode2D.Impulse);
-
-
+            float xCon = 0;
+            if (sc > 0)
+            {
+                xCon = 1;
+            }
+            else
+            {
+                xCon = -1;
+            }
+            GameObject bulletInstace = Instantiate(bullet, spawnerHand.transform.position, handParent.transform.rotation);
+            float cal = Mathf.Sin(handParent.transform.rotation.eulerAngles.z);
+            Vector2 angle = new Vector2(xCon,cal);
+            bulletInstace.GetComponent<Rigidbody2D>().AddForce(angle*bulletVelocity, ForceMode2D.Impulse);
+            print(angle + " " + handParent.transform.rotation.eulerAngles.z);
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)) //right diagonal
-        {
-            go = Instantiate(bullet, transform.position + new Vector3(0, 1f, 0), Quaternion.Euler(0, 0, 45));
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 1f) * bulletVelocity, ForceMode2D.Impulse);
-
-        }
-        else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)) //right not pressed
-        {
-            go = Instantiate(bullet, transform.position + new Vector3(1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 0) * bulletVelocity, ForceMode2D.Impulse);
-
-        }
-        else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)) //left not pressed
-        {
-            go = Instantiate(bullet, transform.position + new Vector3(-1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 0) * bulletVelocity, ForceMode2D.Impulse);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)) //right pressed
-        {
-            go = Instantiate(bullet, transform.position + new Vector3(1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 0) * bulletVelocity, ForceMode2D.Impulse);
-
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)) //left pressed
-        {
-            go = Instantiate(bullet, transform.position + new Vector3(-1f, .6f, 0), Quaternion.identity);
-            go.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 0) * bulletVelocity, ForceMode2D.Impulse);
-        }
-
-
+       
     }
     public void HandleDir(object sender, OnChangeLookArgs e)
     {
@@ -300,6 +279,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 45f);
+                spawnerHand.transform.rotation = Quaternion.Euler(0, 0, 45f);
                 break;
             case OnChangeLookArgs.Direction.rightNotPressed:
                 playerAnim.SetBool("isCrouching", false);
