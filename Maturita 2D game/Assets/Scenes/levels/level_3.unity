@@ -194,6 +194,8 @@ MonoBehaviour:
   playerAnim: {fileID: 654920022}
   handAnim: {fileID: 860254433}
   handParent: {fileID: 555367898}
+  spawnerPlayer: {fileID: 1686548497}
+  spawnerHand: {fileID: 1544575192}
 --- !u!114 &654920016
 MonoBehaviour:
   m_ObjectHideFlags: 0

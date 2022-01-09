@@ -24,7 +24,8 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     public Animator handAnim;
     public GameObject handParent;
     Rigidbody2D rb;
-
+    public GameObject spawnerPlayer;
+    public GameObject spawnerHand;
 
     public event EventHandler<OnChangeLookArgs> OnChangeLook;
     public class OnChangeLookArgs : EventArgs
@@ -66,12 +67,6 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         OnChangeLook += HandleDir;
     }
 
-    private async Task Boolich()
-    {
-        await Task.Delay(160);
-        handAnim.SetBool("isFiring", false);
-    }
-
     void Update()
     {
         Debug.Log(rb.velocity);
@@ -81,11 +76,13 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             IsDead = true;
             //Debug.Log("You are dead");
         }
+        CheckInputs();
         if (Input.GetKey(KeyCode.X) )
         {
             nextFire = Time.time + fireRate;
             handAnim.SetBool("isFiring", true);
             playerAnim.SetBool("isShooting", true);
+            
             //Shoot();
             //Boolich();
         }
@@ -93,10 +90,17 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             handAnim.SetBool("isFiring", false);
             playerAnim.SetBool("isShooting", false);
+            //CheckInputs();
         }
+        
+    }
+    private void CheckInputs()
+    {
         float vel = GetComponent<Rigidbody2D>().velocity.y;
+        if (!Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
+        else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftArrow)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
         #region directions
-        if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && vel == 0) //up
+        else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && vel == 0) //up
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.up));
         }
@@ -124,7 +128,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftPressed));
         }
-       
+
         #endregion
 
         //jump Up
@@ -139,12 +143,12 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             {
                 OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeft));
             }
-            
+
         }
         else if (vel > 0 && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
         {
 
-                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeftDiagonal));
+            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeftDiagonal));
         }
         else if (vel > 0 && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
         {
@@ -199,10 +203,14 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
         }
+        else if (Input.GetKey(KeyCode.C) && vel == 0)
+        {
+            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
+        }
         #endregion
         else
         {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
+            //OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
         }
     }
     public void TakeHit()
@@ -269,94 +277,127 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     }
     public void HandleDir(object sender, OnChangeLookArgs e)
     {
+        float sc = Mathf.Abs(transform.localScale.x);
         switch (e.direction)
         {
             case OnChangeLookArgs.Direction.up:
                 playerAnim.SetBool("isWalking", false);
-                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isNoMovementPressed", true);
                 playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isLookingUp", true);
 
                 break;
             case OnChangeLookArgs.Direction.leftDiagonal:
-                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isNoMovementPressed", true);
                 playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
                 handParent.transform.rotation = Quaternion.Euler(0, 0, -45f);
                 break;
             case OnChangeLookArgs.Direction.rightDiagonal:
                 playerAnim.SetBool("isCrouching", false);
-                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isNoMovementPressed", true);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 45f);
                 break;
             case OnChangeLookArgs.Direction.rightNotPressed:
                 playerAnim.SetBool("isCrouching", false);
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", true);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.leftNotPressed:
                 playerAnim.SetBool("isCrouching", false);
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", true);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.rightPressed:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", true);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.leftPressed:
                 playerAnim.SetBool("isCrouching", false);
                 playerAnim.SetBool("isNoMovementPressed", false);
                 playerAnim.SetBool("isWalking", true);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.jumpUpLeft:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.jumpUpRight:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.jumpUpLeftDiagonal:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, -45f);
                 break;
             case OnChangeLookArgs.Direction.jumpUpRightDiagonal:
                 playerAnim.SetBool("isNoMovementPressed", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 45f);
                 break;
             case OnChangeLookArgs.Direction.jumpDown:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.jumpDownLeftDiagonal:
                 playerAnim.SetBool("isNoMovementPressed", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, -45f);
                 break;
             case OnChangeLookArgs.Direction.jumpDownRightDiagonal:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 45f);
                 break;
             case OnChangeLookArgs.Direction.jumpDownLeft:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.jumpDownRight:
                 playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isWalking", false);
+                handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.crouchLeft:
                 playerAnim.SetBool("isNoMovementPressed", false);
                 playerAnim.SetBool("isWalking", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isCrouching", true);
+                transform.localScale = new Vector3(-sc, sc, sc);
                 break;
             case OnChangeLookArgs.Direction.crouchRight:
                 playerAnim.SetBool("isNoMovementPressed", false);
                 playerAnim.SetBool("isWalking", false);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isCrouching", true);
+                transform.localScale = new Vector3(sc, sc, sc);
                 break;
             case OnChangeLookArgs.Direction.none:
                 playerAnim.SetBool("isWalking", false);
                 playerAnim.SetBool("isNoMovementPressed", true);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isCrouching", false);
 
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -364,6 +405,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             default:
                 playerAnim.SetBool("isWalking", false);
                 playerAnim.SetBool("isNoMovementPressed", true);
+                playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isCrouching", false);
 
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
