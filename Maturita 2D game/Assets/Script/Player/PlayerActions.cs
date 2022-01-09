@@ -38,7 +38,18 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             leftNotPressed,
             rightPressed,
             leftPressed,
-            none
+            jumpUpLeft,
+            jumpUpRight,
+            jumpUpLeftDiagonal,
+            jumpUpRightDiagonal,
+            jumpDown,
+            jumpDownLeftDiagonal,
+            jumpDownRightDiagonal,
+            jumpDownLeft,
+            jumpDownRight,
+            crouchLeft,
+            crouchRight,
+            none,
         }
         public Direction direction;
         public OnChangeLookArgs(Direction direction)
@@ -74,51 +85,125 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             nextFire = Time.time + fireRate;
             handAnim.SetBool("isFiring", true);
+            playerAnim.SetBool("isShooting", true);
             //Shoot();
             //Boolich();
-            //handAnim.SetBool("isFiring", false);
         }
         else
         {
             handAnim.SetBool("isFiring", false);
+            playerAnim.SetBool("isShooting", false);
         }
-
-
-        if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) //up
+        float vel = GetComponent<Rigidbody2D>().velocity.y;
+        #region directions
+        if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && vel == 0) //up
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.up));
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) //left diagonal
+        else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //left diagonal
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftDiagonal));
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)) //right diagonal
+        else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //right diagonal
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightDiagonal));
         }
-        else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)) //right not pressed
+        else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //right not pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightNotPressed));
         }
-        else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)) //left not pressed
+        else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //left not pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftNotPressed));
         }
-        else if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)) //right pressed
+        else if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //right pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightPressed));
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)) //left pressed
+        else if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //left pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftPressed));
         }
+       
+        #endregion
+
+        //jump Up
+        #region jumpUp
+        else if (vel > 0 && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow))
+        {
+            if (transform.localScale.x > 0)
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpRight));
+            }
+            else
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeft));
+            }
+            
+        }
+        else if (vel > 0 && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        {
+
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeftDiagonal));
+        }
+        else if (vel > 0 && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        {
+
+            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpRightDiagonal));
+        }
+        #endregion
+
+        //jump Down
+        #region jumpDown
+        else if (vel < 0 && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow))
+        {
+            if (transform.localScale.x > 0)
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownRight));
+            }
+            else
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownLeft));
+            }
+
+        }
+        else if (vel < 0 && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        {
+
+            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownLeftDiagonal));
+        }
+        else if (vel < 0 && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        {
+
+            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownRightDiagonal));
+        }
+        #endregion
+
+        #region crouch
+        else if (Input.GetKey(KeyCode.C) && vel == 0 && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        {
+            if (transform.localScale.x > 0)
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
+            }
+            else
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchLeft));
+            }
+        }
+        else if (Input.GetKey(KeyCode.C) && vel == 0 && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        {
+            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchLeft));
+        }
+        else if (Input.GetKey(KeyCode.C) && vel == 0 && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
+        {
+            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
+        }
+        #endregion
         else
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
         }
-
-
-
     }
     public void TakeHit()
     {
@@ -186,35 +271,101 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     {
         switch (e.direction)
         {
-
             case OnChangeLookArgs.Direction.up:
-                //Debug.Log(OnChangeLookArgs.Direction.up);
+                playerAnim.SetBool("isWalking", false);
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isCrouching", false);
+
                 break;
             case OnChangeLookArgs.Direction.leftDiagonal:
-                //Debug.Log(OnChangeLookArgs.Direction.leftDiagonal);
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isWalking", false);
                 handParent.transform.rotation = Quaternion.Euler(0, 0, -45f);
                 break;
             case OnChangeLookArgs.Direction.rightDiagonal:
-                //Debug.Log(OnChangeLookArgs.Direction.rightDiagonal);
+                playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 45f);
                 break;
             case OnChangeLookArgs.Direction.rightNotPressed:
-                //Debug.Log(OnChangeLookArgs.Direction.rightNotPressed);
+                playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", true);
                 break;
             case OnChangeLookArgs.Direction.leftNotPressed:
-                //Debug.Log(OnChangeLookArgs.Direction.leftNotPressed);
+                playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", true);
                 break;
             case OnChangeLookArgs.Direction.rightPressed:
-                //Debug.Log(OnChangeLookArgs.Direction.rightPressed);
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", true);
                 break;
             case OnChangeLookArgs.Direction.leftPressed:
-                //Debug.Log(OnChangeLookArgs.Direction.leftPressed);
+                playerAnim.SetBool("isCrouching", false);
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", true);
+                break;
+            case OnChangeLookArgs.Direction.jumpUpLeft:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpUpRight:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpUpLeftDiagonal:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpUpRightDiagonal:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpDown:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpDownLeftDiagonal:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpDownRightDiagonal:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpDownLeft:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.jumpDownRight:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                break;
+            case OnChangeLookArgs.Direction.crouchLeft:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                playerAnim.SetBool("isCrouching", true);
+                break;
+            case OnChangeLookArgs.Direction.crouchRight:
+                playerAnim.SetBool("isNoMovementPressed", false);
+                playerAnim.SetBool("isWalking", false);
+                playerAnim.SetBool("isCrouching", true);
                 break;
             case OnChangeLookArgs.Direction.none:
-                //Debug.Log(OnChangeLookArgs.Direction.none);
+                playerAnim.SetBool("isWalking", false);
+                playerAnim.SetBool("isNoMovementPressed", true);
+                playerAnim.SetBool("isCrouching", false);
+
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             default:
+                playerAnim.SetBool("isWalking", false);
+                playerAnim.SetBool("isNoMovementPressed", true);
+                playerAnim.SetBool("isCrouching", false);
+
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
         }
