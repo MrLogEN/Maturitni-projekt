@@ -233,7 +233,26 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         float sc = gameObject.transform.localScale.x;
         if (spawnerPlayer.active)
         {
-            //GameObject bulletInstace = Instantiate(bullet, spawnerPlayer.transform.position, Quaternion.identity);
+            GameObject bulletInstace = Instantiate(bullet, spawnerPlayer.transform.position, spawnerPlayer.transform.rotation);
+            Debug.Log(spawnerPlayer.transform.rotation.eulerAngles.z + " " + Mathf.Sin(spawnerPlayer.transform.rotation.eulerAngles.z));
+            float rot = Mathf.Sin(spawnerPlayer.transform.rotation.eulerAngles.z);
+            if (rot==1)
+            {
+                
+            }
+            else
+            {
+                if (sc > 0)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            //GameObject bulletInstace = Instantiate(bullet, spawnerHand.transform.position, handParent.transform.rotation);
+
         }
         else if (spawnerHand.active)
         {
@@ -264,7 +283,8 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isNoMovementPressed", true);
                 playerAnim.SetBool("isCrouching", false);
                 playerAnim.SetBool("isLookingUp", true);
-
+                spawnerPlayer.transform.rotation = Quaternion.Euler(0, 0, 90f);
+                
                 break;
             case OnChangeLookArgs.Direction.leftDiagonal:
                 playerAnim.SetBool("isNoMovementPressed", true);
@@ -366,12 +386,15 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isCrouching", true);
                 transform.localScale = new Vector3(-sc, sc, sc);
+                spawnerPlayer.transform.rotation = Quaternion.Euler(0, 0, 0f);
+
                 break;
             case OnChangeLookArgs.Direction.crouchRight:
                 playerAnim.SetBool("isNoMovementPressed", false);
                 playerAnim.SetBool("isWalking", false);
                 playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isCrouching", true);
+                spawnerPlayer.transform.rotation = Quaternion.Euler(0, 0, 0f);
                 transform.localScale = new Vector3(sc, sc, sc);
                 break;
             case OnChangeLookArgs.Direction.none:
@@ -379,7 +402,6 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isNoMovementPressed", true);
                 playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isCrouching", false);
-
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             default:
