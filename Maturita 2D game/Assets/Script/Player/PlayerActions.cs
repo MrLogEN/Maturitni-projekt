@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using System.Threading.Tasks;
 
 public class PlayerActions : MonoBehaviour, IPlayerStats
 {
@@ -82,7 +81,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             nextFire = Time.time + fireRate;
             handAnim.SetBool("isFiring", true);
             playerAnim.SetBool("isShooting", true);
-            
+
             Shoot();
             //Boolich();
         }
@@ -92,7 +91,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             playerAnim.SetBool("isShooting", false);
             //CheckInputs();
         }
-        
+
     }
     private void CheckInputs()
     {
@@ -234,21 +233,22 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         if (spawnerPlayer.active)
         {
             GameObject bulletInstace = Instantiate(bullet, spawnerPlayer.transform.position, spawnerPlayer.transform.rotation);
+            Rigidbody2D rb = bulletInstace.GetComponent<Rigidbody2D>();
             float rot = spawnerPlayer.transform.rotation.eulerAngles.z;
-            if (rot==90)
+            if (rot == 90)
             {
-                bulletInstace.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1)*bulletVelocity,ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, 1) * bulletVelocity, ForceMode2D.Impulse);
             }
             else
             {
                 if (sc > 0)
                 {
-                    bulletInstace.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletVelocity, ForceMode2D.Impulse);
+                    rb.AddForce(new Vector2(1, 0) * bulletVelocity, ForceMode2D.Impulse);
 
                 }
                 else
                 {
-                    bulletInstace.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * bulletVelocity, ForceMode2D.Impulse);
+                    rb.AddForce(new Vector2(-1, 0) * bulletVelocity, ForceMode2D.Impulse);
 
                 }
             }
@@ -268,11 +268,11 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             }
             GameObject bulletInstace = Instantiate(bullet, spawnerHand.transform.position, handParent.transform.rotation);
             float cal = Mathf.Sin(handParent.transform.rotation.eulerAngles.z);
-            Vector2 angle = new Vector2(xCon,cal);
-            bulletInstace.GetComponent<Rigidbody2D>().AddForce(angle*bulletVelocity, ForceMode2D.Impulse);
+            Vector2 angle = new Vector2(xCon, cal);
+            bulletInstace.GetComponent<Rigidbody2D>().AddForce(angle * bulletVelocity, ForceMode2D.Impulse);
             print(angle + " " + handParent.transform.rotation.eulerAngles.z);
         }
-       
+
     }
     public void HandleDir(object sender, OnChangeLookArgs e)
     {
@@ -285,7 +285,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isCrouching", false);
                 playerAnim.SetBool("isLookingUp", true);
                 spawnerPlayer.transform.rotation = Quaternion.Euler(0, 0, 90f);
-                
+
                 break;
             case OnChangeLookArgs.Direction.leftDiagonal:
                 playerAnim.SetBool("isNoMovementPressed", true);
