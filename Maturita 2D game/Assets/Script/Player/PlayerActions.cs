@@ -235,19 +235,22 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             GameObject bulletInstace = Instantiate(bullet, spawnerPlayer.transform.position, spawnerPlayer.transform.rotation);
             Debug.Log(spawnerPlayer.transform.rotation.eulerAngles.z + " " + Mathf.Sin(spawnerPlayer.transform.rotation.eulerAngles.z));
-            float rot = Mathf.Sin(spawnerPlayer.transform.rotation.eulerAngles.z);
-            if (rot==1)
+            float rot = spawnerPlayer.transform.rotation.eulerAngles.z;
+            if (rot==90)
             {
-                
+                Debug.Log("kokot"); 
+                bulletInstace.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1)*bulletVelocity,ForceMode2D.Impulse);
             }
             else
             {
                 if (sc > 0)
                 {
+                    bulletInstace.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletVelocity, ForceMode2D.Impulse);
 
                 }
                 else
                 {
+                    bulletInstace.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * bulletVelocity, ForceMode2D.Impulse);
 
                 }
             }
