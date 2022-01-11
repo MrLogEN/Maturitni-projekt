@@ -67,8 +67,8 @@ public class Boss3Script : MonoBehaviour, IBoss
             //actions for phase 1
 
             //checking if the boss is not in animation is needed.
-            Vector3 distance = DistanceCheck(player); //checking how far is the player from the boss
-            if (distance.x <= 3f && distance.y<=3f) // if the player is far 3f or less - execute following code
+            float distance = (player.transform.position - gameObject.transform.position).magnitude;//checking how far is the player from the boss
+            if (distance <= 3f) // if the player is far 3f or less - execute following code
             {
                 Debug.Log("Slash");
                 //Slash animation
@@ -80,6 +80,7 @@ public class Boss3Script : MonoBehaviour, IBoss
             //actions for phase 2
             //random generator for deciding - straight arrow fire or 3 arrows fired at once
         }
+
     }
     Vector3 DistanceCheck(GameObject player)
     {
