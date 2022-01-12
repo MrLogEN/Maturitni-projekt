@@ -58,12 +58,25 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         }
     }
 
+    #region inputs
+    KeyCode left, right, up, jump, crouch, shoot, special;
+    #endregion
+
     void Start()
     {
         Health = 3; // default settings
         Damage = 1;
         rb = GetComponent<Rigidbody2D>();
         OnChangeLook += HandleDir;
+
+        left = KeyCode.LeftArrow;
+        right = KeyCode.RightArrow;
+        up = KeyCode.UpArrow;
+        jump = KeyCode.Z;
+        crouch = KeyCode.C;
+        shoot = KeyCode.X;
+        special = KeyCode.V;
+
     }
 
     void Update()
@@ -76,7 +89,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             //Debug.Log("You are dead");
         }
         CheckInputs();
-        if (Input.GetKey(KeyCode.X) && Time.time > nextFire)
+        if (Input.GetKey(shoot) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             handAnim.SetBool("isFiring", true);
@@ -96,34 +109,34 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     private void CheckInputs()
     {
         float vel = GetComponent<Rigidbody2D>().velocity.y;
-        if (!Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
-        else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftArrow)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
+        if (!Input.GetKey(crouch) && !Input.GetKey(jump) && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
+        else if (Input.GetKey(right) && Input.GetKey(left)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
         #region directions
-        else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && vel == 0) //up
+        else if (Input.GetKey(up) && !Input.GetKey(crouch) && !Input.GetKey(left) && !Input.GetKey(right) && vel == 0) //up
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.up));
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //left diagonal
+        else if (Input.GetKey(up) && Input.GetKey(left) && !Input.GetKey(right) && vel == 0 && !Input.GetKey(crouch)) //left diagonal
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftDiagonal));
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //right diagonal
+        else if (Input.GetKey(up) && !Input.GetKey(left) && Input.GetKey(right) && vel == 0 && !Input.GetKey(crouch)) //right diagonal
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightDiagonal));
         }
-        else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //right not pressed
+        else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(right) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //right not pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightNotPressed));
         }
-        else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //left not pressed
+        else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(left) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //left not pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftNotPressed));
         }
-        else if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //right pressed
+        else if (Input.GetKey(right) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //right pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightPressed));
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow) && vel == 0 && !Input.GetKey(KeyCode.C)) //left pressed
+        else if (Input.GetKey(left) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //left pressed
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftPressed));
         }
@@ -132,7 +145,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
 
         //jump Up
         #region jumpUp
-        else if (vel > 0 && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow))
+        else if (vel > 0 && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up))
         {
             if (transform.localScale.x > 0)
             {
@@ -144,12 +157,12 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             }
 
         }
-        else if (vel > 0 && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        else if (vel > 0 && Input.GetKey(left) && !Input.GetKey(right) && Input.GetKey(up))
         {
 
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeftDiagonal));
         }
-        else if (vel > 0 && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        else if (vel > 0 && !Input.GetKey(left) && Input.GetKey(right) && Input.GetKey(up))
         {
 
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpRightDiagonal));
@@ -158,7 +171,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
 
         //jump Down
         #region jumpDown
-        else if (vel < 0 && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow))
+        else if (vel < 0 && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up))
         {
             if (transform.localScale.x > 0)
             {
@@ -170,12 +183,12 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             }
 
         }
-        else if (vel < 0 && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        else if (vel < 0 && Input.GetKey(left) && !Input.GetKey(right) && Input.GetKey(up))
         {
 
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownLeftDiagonal));
         }
-        else if (vel < 0 && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
+        else if (vel < 0 && !Input.GetKey(left) && Input.GetKey(right) && Input.GetKey(up))
         {
 
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownRightDiagonal));
@@ -183,7 +196,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         #endregion
 
         #region crouch
-        else if (Input.GetKey(KeyCode.C) && vel == 0 && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(crouch) && vel == 0 && !Input.GetKey(left) && !Input.GetKey(right))
         {
             if (transform.localScale.x > 0)
             {
@@ -194,15 +207,15 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchLeft));
             }
         }
-        else if (Input.GetKey(KeyCode.C) && vel == 0 && Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(crouch) && vel == 0 && Input.GetKey(left) && !Input.GetKey(right))
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchLeft));
         }
-        else if (Input.GetKey(KeyCode.C) && vel == 0 && !Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(crouch) && vel == 0 && !Input.GetKey(left) && Input.GetKey(right))
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
         }
-        else if (Input.GetKey(KeyCode.C) && vel == 0)
+        else if (Input.GetKey(crouch) && vel == 0)
         {
             OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
         }

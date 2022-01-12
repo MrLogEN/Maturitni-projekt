@@ -17,13 +17,21 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private bool isJumping = false;
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
-
+    KeyCode left, right, up, jump, crouch, shoot, special;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         Speed = 5f;
         HasDoubleJump = true;
+        left = KeyCode.LeftArrow;
+        right = KeyCode.RightArrow;
+        up = KeyCode.UpArrow;
+        jump = KeyCode.Z;
+        crouch = KeyCode.C;
+        shoot = KeyCode.X;
+        special = KeyCode.V;
+
     }
     void Update()
     {
@@ -31,23 +39,23 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         float sc = Mathf.Abs(characterScale.x);
         #region Left and right movement
 
-            if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow)&&!Input.GetKey(KeyCode.C)) //Moving to the left
+            if (Input.GetKey(left) && !Input.GetKey(up)&&!Input.GetKey(crouch)) //Moving to the left
             {
                 transform.position -= transform.right * (Time.deltaTime * _moveSpeed);
 
                 characterScale.x = -sc;
             }
-            if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow)&& !Input.GetKey(KeyCode.C)) //Moving to ther right
+            if (Input.GetKey(right) && !Input.GetKey(up)&& !Input.GetKey(crouch)) //Moving to ther right
             {
                 transform.position += transform.right * (Time.deltaTime * _moveSpeed);
                 characterScale.x = sc;
             }
 
-        if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow)) //Moving to the left
+        if (Input.GetKey(left) && Input.GetKey(up)) //Moving to the left
         {
             characterScale.x = -sc;
         }
-        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow)) //Moving to ther right
+        if (Input.GetKey(right) && Input.GetKey(up)) //Moving to ther right
         {
             characterScale.x = sc;
         }
@@ -64,7 +72,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         }
         if (_hasDoubleJump) //Checking if the player has Double jump skill unlocked
         {
-            if (Input.GetKeyDown(KeyCode.Z) && extraJump > 0) //Checking for extra jumps
+            if (Input.GetKeyDown(jump) && extraJump > 0) //Checking for extra jumps
             {
                 //rb.velocity = Vector2.up * jumpForce;
                 isJumping = true;
@@ -75,7 +83,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         else
         {
 
-            if (Input.GetKeyDown(KeyCode.Z) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
+            if (Input.GetKeyDown(jump) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
             {
                 isJumping = true;
                 //rb.velocity = Vector2.up * jumpForce;
