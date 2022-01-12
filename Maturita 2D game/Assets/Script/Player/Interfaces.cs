@@ -14,6 +14,7 @@ public interface IPlayerSkills //skill tree related to movement
 {
     public float Speed { get; set; }
     public bool HasDoubleJump { get; set; }
+    public int PlayerDamage { get; set; }
 }
 public interface ICollisonHandler //Collision handling structure
 {

@@ -25,9 +25,9 @@ public class Boss3Script : MonoBehaviour, IBoss
     public bool isInvincible;
 
     public GameObject player;
+    private int playerDmg;
     public void TakeDamage()
     {
-        
         if (isInvincible)
         {
             //CurrentPhase = 1;
@@ -37,7 +37,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         {
             //CurrentPhase = 2;
 
-            Health--;
+            Health -= playerDmg;
             Debug.Log("Boss health: " + Health);
         }
     }
@@ -48,6 +48,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         Health = bossMaxHealth;
         CurrentPhase = 1;
         isInvincible = true;
+        playerDmg = player.GetComponent<PlayerMovement>().PlayerDamage;
     }
 
     // Update is called once per frame

@@ -9,7 +9,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private float _moveSpeed;
     //private KeyCode pressedKey;
     private BoxCollider2D boxCollider;
+
     private bool _hasDoubleJump;
+    private int _playerDamage;
+
     private bool isGrounded;
     private int extraJump = 1;
     public float jumpForce = 15f;
@@ -17,6 +20,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private bool isJumping = false;
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
+    public int PlayerDamage { get => _playerDamage; set => _playerDamage = value; }
+
     KeyCode left, right, up, jump, crouch, shoot, special;
     void Start()
     {
@@ -31,6 +36,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         crouch = KeyCode.C;
         shoot = KeyCode.X;
         special = KeyCode.V;
+        PlayerDamage = 1;
 
     }
     void Update()
