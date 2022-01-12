@@ -82,12 +82,4 @@ public class Boss3Script : MonoBehaviour, IBoss
         }
 
     }
-    Vector3 DistanceCheck(GameObject player)
-    {
-        float x = Mathf.Abs(player.transform.position.x - gameObject.transform.position.x); //absolute x value of substracted positions of the boss and of the player
-        float y = Mathf.Abs(player.transform.position.y - gameObject.transform.position.y); //absolute y value of substracted positions of the boss and of the player
-        float z = Mathf.Abs(player.transform.position.z - gameObject.transform.position.z); //absolute z value of substracted positions of the boss and of the player
-        Vector3 sub = new Vector3(x, y, z); //Creating Vector3 from the differences
-        return sub;
-    }
 }
