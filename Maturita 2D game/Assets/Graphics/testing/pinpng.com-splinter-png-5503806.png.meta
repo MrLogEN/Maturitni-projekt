@@ -1,0 +1,1188 @@
+fileFormatVersion: 2
+guid: b2b60628b97816e48bb5cd59e8293ed6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6308799432899559692
+    second: pinpng.com-splinter-png-5503806_0
+  - first:
+      213: 952327038452304849
+    second: pinpng.com-splinter-png-5503806_1
+  - first:
+      213: 5423324705591446050
+    second: pinpng.com-splinter-png-5503806_2
+  - first:
+      213: 1229937545184622775
+    second: pinpng.com-splinter-png-5503806_3
+  - first:
+      213: 3374574446091823888
+    second: pinpng.com-splinter-png-5503806_4
+  - first:
+      213: 3214745735543381500
+    second: pinpng.com-splinter-png-5503806_5
+  - first:
+      213: 7301969306447273808
+    second: pinpng.com-splinter-png-5503806_6
+  - first:
+      213: -5782024149690794869
+    second: pinpng.com-splinter-png-5503806_7
+  - first:
+      213: 798965312242175963
+    second: pinpng.com-splinter-png-5503806_8
+  - first:
+      213: -7672069791811520334
+    second: pinpng.com-splinter-png-5503806_9
+  - first:
+      213: -3705725798363191583
+    second: pinpng.com-splinter-png-5503806_10
+  - first:
+      213: -3726452830221575950
+    second: pinpng.com-splinter-png-5503806_11
+  - first:
+      213: 443806495546906539
+    second: pinpng.com-splinter-png-5503806_12
+  - first:
+      213: 5168606651469231785
+    second: pinpng.com-splinter-png-5503806_13
+  - first:
+      213: -7715834096857220763
+    second: pinpng.com-splinter-png-5503806_14
+  - first:
+      213: -8458061111460808053
+    second: pinpng.com-splinter-png-5503806_15
+  - first:
+      213: -6435118253342139523
+    second: pinpng.com-splinter-png-5503806_16
+  - first:
+      213: -1647221687290522994
+    second: pinpng.com-splinter-png-5503806_17
+  - first:
+      213: 2412422958595006867
+    second: pinpng.com-splinter-png-5503806_18
+  - first:
+      213: 1702697579607773745
+    second: pinpng.com-splinter-png-5503806_19
+  - first:
+      213: -387560653973890970
+    second: pinpng.com-splinter-png-5503806_20
+  - first:
+      213: -7122329163652920745
+    second: pinpng.com-splinter-png-5503806_21
+  - first:
+      213: -1506456251748299201
+    second: pinpng.com-splinter-png-5503806_22
+  - first:
+      213: 5778329412825978844
+    second: pinpng.com-splinter-png-5503806_23
+  - first:
+      213: 5934592205208801049
+    second: pinpng.com-splinter-png-5503806_24
+  - first:
+      213: 5074943350413774630
+    second: pinpng.com-splinter-png-5503806_25
+  - first:
+      213: 6310320813603207795
+    second: pinpng.com-splinter-png-5503806_26
+  - first:
+      213: 8873471870159662826
+    second: pinpng.com-splinter-png-5503806_27
+  - first:
+      213: -757073189251547290
+    second: pinpng.com-splinter-png-5503806_28
+  - first:
+      213: -9168982642398932760
+    second: pinpng.com-splinter-png-5503806_29
+  - first:
+      213: 9114840223420730544
+    second: pinpng.com-splinter-png-5503806_30
+  - first:
+      213: -6242740794019140603
+    second: pinpng.com-splinter-png-5503806_31
+  - first:
+      213: 3422840307089276539
+    second: pinpng.com-splinter-png-5503806_32
+  - first:
+      213: 5747510626326964181
+    second: pinpng.com-splinter-png-5503806_33
+  - first:
+      213: -8620860869258199961
+    second: pinpng.com-splinter-png-5503806_34
+  - first:
+      213: 7003374479963078793
+    second: pinpng.com-splinter-png-5503806_35
+  - first:
+      213: -3094066224957631802
+    second: pinpng.com-splinter-png-5503806_36
+  - first:
+      213: 6583998166041905211
+    second: pinpng.com-splinter-png-5503806_37
+  - first:
+      213: -3230696854559421517
+    second: pinpng.com-splinter-png-5503806_38
+  - first:
+      213: -2311430794245814762
+    second: pinpng.com-splinter-png-5503806_39
+  - first:
+      213: 4482453807071255519
+    second: pinpng.com-splinter-png-5503806_40
+  - first:
+      213: -3976249097440468845
+    second: pinpng.com-splinter-png-5503806_41
+  - first:
+      213: -4176065508694060311
+    second: pinpng.com-splinter-png-5503806_42
+  - first:
+      213: 5806750638140454664
+    second: pinpng.com-splinter-png-5503806_43
+  - first:
+      213: -4819118912777775987
+    second: pinpng.com-splinter-png-5503806_44
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 642
+        width: 87
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fef5da5754a278a0800000000000000
+      internalID: -6308799432899559692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 625
+        width: 105
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db03f45568573d00800000000000000
+      internalID: 952327038452304849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_2
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 625
+        width: 118
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ac062f515834b40800000000000000
+      internalID: 5423324705591446050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_3
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 625
+        width: 118
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b835ac4ead911110800000000000000
+      internalID: 1229937545184622775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_4
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 623
+        width: 117
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01be9675495e4de20800000000000000
+      internalID: 3374574446091823888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_5
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 620
+        width: 85
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfdd34ac6321d9c20800000000000000
+      internalID: 3214745735543381500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_6
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 621
+        width: 123
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f589f856ec55560800000000000000
+      internalID: 7301969306447273808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_7
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 719
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c33fa9baf12cfa0800000000000000
+      internalID: -5782024149690794869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_8
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 621
+        width: 120
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfcd08e7be761b00800000000000000
+      internalID: 798965312242175963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_9
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 719
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8b1173c25578590800000000000000
+      internalID: -7672069791811520334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_10
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 621
+        width: 127
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6af89250e929cc0800000000000000
+      internalID: -3705725798363191583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_11
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 719
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8d46ef4eaf84cc0800000000000000
+      internalID: -3726452830221575950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 429
+        width: 150
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7951408a7b82600800000000000000
+      internalID: 443806495546906539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_13
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 527
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a67b847d549ab740800000000000000
+      internalID: 5168606651469231785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_14
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 428
+        width: 146
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5697af6e4c9dbe490800000000000000
+      internalID: -7715834096857220763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_15
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 429
+        width: 117
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a35da5b3eee9a80800000000000000
+      internalID: -8458061111460808053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_16
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 527
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bd8e51b0ed1b6a0800000000000000
+      internalID: -6435118253342139523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_17
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 429
+        width: 145
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e829abe4a94e329e0800000000000000
+      internalID: -1647221687290522994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_18
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 527
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3916d0736e5aa7120800000000000000
+      internalID: 2412422958595006867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_19
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 428
+        width: 115
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13250786d6231a710800000000000000
+      internalID: 1702697579607773745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_20
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 429
+        width: 127
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668d7fa73ab1f9af0800000000000000
+      internalID: -387560653973890970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_21
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 527
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a00138c57682d90800000000000000
+      internalID: -7122329163652920745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_22
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 429
+        width: 125
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e40e4450ef71be0800000000000000
+      internalID: -1506456251748299201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 235
+        width: 95
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd71fae6cffb03050800000000000000
+      internalID: 5778329412825978844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_24
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 235
+        width: 92
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fc546fa28eb5250800000000000000
+      internalID: 5934592205208801049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_25
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 234
+        width: 99
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62fc4a8c612dd6640800000000000000
+      internalID: 5074943350413774630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_26
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 234
+        width: 95
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ab291b853c29750800000000000000
+      internalID: 6310320813603207795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_27
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 228
+        width: 133
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeea949f6a7e42b70800000000000000
+      internalID: 8873471870159662826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_28
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 229
+        width: 123
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f70bd02f55e75f0800000000000000
+      internalID: -757073189251547290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_29
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 235
+        width: 121
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0d618bdda31c080800000000000000
+      internalID: -9168982642398932760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_30
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 232
+        width: 126
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc4f6504ea6e7e70800000000000000
+      internalID: 9114840223420730544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_31
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 232
+        width: 96
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c26a3c2545d59a0800000000000000
+      internalID: -6242740794019140603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 32
+        width: 127
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ef1f2df1f508f20800000000000000
+      internalID: 3422840307089276539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_33
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 32
+        width: 100
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d76009867243cf40800000000000000
+      internalID: 5747510626326964181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_34
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 30
+        width: 90
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cbcc5f6bc8c5880800000000000000
+      internalID: -8620860869258199961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_35
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 22
+        width: 105
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9804c3bebfbf03160800000000000000
+      internalID: 7003374479963078793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_36
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 180
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2ddd5592baf05d0800000000000000
+      internalID: -3094066224957631802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_37
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 0
+        width: 121
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3840c0d27f0f5b50800000000000000
+      internalID: 6583998166041905211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_38
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 180
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb8307e3524a23d0800000000000000
+      internalID: -3230696854559421517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_39
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 0
+        width: 112
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616441a60f52cefd0800000000000000
+      internalID: -2311430794245814762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_40
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 141
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb549c0dffd43e30800000000000000
+      internalID: 4482453807071255519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_41
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 156
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390e790538681d8c0800000000000000
+      internalID: -3976249097440468845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_42
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 141
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2978bab82ab06c0800000000000000
+      internalID: -4176065508694060311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_43
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 156
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80772ad90f8b59050800000000000000
+      internalID: 5806750638140454664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinpng.com-splinter-png-5503806_44
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 118
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d849381b1ec0f1db0800000000000000
+      internalID: -4819118912777775987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
