@@ -11,6 +11,7 @@ public class Boss2Movement : MonoBehaviour
     public bool spell1;
     public bool spell2;
     public float m;
+    public Animator anim;
 
 
     Vector3 posOffset = new Vector3();
@@ -20,6 +21,7 @@ public class Boss2Movement : MonoBehaviour
         posOffset = transform.position;
         spell1 = false;
         spell2 = false;
+        anim = GetComponent<Animator>();
 }
 
     // Update is called once per frame
@@ -50,11 +52,11 @@ public class Boss2Movement : MonoBehaviour
             {
                 //zapne animiaci
                 //anim.SetBool("Attack2Start", true);
-                GetComponent<Animator>().SetBool("Attack2Start", true);
-                if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack - End"))//èeká než dokonèí animaci
+                anim.SetBool("Attack2Start", true);
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2-End"))//èeká než dokonèí animaci
                 {
+                    anim.SetBool("Attack2Start", false);
                     SpellTwoEnd();
-                    GetComponent<Animator>().SetBool("Attack2Start", false);
                     m = m + 2; 
                 }
                 
