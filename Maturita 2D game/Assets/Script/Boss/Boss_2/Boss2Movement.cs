@@ -10,8 +10,9 @@ public class Boss2Movement : MonoBehaviour
     public float frequency = 1f;
     public bool spell1;
     public bool spell2;
+    public float m;
 
-        
+
     Vector3 posOffset = new Vector3();
     Vector3 tempPos = new Vector3();
     void Start()
@@ -24,7 +25,7 @@ public class Boss2Movement : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (Time.fixedTime % 10 == 0)
+        if (Time.fixedTime % 5 == 0)
         {
             System.Random rn = new System.Random();
             int random = rn.Next(0, 2);
@@ -34,44 +35,51 @@ public class Boss2Movement : MonoBehaviour
             }
             else if (random == 1)
             {
-                Thread.Sleep(1000);
                 SpellTwo();
             }
         }
-        if (spell1 == true)
+        if (spell2 == true)
         {
             if (tempPos.y !=-2.5f)
             {
                 tempPos = posOffset;
-                tempPos.y += 5f * Mathf.Sin(Time.fixedTime * Mathf.PI * frequency * 0.5f) * amplitude;
+                tempPos.y += 5f * Mathf.Sin((Time.fixedTime - m)* Mathf.PI * frequency * 0.5f) * amplitude;
                 transform.position = tempPos;
             }
             else
             {
                 //zapne animiaci
-                Thread.Sleep(1000);
-                SpellOneEnd();
+                //anim.SetBool("Attack2Start", true);
+                GetComponent<Animator>().SetBool("Attack2Start", true);
+                if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack - End"))//èeká než dokonèí animaci
+                {
+                    SpellTwoEnd();
+                    GetComponent<Animator>().SetBool("Attack2Start", false);
+                    m = m + 2; 
+                }
+                
             }
 
         }
-        else if (spell2 == true)
+        else if (spell1 == true)
         {
             float player_postion = GameObject.Find("Player").transform.position.y;
-            if (true)
+            if (player_postion == tempPos.y)
             {
 
             }
             else
             {
+                Debug.Log("nig");
                 //zapne animaci
-                SpellTwoEnd();
+                SpellOneEnd();
             }
 
         }
         else
         {
             tempPos = posOffset;
-            tempPos.y += 5f * Mathf.Sin(Time.fixedTime * Mathf.PI * frequency * 0.5f) * amplitude;
+            tempPos.y += 5f * Mathf.Sin((Time.fixedTime - m)* Mathf.PI * frequency * 0.5f) * amplitude;
             transform.position = tempPos;
         }
     }
@@ -81,7 +89,7 @@ public class Boss2Movement : MonoBehaviour
     }
     public void SpellTwo()
     {
-        spell1 = true;
+        spell2 = true;
     }
     public void SpellOneEnd()
     {
@@ -89,6 +97,6 @@ public class Boss2Movement : MonoBehaviour
     }
     public void SpellTwoEnd()
     {
-        spell1 = false;
+        spell2 = false;
     }
 }
