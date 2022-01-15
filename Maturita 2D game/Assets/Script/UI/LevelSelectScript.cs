@@ -7,7 +7,13 @@ public class LevelSelectScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public int sc;
-
+    BindingObject bo;
+    private void Awake()
+    {
+        
+        bo = new BindingObject();
+        bo = ControlBinding.Load();
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         CollisionCheck(collision.gameObject);;
@@ -18,7 +24,7 @@ public class LevelSelectScript : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.Log("Hit");
-            if (Input.GetKey(KeyCode.X))
+            if (Input.GetKey((KeyCode)bo.selectSelect))
             {
                 switch (sc)
                 {
