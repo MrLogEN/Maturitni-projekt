@@ -50,36 +50,55 @@ public static class ControlBinding
 public class BindingObject
 {
     //boss room
-    public int jump;
-    public int right;
-    public int left;
-    public int crouch;
-    public int up;
-    public int shoot;
-    public int specialAbility;
+    public KeyCode jump;
+    public KeyCode right;
+    public KeyCode left;
+    public KeyCode crouch;
+    public KeyCode up;
+    public KeyCode shoot;
+    public KeyCode specialAbility;
 
     //level select
 
-    public int selectUp;
-    public int selectDown;
-    public int selectLeft;
-    public int selectRight;
-    public int selectSelect;
+    public KeyCode selectUp;
+    public KeyCode selectDown;
+    public KeyCode selectLeft;
+    public KeyCode selectRight;
+    public KeyCode selectSelect;
+
+    //audio
+    public float masterVolume;
+    public float musicVolume;
+    public float sfxVolume;
+
+    //display
+    public int screenMode;
+    public int quality;
 
     public void LoadDefault()
     {
-        jump = (int)KeyCode.Z;
-        right = (int)KeyCode.RightArrow;
-        left = (int)KeyCode.LeftArrow;
-        crouch = (int)KeyCode.DownArrow;
-        up = (int)KeyCode.UpArrow;
-        shoot = (int)KeyCode.X;
-        specialAbility = (int)KeyCode.V;
+        jump = KeyCode.Z;
+        right = KeyCode.RightArrow;
+        left = KeyCode.LeftArrow;
+        crouch = KeyCode.DownArrow;
+        up = KeyCode.UpArrow;
+        shoot = KeyCode.X;
+        specialAbility = KeyCode.V;
 
-        selectDown = (int)KeyCode.DownArrow;
-        selectLeft = (int)KeyCode.LeftArrow;
-        selectRight = (int)KeyCode.RightArrow;
-        selectSelect = (int)KeyCode.X;
-        selectUp = (int)KeyCode.UpArrow;
-    }
+        selectDown = KeyCode.DownArrow;
+        selectLeft = KeyCode.LeftArrow;
+        selectRight = KeyCode.RightArrow;
+        selectSelect = KeyCode.X;
+        selectUp = KeyCode.UpArrow;
+
+
+        //audio
+        masterVolume = 1;
+        musicVolume = 1;
+        sfxVolume = 1;
+
+        //display
+        screenMode = 0;
+        quality = 0;
+}
 }
