@@ -36,6 +36,7 @@ public class EscMenu : MonoBehaviour
     }
     public void MainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("main_menu");
     }
 }

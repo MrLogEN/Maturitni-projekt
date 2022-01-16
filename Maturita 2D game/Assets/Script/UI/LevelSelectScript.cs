@@ -8,11 +8,14 @@ public class LevelSelectScript : MonoBehaviour
     // Start is called before the first frame update
     public int sc;
     BindingObject bo;
+    public Transform player;
     private void Awake()
     {
-        
+
         bo = new BindingObject();
         bo = ControlBinding.Load();
+        SaveObject so = SaveLoad.Load();
+        player.position = so.position;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -23,10 +26,11 @@ public class LevelSelectScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit");
-            if (Input.GetKey((KeyCode)bo.selectSelect))
+            SaveLoad.Save(player);
+            
+            if (Input.GetKey(bo.selectSelect))
             {
-
+                Debug.Log("Loading...");
                 switch (sc)
                 {
                     case 0:

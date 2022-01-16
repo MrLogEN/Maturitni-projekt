@@ -9,32 +9,32 @@ public class LevelSelectMovement : MonoBehaviour
     BindingObject bo;
     private void Awake()
     {
-        bo = new BindingObject();
-        bo = ControlBinding.Load();
+       
     }
     void Start()
     {
-
+        bo = new BindingObject();
+        bo = ControlBinding.Load();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetKey((KeyCode)bo.selectLeft)) //Moving to the left
+        if (Input.GetKey(bo.selectLeft)) //Moving to the left
         {
-            transform.position -= transform.right * (Time.fixedDeltaTime * moveSpeed);
+            transform.position -= transform.right * (Time.deltaTime * moveSpeed);
         }
-        if (Input.GetKey((KeyCode)bo.selectRight)) //Moving to ther right
+        if (Input.GetKey(bo.selectRight)) //Moving to ther right
         {
-            transform.position += transform.right * (Time.fixedDeltaTime * moveSpeed); 
+            transform.position += transform.right * (Time.deltaTime * moveSpeed); 
         }
-        if (Input.GetKey((KeyCode)bo.selectUp)) //Moving up
+        if (Input.GetKey(bo.selectUp)) //Moving up
         {
-            transform.position += transform.up * (Time.fixedDeltaTime * moveSpeed);
+            transform.position += transform.up * (Time.deltaTime * moveSpeed);
         }
-        if (Input.GetKey((KeyCode)bo.selectDown)) //Moving down
+        if (Input.GetKey(bo.selectDown)) //Moving down
         {
-            transform.position -= transform.up * (Time.fixedDeltaTime * moveSpeed);
+            transform.position -= transform.up * (Time.deltaTime * moveSpeed);
         }
     }
 }
