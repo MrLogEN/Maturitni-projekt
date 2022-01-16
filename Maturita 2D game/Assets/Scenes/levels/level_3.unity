@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d1460b07286c143ae8668a4eaf5188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloon: {fileID: 0}
+  balloon: {fileID: 5501765147967614847, guid: ac2fb50fefa21944096a9aaf50719625, type: 3}
   boss: {fileID: 2106812037}
 --- !u!4 &2109848144
 Transform:
