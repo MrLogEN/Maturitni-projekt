@@ -33,4 +33,11 @@ public class ArrowRigid : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.transform.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerActions>().TakeHit();
+        }
+    }
 }
