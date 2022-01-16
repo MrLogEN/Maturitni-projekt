@@ -20,8 +20,24 @@ public class DetectCollisions : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerActions>().TakeHit();
+            Destroy(gameObject);
+
         }
-        Destroy(gameObject);
+        else if (collision.CompareTag("Boss"))
+        {
+
+        }
+        else if (collision.CompareTag("BossAttack"))
+        {
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+
 
     }
 }

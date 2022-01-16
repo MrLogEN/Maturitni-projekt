@@ -26,6 +26,7 @@ public class LevelSelectScript : MonoBehaviour
             Debug.Log("Hit");
             if (Input.GetKey((KeyCode)bo.selectSelect))
             {
+
                 switch (sc)
                 {
                     case 0:
