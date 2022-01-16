@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IPlayerSkills
@@ -10,46 +12,55 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private bool _hasDoubleJump;
     private bool isGrounded;
     private int extraJump = 1;
-    public float jumpForce = 10f;
+    public float jumpForce = 15f;
 
+    private bool isJumping = false;
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
-    BindingObject bo;
-    private void Awake()
-    {
-        bo = new BindingObject();
-        bo = ControlBinding.Load();
-    }
+    KeyCode left, right, up, jump, crouch, shoot, special;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         Speed = 5f;
         HasDoubleJump = true;
+        left = KeyCode.LeftArrow;
+        right = KeyCode.RightArrow;
+        up = KeyCode.UpArrow;
+        jump = KeyCode.Z;
+        crouch = KeyCode.C;
+        shoot = KeyCode.X;
+        special = KeyCode.V;
+
     }
     void Update()
     {
         Vector3 characterScale = transform.localScale;
+        float sc = Mathf.Abs(characterScale.x);
         #region Left and right movement
-        if (Input.GetKey((KeyCode)bo.left) && !Input.GetKey((KeyCode)bo.up)) //Moving to the left
+
+            if (Input.GetKey(left) && !Input.GetKey(up)&&!Input.GetKey(crouch)) //Moving to the left
+            {
+                transform.position -= transform.right * (Time.deltaTime * _moveSpeed);
+
+                characterScale.x = -sc;
+            }
+            if (Input.GetKey(right) && !Input.GetKey(up)&& !Input.GetKey(crouch)) //Moving to ther right
+            {
+                transform.position += transform.right * (Time.deltaTime * _moveSpeed);
+                characterScale.x = sc;
+            }
+
+        if (Input.GetKey(left) && Input.GetKey(up)) //Moving to the left
         {
-            transform.position -= transform.right * (Time.deltaTime * _moveSpeed);
-            characterScale.x = -1;
+            characterScale.x = -sc;
         }
-        if (Input.GetKey((KeyCode)bo.right) && !Input.GetKey((KeyCode)bo.up)) //Moving to ther right
+        if (Input.GetKey(right) && Input.GetKey(up)) //Moving to ther right
         {
-            transform.position += transform.right * (Time.deltaTime * _moveSpeed);
-            characterScale.x = 1;
+            characterScale.x = sc;
         }
 
-        if (Input.GetKey((KeyCode)bo.left) && Input.GetKey((KeyCode)bo.up)) //Moving to the left
-        {
-            characterScale.x = -1;
-        }
-        if (Input.GetKey((KeyCode)bo.right) && Input.GetKey((KeyCode)bo.up)) //Moving to ther right
-        {
-            characterScale.x = 1;
-        }
+
         transform.localScale = characterScale;
         #endregion
 
@@ -61,28 +72,41 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         }
         if (_hasDoubleJump) //Checking if the player has Double jump skill unlocked
         {
-            if (Input.GetKeyDown((KeyCode)bo.jump) && extraJump > 0) //Checking for extra jumps
+            if (Input.GetKeyDown(jump) && extraJump > 0) //Checking for extra jumps
             {
-                rb.velocity = Vector2.up * jumpForce;
+                //rb.velocity = Vector2.up * jumpForce;
+                isJumping = true;
                 extraJump--;
+                //isJumping = false;
             }
         }
         else
         {
 
-            if (Input.GetKeyDown((KeyCode)bo.jump) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
+            if (Input.GetKeyDown(jump) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
             {
-                rb.velocity = Vector2.up * jumpForce;
+                isJumping = true;
+                //rb.velocity = Vector2.up * jumpForce;
             }
         }
         #endregion
+
+    }
+    private void FixedUpdate()
+    {
+        if (isJumping)
+        {
+            rb.velocity = Vector2.up * jumpForce;
+            isJumping = false;
+        }
+        
     }
 
     private bool CheckGroundStatus()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.15f, platformLayerMask);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.15f,platformLayerMask);
         return raycastHit;
     } //Function checking if the player is on the ground via BoxCast
 
-
+   
 }

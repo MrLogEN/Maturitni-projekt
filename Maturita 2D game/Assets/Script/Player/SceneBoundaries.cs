@@ -12,13 +12,13 @@ public class SceneBoundaries : MonoBehaviour
     void Start()
     {
         screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
-        objectWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x; //extents = size of width / 2
-        objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y; //extents = size of height / 2
+        objectWidth = transform.GetComponent<BoxCollider2D>().bounds.extents.x; //extents = size of width / 2
+        objectHeight = transform.GetComponent<BoxCollider2D>().bounds.extents.y; //extents = size of height / 2
     }
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
+        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth+1, screenBounds.x-1 - objectWidth);
         viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
         transform.position = viewPos;
     }
