@@ -14,6 +14,8 @@ public class SettingsManager : MonoBehaviour
     public KeyCode shoot;
     public KeyCode specialAbility;
 
+
+
     //level select
 
     public KeyCode selectUp;
