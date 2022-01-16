@@ -21,6 +21,7 @@ public class Boss3Script : MonoBehaviour, IBoss
 
     public int Phases => _phases;
     public int CurrentPhase { get => _currentPhase; set => _currentPhase=value; }
+    int IBoss.Phases { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     public bool isInvincible;
 

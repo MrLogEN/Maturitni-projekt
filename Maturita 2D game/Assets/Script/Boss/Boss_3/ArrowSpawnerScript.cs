@@ -29,7 +29,7 @@ public class ArrowSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentInParent<IBoss>().CurrentPhase == 2)
+        if (GetComponentInParent<Boss3Script>().CurrentPhase == 2)
         {
             if (Time.time >= t)
             {

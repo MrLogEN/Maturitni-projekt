@@ -109,7 +109,6 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     private void CheckInputs()
     {
         float vel = GetComponent<Rigidbody2D>().velocity.y;
-        Debug.Log(vel);
         if (!Input.GetKey(crouch) && !Input.GetKey(jump) && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
         else if (Input.GetKey(right) && Input.GetKey(left)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
         #region directions
@@ -329,7 +328,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             float cal = Mathf.Sin(handParent.transform.rotation.eulerAngles.z);
             Vector2 angle = new Vector2(xCon, cal);
             bulletInstace.GetComponent<Rigidbody2D>().AddForce(angle * bulletVelocity, ForceMode2D.Impulse);
-            print(angle + " " + handParent.transform.rotation.eulerAngles.z);
+            //print(angle + " " + handParent.transform.rotation.eulerAngles.z);
         }
 
     }
