@@ -206,6 +206,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &401984594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6438381098588298192, guid: 2ee924a73dba87945a6b68179ac141c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6438381098603269363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &401984602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401984594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45ffb357d3b21c47b8e14cbb9518e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpButton: {fileID: 1576191658}
+  rightButton: {fileID: 0}
+  leftButton: {fileID: 0}
+  crouchButton: {fileID: 0}
+  upButton: {fileID: 0}
+  shootButton: {fileID: 0}
+  specialAbilityButton: {fileID: 0}
+  selectUpButton: {fileID: 0}
+  selectDownButton: {fileID: 0}
+  selectLeftButton: {fileID: 0}
+  selectRightButton: {fileID: 0}
+  selectSelectButton: {fileID: 0}
+  jump: 0
+  right: 0
+  left: 0
+  crouch: 0
+  up: 0
+  shoot: 0
+  specialAbility: 0
+  selectUp: 0
+  selectDown: 0
+  selectLeft: 0
+  selectRight: 0
+  selectSelect: 0
 --- !u!1 &914957112
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +779,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576191658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6438381098603269363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1586363633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,7 +1320,7 @@ PrefabInstance:
     - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
         type: 3}
@@ -1275,8 +1329,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 401984602}
+    - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnJumpButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonsActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ee924a73dba87945a6b68179ac141c4, type: 3}
