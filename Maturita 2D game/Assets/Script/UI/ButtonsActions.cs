@@ -47,9 +47,92 @@ public class ButtonsActions : MonoBehaviour
     public KeyCode selectRight;
     public KeyCode selectSelect;
 
+    private bool isClickedJump = false;
+    private bool isClickedRight = false;
+    private bool isClickedLeft = false;
+    private bool isClickedCrouch = false;
+    private bool isClickedUp = false;
+    private bool isClickedShoot = false;
+    private bool isClickedSpecialAbility = false;
+
+    private bool isClickedSelectUp = false;
+    private bool isClickedSelectDown = false;
+    private bool isClickedSelectLeft = false;
+    private bool isClickedSelectRight = false;
+    private bool isClickedSelectSelect = false;
+
     private void Update()
     {
+        //print(isClickedJump);
         
     }
+    private void OnGUI()
+    {
+        if (isClickedJump)
+        {
+            WaitongForKey(ref jump, jumpButton, ref isClickedJump);
+            jumpButton.GetComponentInChildren<Text>().text = jump.ToString();
+        }
+        else if (isClickedRight)
+        {
 
+        }
+        else if (isClickedLeft)
+        {
+
+        }
+        else if (isClickedCrouch)
+        {
+
+        }
+        else if (isClickedUp)
+        {
+
+        }
+        else if (isClickedShoot)
+        {
+
+        }
+        else if (isClickedSpecialAbility)
+        {
+
+        }
+        else if (isClickedSelectUp)
+        {
+
+        }
+        else if (isClickedSelectDown)
+        {
+
+        }
+        else if (isClickedSelectLeft)
+        {
+
+        }
+        else if (isClickedSelectRight)
+        {
+
+        }
+        else if (isClickedSelectSelect)
+        {
+
+        }
+
+    }
+    public void OnJumpButtonClick()
+    {
+        isClickedJump = true;
+    }
+    private void WaitongForKey(ref KeyCode key, Button but, ref bool isClicked)
+    {
+        if (Event.current.isKey)
+        {
+            if (!Input.GetKeyDown(KeyCode.Escape))
+            {
+                key = Event.current.keyCode;
+                print(key);
+                isClicked = false;
+            }
+        }
+    }
 }

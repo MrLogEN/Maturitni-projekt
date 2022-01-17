@@ -1103,6 +1103,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6438381097548614067, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: SelectButtonSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381097789019007, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkUpButtonSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381097826566485, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkUpSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381098277714718, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkLeftButtonSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381098294338041, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkDownButtonSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381098323853277, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkRightSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381098509466127, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkLeftSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381098509473731, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkDownSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 6438381098588298192, guid: 2ee924a73dba87945a6b68179ac141c4,
         type: 3}
       propertyPath: m_Name
@@ -1212,6 +1252,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381098732268545, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: SelectSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381099019852519, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_Name
+      value: WalkRightButtonSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438381099132254329, guid: 2ee924a73dba87945a6b68179ac141c4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ee924a73dba87945a6b68179ac141c4, type: 3}
