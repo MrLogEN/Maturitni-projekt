@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerActions : MonoBehaviour, IPlayerStats
 {
@@ -25,7 +26,8 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     Rigidbody2D rb;
     public GameObject spawnerPlayer;
     public GameObject spawnerHand;
-
+    public GameObject heartPrefab;
+    public List<GameObject> heartList;
     public event EventHandler<OnChangeLookArgs> OnChangeLook;
     public class OnChangeLookArgs : EventArgs
     {
@@ -64,7 +66,8 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
 
     void Start()
     {
-        Health = 3; // default settings
+        
+        Health = 4; // default settings
         Damage = 1;
         rb = GetComponent<Rigidbody2D>();
         OnChangeLook += HandleDir;
@@ -77,6 +80,8 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         shoot = KeyCode.X;
         special = KeyCode.V;
 
+        heartList = new List<GameObject>();
+        SpawnHearts();
     }
 
     void Update()
@@ -276,6 +281,9 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             isInvincible = true;
             Health--;
+            Debug.Log("Count "+heartList.Count);
+            Destroy(heartList[heartList.Count - 1]);
+            heartList.RemoveAt(heartList.Count - 1);
             Debug.Log(Health);
             Invoke("Invincibility", invincibilityTime);
         }
@@ -513,5 +521,14 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 break;
         }
         //handParent.transform.rotation = Quaternion.Euler();
+    }
+
+    private void SpawnHearts()
+    {
+        for (int i = 0; i < Health; i++)
+        {
+            GameObject hrt = Instantiate(heartPrefab, new Vector3(-8 + i * 0.8f, 4, 0), Quaternion.identity);
+            heartList.Add(hrt);
+        }
     }
 }
