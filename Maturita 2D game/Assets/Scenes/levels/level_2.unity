@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 632971927}
   - component: {fileID: 632971929}
   - component: {fileID: 632971930}
+  - component: {fileID: 632971931}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -394,7 +395,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -431,6 +432,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &632971931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632971926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0b706ddbe6683499007c7d556d7b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
 --- !u!1 &811082408
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +877,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4388107321343747186, guid: b2cbeaedec2ae4c409b5efe39b34799a, type: 3}
-    - {fileID: 8630584336379770687, guid: b2cbeaedec2ae4c409b5efe39b34799a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cbeaedec2ae4c409b5efe39b34799a, type: 3}
