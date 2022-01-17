@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss2 : MonoBehaviour
+public class Boss2 : MonoBehaviour, IBoss
 {
     private int _health;
     private int _damage = 1;
