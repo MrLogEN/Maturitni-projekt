@@ -67,7 +67,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     void Start()
     {
         
-        Health = 4; // default settings
+        Health = 3; // default settings
         Damage = 1;
         rb = GetComponent<Rigidbody2D>();
         OnChangeLook += HandleDir;
@@ -281,10 +281,8 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             isInvincible = true;
             Health--;
-            Debug.Log("Count "+heartList.Count);
             Destroy(heartList[heartList.Count - 1]);
             heartList.RemoveAt(heartList.Count - 1);
-            Debug.Log(Health);
             Invoke("Invincibility", invincibilityTime);
         }
 
