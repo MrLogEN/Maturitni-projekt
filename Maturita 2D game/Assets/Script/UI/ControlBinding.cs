@@ -80,7 +80,7 @@ public class BindingObject
         jump = KeyCode.Z;
         right = KeyCode.RightArrow;
         left = KeyCode.LeftArrow;
-        crouch = KeyCode.DownArrow;
+        crouch = KeyCode.C;
         up = KeyCode.UpArrow;
         shoot = KeyCode.X;
         specialAbility = KeyCode.V;
@@ -93,9 +93,9 @@ public class BindingObject
 
 
         //audio
-        masterVolume = 1;
-        musicVolume = 1;
-        sfxVolume = 1;
+        masterVolume = 1f;
+        musicVolume = 1f;
+        sfxVolume = 1f;
 
         //display
         screenMode = 0;

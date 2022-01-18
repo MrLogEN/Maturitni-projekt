@@ -1488,6 +1488,9 @@ MonoBehaviour:
   selectLeftButton: {fileID: 1975056367}
   selectRightButton: {fileID: 427595286}
   selectSelectButton: {fileID: 1093649730}
+  masterVolumeSlider: {fileID: 1756971867}
+  musicVolumeSlider: {fileID: 569853167}
+  sfxVolumeSlider: {fileID: 1669307396}
   jump: 0
   right: 0
   left: 0
@@ -1500,6 +1503,9 @@ MonoBehaviour:
   selectLeft: 0
   selectRight: 0
   selectSelect: 0
+  musicVolume: 0
+  masterVolume: 0
+  sfxVolume: 0
 --- !u!1 &403189151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,7 +2419,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 401984602}
+        m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
+        m_MethodName: OnMusicVolumeChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &574341462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,7 +2647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 615830391}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 401984602}
+        m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
+        m_MethodName: SaveSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &615830391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3146,7 +3176,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 813409480}
   m_Direction: 2
   m_Value: 0.9665106
-  m_Size: 0.17349975
+  m_Size: 0.17349976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6772,7 +6802,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1421741187}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 401984602}
+        m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
+        m_MethodName: OnDefaultPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1421741187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7889,7 +7931,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 401984602}
+        m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
+        m_MethodName: OnSfxVolumeChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1693964940
 GameObject:
   m_ObjectHideFlags: 0
@@ -8306,7 +8360,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 401984602}
+        m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
+        m_MethodName: OnMasterVolumeChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1759235155
 GameObject:
   m_ObjectHideFlags: 0
