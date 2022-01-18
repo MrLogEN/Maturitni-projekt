@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_cs
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: cs
+  m_SharedData: {fileID: 11400000, guid: da2358a0a7be56c4dbc5e9e476106d45, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1048214425600
+    m_Localized: "Hr\xE1t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1496912678912
+    m_Localized: "Odej\xEDt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1413957734400
+    m_Localized: "Nastaven\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831875756032
+    m_Localized: "Zp\u011Bt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2943960141824
+    m_Localized: "Ulo\u017Eit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2972481409024
+    m_Localized: "V\xFDchoz\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023890993152
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3691863265280
+    m_Localized: Obrazovka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5072091271168
+    m_Localized: "Ovl\xE1d\xE1n\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12085105971200
+    m_Localized: Hra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12125769748480
+    m_Localized: "V\xFDb\u011Br \xFArovn\u011B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3426850361344
+    m_Localized: "Celkov\xE1 hlasitost"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3498803646464
+    m_Localized: Hlasitost hudby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3537798090752
+    m_Localized: "Zvukov\xE9 efekty"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1
