@@ -32,7 +32,6 @@ public class DisplaySettings : MonoBehaviour
                 Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
                 Debug.Log(screenValue);
                 break;
-
             default:
                 break;
 

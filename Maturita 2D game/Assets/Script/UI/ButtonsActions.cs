@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading.Tasks;
-using System;
 
 public class ButtonsActions : MonoBehaviour
 {
@@ -61,20 +58,22 @@ public class ButtonsActions : MonoBehaviour
     private bool isClickedUp = false;
     private bool isClickedShoot = false;
     private bool isClickedSpecialAbility = false;
-
     private bool isClickedSelectUp = false;
     private bool isClickedSelectDown = false;
     private bool isClickedSelectLeft = false;
     private bool isClickedSelectRight = false;
     private bool isClickedSelectSelect = false;
-    private bool isClickedDefaul = false;
     BindingObject bo;
     public event EventHandler OnBindingChange;
+    public EscMenu escMenu;
+    public Button backButton;
+    public Button resumeButton;
     private void Start()
     {
+        escMenu.OnSettingsEnter += SelectButton;
         bo = ControlBinding.Load();
         Debug.Log(bo.masterVolume + " " + bo.musicVolume + " " + bo.sfxVolume);
-
+        
         jump = bo.jump;
         right = bo.right;
         left = bo.left;
@@ -113,6 +112,10 @@ public class ButtonsActions : MonoBehaviour
     private void Update()
     {
         //print(isClickedJump);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnBackPressed();
+        }
     }
     private void OnGUI()
     {
@@ -123,64 +126,70 @@ public class ButtonsActions : MonoBehaviour
         }
         else if (isClickedRight)
         {
+
             WaitongForKey(ref right, rightButton, ref isClickedRight);
             rightButton.GetComponentInChildren<Text>().text = right.ToString();
         }
         else if (isClickedLeft)
         {
+
             WaitongForKey(ref left, leftButton, ref isClickedLeft);
             leftButton.GetComponentInChildren<Text>().text = left.ToString();
         }
         else if (isClickedCrouch)
         {
+
             WaitongForKey(ref crouch, crouchButton, ref isClickedCrouch);
             crouchButton.GetComponentInChildren<Text>().text = crouch.ToString();
         }
         else if (isClickedUp)
         {
+
             WaitongForKey(ref up, upButton, ref isClickedUp);
             upButton.GetComponentInChildren<Text>().text = up.ToString();
         }
         else if (isClickedShoot)
         {
+
             WaitongForKey(ref shoot, shootButton, ref isClickedShoot);
             shootButton.GetComponentInChildren<Text>().text = shoot.ToString();
         }
         else if (isClickedSpecialAbility)
         {
+
             WaitongForKey(ref specialAbility, specialAbilityButton, ref isClickedSpecialAbility);
             specialAbilityButton.GetComponentInChildren<Text>().text = specialAbility.ToString();
         }
         else if (isClickedSelectUp)
         {
+
             WaitongForKey(ref selectUp, selectUpButton, ref isClickedSelectUp);
             selectUpButton.GetComponentInChildren<Text>().text = selectUp.ToString();
         }
         else if (isClickedSelectDown)
         {
+
             WaitongForKey(ref selectDown, selectDownButton, ref isClickedSelectDown);
             selectDownButton.GetComponentInChildren<Text>().text = selectDown.ToString();
         }
         else if (isClickedSelectLeft)
         {
+
             WaitongForKey(ref selectLeft, selectLeftButton, ref isClickedSelectLeft);
             selectLeftButton.GetComponentInChildren<Text>().text = selectLeft.ToString();
         }
         else if (isClickedSelectRight)
         {
+
             WaitongForKey(ref selectRight, selectRightButton, ref isClickedSelectRight);
             selectRightButton.GetComponentInChildren<Text>().text = selectRight.ToString();
         }
         else if (isClickedSelectSelect)
         {
+
             WaitongForKey(ref selectSelect, selectSelectButton, ref isClickedSelectSelect);
             selectSelectButton.GetComponentInChildren<Text>().text = selectSelect.ToString();
         }
-        //else if (isClickedDefaul)
-        //{
-            
-        //    isClickedDefaul = false;
-        //}
 
     }
     public void OnJumpButtonClick()
@@ -266,18 +275,18 @@ public class ButtonsActions : MonoBehaviour
     public void OnMusicVolumeChanged()
     {
         musicVolume = musicVolumeSlider.value;
-        bo.musicVolume = musicVolume;
+        //bo.musicVolume = musicVolume;
     }
     public void OnMasterVolumeChanged()
     {
         masterVolume = masterVolumeSlider.value;
-        bo.masterVolume = masterVolume;
+        //bo.masterVolume = masterVolume;
 
     }
     public void OnSfxVolumeChanged()
     {
         sfxVolume = sfxVolumeSlider.value;
-        bo.sfxVolume = sfxVolume;
+        //bo.sfxVolume = sfxVolume;
     }
     public void OnDefaultPressed()
     {
@@ -317,5 +326,29 @@ public class ButtonsActions : MonoBehaviour
         masterVolumeSlider.value = masterVolume;
         sfxVolumeSlider.value = sfxVolume;
         musicVolumeSlider.value = musicVolume;
+    }
+    public void OnBackPressed()
+    {
+        jumpButton.GetComponentInChildren<Text>().text = bo.jump.ToString();
+        rightButton.GetComponentInChildren<Text>().text = bo.right.ToString();
+        leftButton.GetComponentInChildren<Text>().text = bo.left.ToString();
+        crouchButton.GetComponentInChildren<Text>().text = bo.crouch.ToString();
+        upButton.GetComponentInChildren<Text>().text = bo.up.ToString();
+        shootButton.GetComponentInChildren<Text>().text = bo.shoot.ToString();
+        specialAbilityButton.GetComponentInChildren<Text>().text = bo.specialAbility.ToString();
+        selectUpButton.GetComponentInChildren<Text>().text = bo.selectUp.ToString();
+        selectDownButton.GetComponentInChildren<Text>().text = bo.selectDown.ToString();
+        selectLeftButton.GetComponentInChildren<Text>().text = bo.selectLeft.ToString();
+        selectRightButton.GetComponentInChildren<Text>().text = bo.selectRight.ToString();
+        selectSelectButton.GetComponentInChildren<Text>().text = bo.selectSelect.ToString();
+
+        masterVolumeSlider.value = bo.masterVolume;
+        sfxVolumeSlider.value = bo.sfxVolume;
+        musicVolumeSlider.value = bo.musicVolume;
+        resumeButton.Select();
+    }
+    private void SelectButton(object sender, EventArgs e)
+    {
+        backButton.Select();
     }
 }
