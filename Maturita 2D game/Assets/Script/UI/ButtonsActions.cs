@@ -51,6 +51,9 @@ public class ButtonsActions : MonoBehaviour
     public float masterVolume;
     public float sfxVolume;
 
+    public int quality;
+    public int resolution;
+
     private bool isClickedJump = false;
     private bool isClickedRight = false;
     private bool isClickedLeft = false;
@@ -68,12 +71,14 @@ public class ButtonsActions : MonoBehaviour
     public EscMenu escMenu;
     public Button backButton;
     public Button resumeButton;
+    public Dropdown resolutionDropdown;
+    public Dropdown qualityDropdown;
     private void Start()
     {
         escMenu.OnSettingsEnter += SelectButton;
         bo = ControlBinding.Load();
         Debug.Log(bo.masterVolume + " " + bo.musicVolume + " " + bo.sfxVolume);
-        
+
         jump = bo.jump;
         right = bo.right;
         left = bo.left;
@@ -89,6 +94,9 @@ public class ButtonsActions : MonoBehaviour
         sfxVolume = bo.sfxVolume;
         musicVolume = bo.musicVolume;
         masterVolume = bo.masterVolume;
+        quality = bo.quality;
+        resolution = bo.screenMode;
+
 
         jumpButton.GetComponentInChildren<Text>().text = jump.ToString();
         rightButton.GetComponentInChildren<Text>().text = right.ToString();
@@ -107,6 +115,9 @@ public class ButtonsActions : MonoBehaviour
         masterVolumeSlider.value = masterVolume;
         sfxVolumeSlider.value = sfxVolume;
         musicVolumeSlider.value = musicVolume;
+
+        qualityDropdown.value = quality;
+        resolutionDropdown.value = resolution;
 
     }
     private void Update()
@@ -254,21 +265,23 @@ public class ButtonsActions : MonoBehaviour
     }
     public void SaveSettings()
     {
-        bo.jump = jump;
-        bo.shoot = shoot;
-        bo.crouch = crouch;
-        bo.left = left;
-        bo.right = right;
-        bo.up = up;
-        bo.specialAbility = specialAbility;
-        bo.selectDown = selectDown;
-        bo.selectLeft = selectLeft;
-        bo.selectRight = selectRight;
-        bo.selectUp = selectUp;
-        bo.selectSelect = selectSelect;
+        if (jump != KeyCode.None) bo.jump = jump;
+        if(shoot != KeyCode.None ) bo.shoot = shoot;
+        if(crouch != KeyCode.None ) bo.crouch = crouch;
+        if(left != KeyCode.None) bo.left = left;
+        if(right != KeyCode.None) bo.right = right;
+        if(up != KeyCode.None) bo.up = up;
+        if(specialAbility != KeyCode.None) bo.specialAbility = specialAbility;
+        if(selectDown != KeyCode.None) bo.selectDown = selectDown;
+        if(selectUp != KeyCode.None) bo.selectUp = selectUp;
+        if(selectLeft != KeyCode.None) bo.selectLeft = selectLeft;
+        if(selectRight != KeyCode.None) bo.selectRight = selectRight;
+        if(selectSelect != KeyCode.None) bo.selectSelect = selectSelect;
         bo.sfxVolume = sfxVolume;
         bo.musicVolume = musicVolume;
         bo.masterVolume = masterVolume;
+        bo.quality = quality;
+        bo.screenMode = resolution;
         ControlBinding.Save(bo);
         OnBindingChange?.Invoke(this, EventArgs.Empty);
     }
@@ -326,6 +339,9 @@ public class ButtonsActions : MonoBehaviour
         masterVolumeSlider.value = masterVolume;
         sfxVolumeSlider.value = sfxVolume;
         musicVolumeSlider.value = musicVolume;
+
+        qualityDropdown.value = bo.quality;
+        resolutionDropdown.value = bo.screenMode;
     }
     public void OnBackPressed()
     {
@@ -345,10 +361,20 @@ public class ButtonsActions : MonoBehaviour
         masterVolumeSlider.value = bo.masterVolume;
         sfxVolumeSlider.value = bo.sfxVolume;
         musicVolumeSlider.value = bo.musicVolume;
+        qualityDropdown.value = bo.quality;
+        resolutionDropdown.value = bo.screenMode;
         resumeButton.Select();
     }
     private void SelectButton(object sender, EventArgs e)
     {
         backButton.Select();
+    }
+    public void OnQualityDropDownChanged()
+    {
+        quality = qualityDropdown.value;
+    }
+    public void OnResolutionChanged()
+    {
+        resolution = resolutionDropdown.value;
     }
 }

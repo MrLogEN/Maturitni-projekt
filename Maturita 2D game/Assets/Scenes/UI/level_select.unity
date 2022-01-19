@@ -302,10 +302,9 @@ GameObject:
   - component: {fileID: 52926244}
   - component: {fileID: 52926248}
   - component: {fileID: 52926249}
-  - component: {fileID: 52926250}
   - component: {fileID: 401984602}
   m_Layer: 5
-  m_Name: EscapeMenuCanvas
+  m_Name: EscapeMenuCanvasSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,35 +438,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &52926250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52926243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2146293a8609f048bfa052552896eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jump: 266
-  right: 0
-  left: 0
-  crouch: 0
-  up: 0
-  shoot: 0
-  specialAbility: 0
-  selectUp: 0
-  selectDown: 0
-  selectLeft: 0
-  selectRight: 0
-  selectSelect: 0
-  masterVolume: {fileID: 1756971867}
-  musicVolume: {fileID: 569853167}
-  sfxVolume: {fileID: 1669307396}
-  screenMode: {fileID: 1321125695}
-  quality: {fileID: 728732341}
 --- !u!1 &132691708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,9 +1478,13 @@ MonoBehaviour:
   musicVolume: 0
   masterVolume: 0
   sfxVolume: 0
+  quality: 0
+  resolution: 0
   escMenu: {fileID: 52926248}
   backButton: {fileID: 1775017277}
   resumeButton: {fileID: 658787414}
+  resolutionDropdown: {fileID: 1321125695}
+  qualityDropdown: {fileID: 728732341}
 --- !u!1 &403189151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,7 +3155,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 813409480}
   m_Direction: 2
   m_Value: 0.9665106
-  m_Size: 0.17349975
+  m_Size: 0.17349976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3559,10 +3533,22 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020458360}
         m_TargetAssemblyTypeName: DisplaySettings, Assembly-CSharp
         m_MethodName: SetQuality
-        m_Mode: 0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 401984602}
+        m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
+        m_MethodName: OnQualityDropDownChanged
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3854,8 +3840,8 @@ RectTransform:
   m_Father: {fileID: 1906189935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7988213}
-  m_AnchorMax: {x: 1, y: 0.97232103}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1, y: 0.038879395}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4820,7 +4806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75fe7a2d0b3d2346abc037c3cd41f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropDown: {fileID: 1321125695}
+  dropDownQuality: {fileID: 728732341}
+  dropDownScreenMode: {fileID: 1321125695}
 --- !u!114 &1020458361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6260,10 +6247,22 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1020458360}
         m_TargetAssemblyTypeName: DisplaySettings, Assembly-CSharp
         m_MethodName: ValueChanged
-        m_Mode: 0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 401984602}
+        m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
+        m_MethodName: OnResolutionChanged
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
