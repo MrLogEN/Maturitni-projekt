@@ -50,4 +50,9 @@ public class EscMenu : MonoBehaviour
     {
         OnSettingsEnter?.Invoke(this, EventArgs.Empty);
     }
+    public void LoadLevelSelect()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("level_select");
+    }
 }
