@@ -74,5 +74,97 @@ MonoBehaviour:
     m_Localized: "Zvukov\xE9 efekty"
     m_Metadata:
       m_Items: []
+  - m_Id: 2889443043364864
+    m_Localized: "Cel\xE1 obrazovka"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889502422126592
+    m_Localized: Okno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889552841854976
+    m_Localized: "Okno bez r\xE1me\u010Dku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891826343366656
+    m_Localized: "Vysok\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891861906870272
+    m_Localized: "St\u0159edn\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891892021972992
+    m_Localized: "N\xEDzk\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893005093785600
+    m_Localized: "J\xEDt doleva"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893056734056448
+    m_Localized: "J\xEDt doprava"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894129645408256
+    m_Localized: "J\xEDt nahoru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894186255929344
+    m_Localized: "J\xEDt dolu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893097741766656
+    m_Localized: "St\u0159\xEDlet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893149386231808
+    m_Localized: "St\u0159ilet GG"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893196098195456
+    m_Localized: "Sk\xE1kat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893225835810816
+    m_Localized: Vybrat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2918785995689984
+    m_Localized: "Hlavn\xED menu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2918554277171200
+    m_Localized: "Pokra\u010Dovat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2923182305759232
+    m_Localized: "Pod\xEDvat se nahoru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924079131840512
+    m_Localized: "Cel\xE1 obrazovka"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924114481434624
+    m_Localized: Okno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924130608533504
+    m_Localized: "Okno bez r\xE1me\u010Dku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924786018865152
+    m_Localized: "Vysok\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924823658549248
+    m_Localized: "St\u0159edn\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924844101586944
+    m_Localized: "N\xEDzk\xE9"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

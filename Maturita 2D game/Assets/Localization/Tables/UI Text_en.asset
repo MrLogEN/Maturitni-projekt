@@ -74,5 +74,97 @@ MonoBehaviour:
     m_Localized: Level select
     m_Metadata:
       m_Items: []
+  - m_Id: 2889443043364864
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889502422126592
+    m_Localized: Windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889552841854976
+    m_Localized: Windowed borderless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891826343366656
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891861906870272
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891892021972992
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893005093785600
+    m_Localized: Walk left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893056734056448
+    m_Localized: Walk right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893097741766656
+    m_Localized: Shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893149386231808
+    m_Localized: Shoot GG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893196098195456
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893225835810816
+    m_Localized: Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894129645408256
+    m_Localized: Walk up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894186255929344
+    m_Localized: Walk down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2918554277171200
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2918785995689984
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2923182305759232
+    m_Localized: Look up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924079131840512
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924114481434624
+    m_Localized: Windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924130608533504
+    m_Localized: Windowed borderless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924786018865152
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924823658549248
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924844101586944
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

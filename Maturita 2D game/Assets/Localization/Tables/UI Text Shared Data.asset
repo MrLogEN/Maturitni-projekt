@@ -27,6 +27,14 @@ MonoBehaviour:
     m_Key: Settings button
     m_Metadata:
       m_Items: []
+  - m_Id: 2918554277171200
+    m_Key: Resume button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2918785995689984
+    m_Key: Main menu button
+    m_Metadata:
+      m_Items: []
   - m_Id: 2831875756032
     m_Key: Back button
     m_Metadata:
@@ -71,6 +79,90 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 12125769748480
     m_Key: Level select text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889443043364864
+    m_Key: Main menu - Fulscreen option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889502422126592
+    m_Key: Main menu - Windowed option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889552841854976
+    m_Key: Main menu - Windowed borderless option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891826343366656
+    m_Key: Main menu - High option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891861906870272
+    m_Key: Main menu - Medium option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891892021972992
+    m_Key: Main menu - Low option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893005093785600
+    m_Key: Walk left text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893056734056448
+    m_Key: Walk right text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894129645408256
+    m_Key: Walk up text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894186255929344
+    m_Key: Walk down texxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893097741766656
+    m_Key: Shoot text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893149386231808
+    m_Key: Shoot GG text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893196098195456
+    m_Key: Jump text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893225835810816
+    m_Key: Select text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2923182305759232
+    m_Key: Look up text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924079131840512
+    m_Key: Escape menu - Fulscreen option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924114481434624
+    m_Key: Escape menu - Windowed option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924130608533504
+    m_Key: Escape menu - Windowed borderless option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924786018865152
+    m_Key: Escape menu - High option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924823658549248
+    m_Key: Escape menu - Medium option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924844101586944
+    m_Key: Escape menu - Low option
     m_Metadata:
       m_Items: []
   m_Metadata:
