@@ -21,6 +21,14 @@ public class HandleInputsTutorial : MonoBehaviour
     private bool finished = false;
     void Start()
     {
+        
+        left = KeyCode.LeftArrow;
+        right = KeyCode.RightArrow;
+        up = KeyCode.UpArrow;
+        crouch = KeyCode.C;
+        jump = KeyCode.Z;
+        shoot = KeyCode.X;
+        special = KeyCode.V;
         stateText = gameObject.GetComponent<Text>();
         stateText.text = "Go left and right by pressing " + left.ToString() + " and " + right.ToString();
     }
