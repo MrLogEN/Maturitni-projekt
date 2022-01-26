@@ -90,7 +90,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         if (Health <= 0)
         {
             //Changes the state isDead to true;
-            IsDead = true;
+            HandleDeath();
             //Debug.Log("You are dead");
         }
         CheckInputs();
@@ -528,5 +528,12 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             GameObject hrt = Instantiate(heartPrefab, new Vector3(-8 + i * 0.8f, 4, 0), Quaternion.identity);
             heartList.Add(hrt);
         }
+    }
+    private void HandleDeath()
+    {
+        IsDead = true;
+        Time.timeScale = 0;
+        //nejake ty death screeny s menickem
+
     }
 }
