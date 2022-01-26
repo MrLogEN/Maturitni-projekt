@@ -379,6 +379,9 @@ MonoBehaviour:
   handParent: {fileID: 7111481020964248515}
   spawnerPlayer: {fileID: 7111481019934250504}
   spawnerHand: {fileID: 7111481019270430401}
+  heartPrefab: {fileID: 5669180292627713515, guid: a600346b6f23dbf47aa2c4ecf095df0b,
+    type: 3}
+  heartList: []
 --- !u!95 &7111481021066047311
 Animator:
   serializedVersion: 3

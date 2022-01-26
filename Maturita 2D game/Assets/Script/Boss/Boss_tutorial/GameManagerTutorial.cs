@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerTutorial : MonoBehaviour
 {
-    public static GameManagerTutorial instance = new GameManagerTutorial();
+    public static GameManagerTutorial instance;
     public event EventHandler<OnStateChangedEventArgs> OnStateChaged;
     public class OnStateChangedEventArgs : EventArgs
     {
@@ -25,8 +25,12 @@ public class GameManagerTutorial : MonoBehaviour
         Special,
         End
     }
-   // private bool canInstantiate = false;
+    // private bool canInstantiate = false;
+    private void Awake()
+    {
+        instance = this;
 
+    }
     void Start()
     {
         //canInstantiate = false;
