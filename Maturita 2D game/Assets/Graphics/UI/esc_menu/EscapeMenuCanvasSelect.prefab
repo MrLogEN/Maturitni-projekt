@@ -5578,13 +5578,13 @@ MonoBehaviour:
   musicVolume: 0
   masterVolume: 0
   sfxVolume: 0
-  quality: 0
+  screenMode: 0
   resolution: 0
   escMenu: {fileID: 3233822408197956745}
   backButton: {fileID: 3233822407768501916}
   resumeButton: {fileID: 3233822408799797239}
   resolutionDropdown: {fileID: 3233822407316681886}
-  qualityDropdown: {fileID: 3233822408865374484}
+  screenModeDropdown: {fileID: 0}
 --- !u!1 &3233822408199916791
 GameObject:
   m_ObjectHideFlags: 0
@@ -8373,7 +8373,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3233822408947947369}
   m_Direction: 2
   m_Value: 0.9665106
-  m_Size: 0.17349978
+  m_Size: 0.17349976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
