@@ -418,7 +418,7 @@ MonoBehaviour:
   height: 5
   gravity: -9.8
   timeToLive: 3
-  fireRate: 2
+  fireRate: 4
 --- !u!1001 &701007755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   target: {fileID: 2110224904}
   speed: 15
   timeToLive: 3
-  timeBetweenShots: 1.5
+  fireRate: 2
 --- !u!212 &2118088080
 SpriteRenderer:
   m_ObjectHideFlags: 0

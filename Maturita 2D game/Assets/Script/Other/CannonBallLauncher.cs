@@ -11,13 +11,13 @@ public class CannonBallLauncher : MonoBehaviour
     private Vector2 direction;
     public float speed = 15;
     public float timeToLive = 2;
-    public float timeBetweenShots = 1.5f;
-    private float nextFire = 0;
+    public float fireRate = 2;
+    private float nextFire = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class CannonBallLauncher : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            nextFire = Time.time + timeBetweenShots;
+            nextFire = Time.time + fireRate;
             Launch();
         }
         Destroy(cannonBallClone, timeToLive);
@@ -37,6 +37,5 @@ public class CannonBallLauncher : MonoBehaviour
         cannonBall = cannonBallClone.GetComponent<Rigidbody2D>();
         direction = (target.transform.position - transform.position).normalized * speed;
         cannonBall.velocity = new Vector2(direction.x, direction.y);
-
     }
 }

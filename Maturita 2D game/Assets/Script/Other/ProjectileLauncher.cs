@@ -11,9 +11,9 @@ public class ProjectileLauncher : MonoBehaviour
     public float height = 5;  // maximální výška trajektorie střely
     public float gravity = -18; // hodnota gravitace
     public float timeToLive = 3; // čas, po kterém se odstraní instance objektu ze scény
-    public float fireRate = 2; // čas, za který se jednou vystřelí
-    private float nextFire = 0; // čas, ve který proběhne další výstřel
-    
+    public float fireRate = 4; // čas, za který se jednou vystřelí
+    private float nextFire = 4; // čas, ve který proběhne další výstřel
+
     // Start is called before the first frame update
     void Start()
     {
