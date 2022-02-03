@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LevelSelectMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     private float moveSpeed = 5f;
     BindingObject bo;
-    private void Awake()
-    {
-       
-    }
+    public ButtonsActions actions;
     void Start()
     {
         bo = new BindingObject();
         bo = ControlBinding.Load();
+        actions.OnBindingChange += ChangeBindings;
     }
 
     // Update is called once per frame
@@ -36,5 +35,9 @@ public class LevelSelectMovement : MonoBehaviour
         {
             transform.position -= transform.up * (Time.deltaTime * moveSpeed);
         }
+    }
+    public void ChangeBindings(object sender, EventArgs e)
+    {
+        bo = ControlBinding.Load();
     }
 }

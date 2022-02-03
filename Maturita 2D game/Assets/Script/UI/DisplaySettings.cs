@@ -5,18 +5,17 @@ using UnityEngine.UI;
 
 public class DisplaySettings : MonoBehaviour
 {
-	public Dropdown dropDown;
-    
-    public void SetQuality(int qualityValue)
+	public Dropdown dropDownQuality;
+    public Dropdown dropDownScreenMode;
+    public void SetQuality()
     {
-        QualitySettings.SetQualityLevel(qualityValue);
-        Debug.Log(qualityValue);
+        QualitySettings.SetQualityLevel(dropDownQuality.value);
+        Debug.Log(dropDownQuality.value);
     }
 
-    public void ValueChanged(int screenValue)
+    public void ValueChanged()
     {
-         
-        screenValue = dropDown.value;
+        int screenValue = dropDownScreenMode.value;
         switch (screenValue)
         {
             case 0:
@@ -32,7 +31,6 @@ public class DisplaySettings : MonoBehaviour
                 Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
                 Debug.Log(screenValue);
                 break;
-
             default:
                 break;
 
