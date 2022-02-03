@@ -19,15 +19,13 @@ public class LevelSelectScript : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        CollisionCheck(collision.gameObject);;
+        CollisionCheck(collision.gameObject);
     }
-
     void CollisionCheck(GameObject col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             SaveLoad.Save(player);
-            
             if (Input.GetKey(bo.selectSelect))
             {
                 Debug.Log("Loading...");

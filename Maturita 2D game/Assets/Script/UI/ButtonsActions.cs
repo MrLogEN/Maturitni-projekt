@@ -12,9 +12,6 @@ public class ButtonsActions : MonoBehaviour
     public Button upButton;
     public Button shootButton;
     public Button specialAbilityButton;
-
-
-
     //level select
 
     public Button selectUpButton;
