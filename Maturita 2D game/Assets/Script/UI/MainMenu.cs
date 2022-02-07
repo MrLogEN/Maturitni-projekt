@@ -8,7 +8,43 @@ using System;
 public class MainMenu : MonoBehaviour
 {
     //public event EventHandler OnSettingsEnterMenu;
+    public GameObject ContinueBut;
+    public GameObject WarningPanel;
     public void PlayGame()
+    {
+        //SceneManager.LoadScene("level_select");
+        SaveObject so = SaveLoad.Load();
+        if (so.tutorialCompleted == false)
+        {
+            ContinueBut.SetActive(false);
+        }
+        else
+        {
+            ContinueBut.SetActive(true);
+
+        }
+    }
+    public void NewGame()
+    {
+        //SaveLoad.SaveDefault();
+        SaveObject so = SaveLoad.Load();
+        if (ContinueBut.active == false)
+        {
+
+            SaveLoad.SaveDefault();
+            SceneManager.LoadScene("level_tutorial");
+        }
+        else
+        {
+            WarningPanel.SetActive(true);
+        }
+    }
+    public void Yes()
+    {
+        SaveLoad.SaveDefault();
+        SceneManager.LoadScene("level_tutorial");
+    }
+    public void Continue()
     {
         SceneManager.LoadScene("level_select");
     }

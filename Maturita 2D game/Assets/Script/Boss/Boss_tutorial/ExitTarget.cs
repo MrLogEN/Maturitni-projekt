@@ -22,6 +22,9 @@ public class ExitTarget : MonoBehaviour
         {
             Debug.Log("hiiit");
             //OnExitTargetFinished?.Invoke(instance, EventArgs.Empty);
+            SaveObject so = SaveLoad.Load();
+            so.tutorialCompleted = true;
+            SaveLoad.Save(so);
             SceneManager.LoadScene(1);
         }
     }

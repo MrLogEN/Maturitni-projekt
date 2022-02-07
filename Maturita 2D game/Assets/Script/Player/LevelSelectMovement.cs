@@ -25,7 +25,7 @@ public class LevelSelectMovement : MonoBehaviour
         }
         if (Input.GetKey(bo.selectRight)) //Moving to ther right
         {
-            transform.position += transform.right * (Time.deltaTime * moveSpeed); 
+            transform.position += transform.right * (Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(bo.selectUp)) //Moving up
         {

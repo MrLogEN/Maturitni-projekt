@@ -9,7 +9,7 @@ public class Boss3Script : MonoBehaviour, IBoss
     private int _damage;
     private readonly int _phases = 2;
     private int _currentPhase;
-    private int bossMaxHealth = 2000;
+    private int bossMaxHealth = 20;
 
     #endregion
 
@@ -40,6 +40,12 @@ public class Boss3Script : MonoBehaviour, IBoss
 
             Health--;
             Debug.Log("Boss health: " + Health);
+        }
+        if (Health <= 0)
+        {
+            SaveObject so = SaveLoad.Load();
+            so.lvl3IsCompleted = true;
+            SaveLoad.Save(so);
         }
     }
 

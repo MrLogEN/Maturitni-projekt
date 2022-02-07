@@ -9,12 +9,13 @@ public class LevelSelectScript : MonoBehaviour
     public int sc;
     BindingObject bo;
     public Transform player;
+    SaveObject so;
     private void Awake()
     {
 
         bo = new BindingObject();
         bo = ControlBinding.Load();
-        SaveObject so = SaveLoad.Load();
+        so = SaveLoad.Load();
         player.position = so.position;
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -25,7 +26,8 @@ public class LevelSelectScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            SaveLoad.Save(player);
+            so.position = player.position;
+            SaveLoad.Save(so);
             if (Input.GetKey(bo.selectSelect))
             {
                 Debug.Log("Loading...");

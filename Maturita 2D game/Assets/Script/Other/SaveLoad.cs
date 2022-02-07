@@ -5,13 +5,8 @@ public static class SaveLoad
 {
     private static string filePath = Application.dataPath + "/saves/save.json";
     private static string directoryPath = Application.dataPath + "/saves";
-    public static void Save(Transform player)
+    public static void Save(SaveObject so)
     {
-
-        SaveObject so = new SaveObject
-        {
-            position = player.position
-        };
         string json;
 
         if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
