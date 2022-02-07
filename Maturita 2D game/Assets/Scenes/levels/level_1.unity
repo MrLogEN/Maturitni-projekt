@@ -536,13 +536,13 @@ PrefabInstance:
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: sounds.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 61d07162ba994b742885f1f12e18a2f3, type: 3}
+      objectReference: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: sounds.Array.data[1].loop
@@ -551,7 +551,7 @@ PrefabInstance:
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: sounds.Array.data[1].name
-      value: plastic
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
@@ -570,8 +570,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
       propertyPath: sounds.Array.data[1].volume
-      value: 0.418
+      value: 0.343
       objectReference: {fileID: 0}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
@@ -810,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &751085537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1164,7 +1169,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0.000061035, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1312,7 +1317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1191313246
 RectTransform:
   m_ObjectHideFlags: 0
