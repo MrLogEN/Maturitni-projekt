@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSelectScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject popUpButton;
+     
     public int sc;
     BindingObject bo;
     public Transform player;
     private void Awake()
     {
-
+         
         bo = new BindingObject();
         bo = ControlBinding.Load();
         SaveObject so = SaveLoad.Load();
         player.position = so.position;
+        
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -25,9 +29,11 @@ public class LevelSelectScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+             
             SaveLoad.Save(player);
             if (Input.GetKey(bo.selectSelect))
             {
+                 
                 Debug.Log("Loading...");
                 switch (sc)
                 {
@@ -60,5 +66,11 @@ public class LevelSelectScript : MonoBehaviour
                 }
             }
         }
+        void PopUpButton()
+        {
+            popUpButton.gameObject.SetActive(true);
+            popUpButton.GetComponentInChildren<Text>().text = "Press " + bo.selectSelect + " to start the level";
+        }
     }
+     
 }
