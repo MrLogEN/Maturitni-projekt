@@ -11,8 +11,8 @@ public class ArrowSpawnerScript : MonoBehaviour
 
     public GameObject projectileGameobject;
     public Transform target; // cíl, na který se støílí
-    
-
+    int i = 0;
+    Boss3Script boss;
 
 
 
@@ -24,13 +24,21 @@ public class ArrowSpawnerScript : MonoBehaviour
     {
         rn = new System.Random();
         t = Time.time;
+        boss = GetComponentInParent<Boss3Script>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentInParent<Boss3Script>().CurrentPhase == 2)
+        //print(boss.CurrentPhase);
+        if (boss.CurrentPhase == 2)
         {
+            if (i==0)
+            {
+                t = Time.time + 2;
+            }
+            i++;
+
             if (Time.time >= t)
             {
                 int randomAttack = rn.Next(3);
@@ -61,7 +69,9 @@ public class ArrowSpawnerScript : MonoBehaviour
         if (num == 1)
         {
             GameObject go;
+
             go = Instantiate(arrow, transform.position, Quaternion.identity, this.gameObject.transform);
+
         }
         if (num == 3)
         {
@@ -75,7 +85,6 @@ public class ArrowSpawnerScript : MonoBehaviour
         }
 
     }
-
   
     private void Launch(Vector3 target)
     {

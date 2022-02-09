@@ -26,30 +26,30 @@ public class ButtonsActions : MonoBehaviour
 
 
     //fdsafdsafasfdsfdasfsda
-    public KeyCode jump;
-    public KeyCode right;
-    public KeyCode left;
-    public KeyCode crouch;
-    public KeyCode up;
-    public KeyCode shoot;
-    public KeyCode specialAbility;
+    private KeyCode jump;
+    private KeyCode right;
+    private KeyCode left;
+    private KeyCode crouch;
+    private KeyCode up;
+    private KeyCode shoot;
+    private KeyCode specialAbility;
 
 
 
     //level select
 
-    public KeyCode selectUp;
-    public KeyCode selectDown;
-    public KeyCode selectLeft;
-    public KeyCode selectRight;
-    public KeyCode selectSelect;
+    private KeyCode selectUp;
+    private KeyCode selectDown;
+    private KeyCode selectLeft;
+    private KeyCode selectRight;
+    private KeyCode selectSelect;
 
-    public float musicVolume;
-    public float masterVolume;
-    public float sfxVolume;
+    private float musicVolume;
+    private float masterVolume;
+    private float sfxVolume;
 
-    public int screenMode;
-    public int resolution;
+    private int screenMode;
+    private int resolution;
 
     private bool isClickedJump = false;
     private bool isClickedRight = false;

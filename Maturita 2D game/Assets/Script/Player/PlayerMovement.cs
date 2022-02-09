@@ -38,27 +38,30 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         Vector3 characterScale = transform.localScale;
         float sc = Mathf.Abs(characterScale.x);
         #region Left and right movement
-
-            if (Input.GetKey(left) && !Input.GetKey(up)&&!Input.GetKey(crouch)) //Moving to the left
+        if (Time.timeScale == 1)
+        {
+            if (Input.GetKey(left) && !Input.GetKey(up) && !Input.GetKey(crouch)) //Moving to the left
             {
                 transform.position -= transform.right * (Time.deltaTime * _moveSpeed);
 
                 characterScale.x = -sc;
             }
-            if (Input.GetKey(right) && !Input.GetKey(up)&& !Input.GetKey(crouch)) //Moving to ther right
+            if (Input.GetKey(right) && !Input.GetKey(up) && !Input.GetKey(crouch)) //Moving to ther right
             {
                 transform.position += transform.right * (Time.deltaTime * _moveSpeed);
                 characterScale.x = sc;
             }
 
-        if (Input.GetKey(left) && Input.GetKey(up)) //Moving to the left
-        {
-            characterScale.x = -sc;
+            if (Input.GetKey(left) && Input.GetKey(up)) //Moving to the left
+            {
+                characterScale.x = -sc;
+            }
+            if (Input.GetKey(right) && Input.GetKey(up)) //Moving to ther right
+            {
+                characterScale.x = sc;
+            }
         }
-        if (Input.GetKey(right) && Input.GetKey(up)) //Moving to ther right
-        {
-            characterScale.x = sc;
-        }
+            
 
 
         transform.localScale = characterScale;

@@ -19,7 +19,8 @@ public class BalloonSpawner : MonoBehaviour
     {
         if (boss.GetComponent<Boss3Script>().isInvincible)
         {
-            if (Time.time >= t)
+            ShieldScript ss = FindObjectOfType<ShieldScript>();
+            if (Time.time >= t && ss==null)
             {
                 Instantiate(balloon, transform.position, Quaternion.identity);
                 t = Time.time + spawnRate;

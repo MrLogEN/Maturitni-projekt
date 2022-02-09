@@ -26,12 +26,16 @@ public class ShieldScript : MonoBehaviour
             rb.gravityScale = 1;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Boss")
         {
             collision.gameObject.GetComponent<Boss3Script>().isInvincible = false;
             Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            collision.GetComponent<PlayerActions>().TakeHit();
         }
     }
 }

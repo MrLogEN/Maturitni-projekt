@@ -9,12 +9,11 @@ public class Boss3Script : MonoBehaviour, IBoss
     private int _damage;
     private readonly int _phases = 2;
     private int _currentPhase;
-    private int bossMaxHealth = 20;
+    public int bossMaxHealth = 20;
 
     #endregion
 
 
-   
     public int Health { get => _health; set => _health = value; }
 
     public int Damage => _damage;
@@ -37,16 +36,18 @@ public class Boss3Script : MonoBehaviour, IBoss
         if (!isInvincible)
         {
             //CurrentPhase = 2;
-
             Health--;
-            Debug.Log("Boss health: " + Health);
         }
         if (Health <= 0)
         {
+            Health = 0;
+            CurrentPhase = 3;
+            Time.timeScale = 0f;
             SaveObject so = SaveLoad.Load();
             so.lvl3IsCompleted = true;
             SaveLoad.Save(so);
         }
+        Debug.Log("Boss health: " + Health);
     }
 
     // Start is called before the first frame update
@@ -56,7 +57,6 @@ public class Boss3Script : MonoBehaviour, IBoss
         CurrentPhase = 1;
         isInvincible = true;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -64,7 +64,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         {
             CurrentPhase = 1;
         }
-        if (!isInvincible)
+        if (!isInvincible&&Health>0)
         {
             CurrentPhase = 2;
         }
@@ -88,5 +88,12 @@ public class Boss3Script : MonoBehaviour, IBoss
             //random generator for deciding - straight arrow fire or 3 arrows fired at once
         }
 
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.GetComponent<PlayerActions>().TakeHit();
+        }
     }
 }
