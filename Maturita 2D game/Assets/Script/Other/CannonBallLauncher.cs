@@ -25,6 +25,7 @@ public class CannonBallLauncher : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
+            print(nextFire+"can");
             nextFire = Time.time + fireRate;
             Launch();
         }

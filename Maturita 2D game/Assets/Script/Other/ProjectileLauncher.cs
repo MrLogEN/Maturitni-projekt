@@ -9,7 +9,7 @@ public class ProjectileLauncher : MonoBehaviour
     private Rigidbody2D projectile; // Rigidbody2D komponent objektu
     public Transform target; // cíl, na který se střílí
     public float height = 5;  // maximální výška trajektorie střely
-    public float gravity = -18; // hodnota gravitace
+    //public float gravity = -18; // hodnota gravitace
     public float timeToLive = 3; // čas, po kterém se odstraní instance objektu ze scény
     public float fireRate = 4; // čas, za který se jednou vystřelí
     private float nextFire = 4; // čas, ve který proběhne další výstřel
@@ -25,6 +25,7 @@ public class ProjectileLauncher : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
+            print(nextFire + "pro");
             nextFire = Time.time + fireRate;
             Launch();
         }
@@ -35,7 +36,7 @@ public class ProjectileLauncher : MonoBehaviour
     {
         projectileClone = Instantiate(projectileGameobject, transform.position, transform.rotation); // vytvoření instance objektu ve scéně
         projectile = projectileClone.GetComponent<Rigidbody2D>(); // získání komponenty Rigidbody2D z vytvořené instance
-        Physics2D.gravity = Vector2.up * gravity; // přiřazení gravitace
+        //Physics2D.gravity = Vector2.up * Physics2D.gravity; // přiřazení gravitace
         projectile.velocity = CalculateLaunchVelocity(); // přiřazení vypočítané rychlosti komponentě Rigidbody2D
         print(CalculateLaunchVelocity());
     }
@@ -45,8 +46,8 @@ public class ProjectileLauncher : MonoBehaviour
     {
         float displacementY = target.position.y - projectile.position.y;
         Vector2 displacementX = new Vector2(target.position.x - projectile.position.x, 0);
-        Vector2 velocityY = Vector2.up * Mathf.Sqrt(-2 * gravity * height);
-        Vector2 velocityX = displacementX / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (displacementY - height) / gravity));
+        Vector2 velocityY = Vector2.up * Mathf.Sqrt(-2 * Physics2D.gravity.y * height);
+        Vector2 velocityX = displacementX / (Mathf.Sqrt(-2 * height / Physics2D.gravity.y) + Mathf.Sqrt(2 * (displacementY - height) / Physics2D.gravity.y));
         return velocityX + velocityY;
     }
 }
