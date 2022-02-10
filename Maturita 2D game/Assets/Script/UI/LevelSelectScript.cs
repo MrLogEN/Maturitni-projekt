@@ -36,7 +36,9 @@ public class LevelSelectScript : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             PopUpButton();
-            SaveLoad.Save(player);
+            SaveObject so = SaveLoad.Load();
+            so.position = player.position;
+            SaveLoad.Save(so);
             if (Input.GetKey(bo.selectSelect))
             {
                  
