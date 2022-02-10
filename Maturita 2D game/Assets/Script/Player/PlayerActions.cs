@@ -113,167 +113,171 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     }
     private void CheckInputs()
     {
-        float vel = GetComponent<Rigidbody2D>().velocity.y;
-        if (!Input.GetKey(crouch) && !Input.GetKey(jump) && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
-        else if (Input.GetKey(right) && Input.GetKey(left)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
-        #region directions
-        else if (Input.GetKey(up) && !Input.GetKey(crouch) && !Input.GetKey(left) && !Input.GetKey(right) && vel == 0) //up
+        if (Time.timeScale == 1)
         {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.up));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (Input.GetKey(up) && Input.GetKey(left) && !Input.GetKey(right) && vel == 0 && !Input.GetKey(crouch)) //left diagonal
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftDiagonal));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (Input.GetKey(up) && !Input.GetKey(left) && Input.GetKey(right) && vel == 0 && !Input.GetKey(crouch)) //right diagonal
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightDiagonal));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(right) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //right not pressed
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightNotPressed));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(left) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //left not pressed
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftNotPressed));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (Input.GetKey(right) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //right pressed
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightPressed));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (Input.GetKey(left) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //left pressed
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftPressed));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-
-        #endregion
-        //jump Up
-        #region jumpUp
-        else if (vel > 0 && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up))
-        {
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", true);
-            if (transform.localScale.x > 0)
+            float vel = GetComponent<Rigidbody2D>().velocity.y;
+            if (!Input.GetKey(crouch) && !Input.GetKey(jump) && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
+            else if (Input.GetKey(right) && Input.GetKey(left)) OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
+            #region directions
+            else if (Input.GetKey(up) && !Input.GetKey(crouch) && !Input.GetKey(left) && !Input.GetKey(right) && vel == 0) //up
             {
-                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpRight));
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.up));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
             }
-            else
+            else if (Input.GetKey(up) && Input.GetKey(left) && !Input.GetKey(right) && vel == 0 && !Input.GetKey(crouch)) //left diagonal
             {
-                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeft));
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftDiagonal));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else if (Input.GetKey(up) && !Input.GetKey(left) && Input.GetKey(right) && vel == 0 && !Input.GetKey(crouch)) //right diagonal
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightDiagonal));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else if (transform.localScale == new Vector3(1, 1, 1) && !Input.GetKey(right) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //right not pressed
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightNotPressed));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else if (transform.localScale == new Vector3(-1, 1, 1) && !Input.GetKey(left) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //left not pressed
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftNotPressed));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else if (Input.GetKey(right) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //right pressed
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.rightPressed));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else if (Input.GetKey(left) && !Input.GetKey(up) && vel == 0 && !Input.GetKey(crouch)) //left pressed
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.leftPressed));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
             }
 
-        }
-        else if (vel > 0 && Input.GetKey(left) && !Input.GetKey(right) && Input.GetKey(up))
-        {
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", true);
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeftDiagonal));
-        }
-        else if (vel > 0 && !Input.GetKey(left) && Input.GetKey(right) && Input.GetKey(up))
-        {
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", true);
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpRightDiagonal));
-        }
-        #endregion
-
-        //jump Down
-        #region jumpDown
-        else if (vel < 0 && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up))
-        {
-            playerAnim.SetBool("isJumpingDown", true);
-            playerAnim.SetBool("isJumpingUp", false);
-            if (transform.localScale.x > 0)
+            #endregion
+            //jump Up
+            #region jumpUp
+            else if (vel > 0 && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up))
             {
-                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownRight));
-            }
-            else
-            {
-                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownLeft));
-            }
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", true);
+                if (transform.localScale.x > 0)
+                {
+                    OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpRight));
+                }
+                else
+                {
+                    OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeft));
+                }
 
-        }
-        else if (vel < 0 && Input.GetKey(left) && !Input.GetKey(right) && Input.GetKey(up))
-        {
-            playerAnim.SetBool("isJumpingDown", true);
-            playerAnim.SetBool("isJumpingUp", false);
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownLeftDiagonal));
-        }
-        else if (vel < 0 && !Input.GetKey(left) && Input.GetKey(right) && Input.GetKey(up))
-        {
-            playerAnim.SetBool("isJumpingDown", true);
-            playerAnim.SetBool("isJumpingUp", false);
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownRightDiagonal));
-        }
-        #endregion
-
-        #region crouch
-        else if (Input.GetKey(crouch) && vel == 0 && !Input.GetKey(left) && !Input.GetKey(right))
-        {
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-            if (transform.localScale.x > 0)
-            {
-                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
             }
-            else
+            else if (vel > 0 && Input.GetKey(left) && !Input.GetKey(right) && Input.GetKey(up))
+            {
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", true);
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpLeftDiagonal));
+            }
+            else if (vel > 0 && !Input.GetKey(left) && Input.GetKey(right) && Input.GetKey(up))
+            {
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", true);
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpUpRightDiagonal));
+            }
+            #endregion
+
+            //jump Down
+            #region jumpDown
+            else if (vel < 0 && !Input.GetKey(left) && !Input.GetKey(right) && !Input.GetKey(up))
+            {
+                playerAnim.SetBool("isJumpingDown", true);
+                playerAnim.SetBool("isJumpingUp", false);
+                if (transform.localScale.x > 0)
+                {
+                    OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownRight));
+                }
+                else
+                {
+                    OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownLeft));
+                }
+
+            }
+            else if (vel < 0 && Input.GetKey(left) && !Input.GetKey(right) && Input.GetKey(up))
+            {
+                playerAnim.SetBool("isJumpingDown", true);
+                playerAnim.SetBool("isJumpingUp", false);
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownLeftDiagonal));
+            }
+            else if (vel < 0 && !Input.GetKey(left) && Input.GetKey(right) && Input.GetKey(up))
+            {
+                playerAnim.SetBool("isJumpingDown", true);
+                playerAnim.SetBool("isJumpingUp", false);
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.jumpDownRightDiagonal));
+            }
+            #endregion
+
+            #region crouch
+            else if (Input.GetKey(crouch) && vel == 0 && !Input.GetKey(left) && !Input.GetKey(right))
+            {
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+                if (transform.localScale.x > 0)
+                {
+                    OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
+                }
+                else
+                {
+                    OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchLeft));
+                }
+            }
+            else if (Input.GetKey(crouch) && vel == 0 && Input.GetKey(left) && !Input.GetKey(right))
             {
                 OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchLeft));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else if (Input.GetKey(crouch) && vel == 0 && !Input.GetKey(left) && Input.GetKey(right))
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else if (Input.GetKey(crouch) && vel == 0)
+            {
+                OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            #endregion
+            else
+            {
+                //OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
+            }
+
+            if (vel > 1.5f)
+            {
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", true);
+            }
+            else if (vel < -3)
+            {
+                playerAnim.SetBool("isJumpingDown", true);
+                playerAnim.SetBool("isJumpingUp", false);
+            }
+            else
+            {
+                playerAnim.SetBool("isJumpingDown", false);
+                playerAnim.SetBool("isJumpingUp", false);
             }
         }
-        else if (Input.GetKey(crouch) && vel == 0 && Input.GetKey(left) && !Input.GetKey(right))
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchLeft));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (Input.GetKey(crouch) && vel == 0 && !Input.GetKey(left) && Input.GetKey(right))
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else if (Input.GetKey(crouch) && vel == 0)
-        {
-            OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.crouchRight));
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        #endregion
-        else
-        {
-            //OnChangeLook?.Invoke(this, new OnChangeLookArgs(OnChangeLookArgs.Direction.none));
-        }
-
-        if (vel > 1.5f)
-        {
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", true);
-        }
-        else if (vel < -3)
-        {
-            playerAnim.SetBool("isJumpingDown", true);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
-        else
-        {
-            playerAnim.SetBool("isJumpingDown", false);
-            playerAnim.SetBool("isJumpingUp", false);
-        }
+       
     }
     public void TakeHit()
     {

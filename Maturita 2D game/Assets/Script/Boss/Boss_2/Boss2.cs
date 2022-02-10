@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss2 : MonoBehaviour
+public class Boss2 : MonoBehaviour,IBoss
 {
     private int _health;
     private int _damage = 1;
@@ -12,7 +12,7 @@ public class Boss2 : MonoBehaviour
     public int Phases { get => _phases; set => _phases = value; }
     void Start()
     {
-        _health = 20;
+        _health = 10;
         _phases = 1;
     }
     void Update()
@@ -23,5 +23,13 @@ public class Boss2 : MonoBehaviour
     {
         Health--;
         Debug.Log("Boss health" + Health);
+        if (Health <= 0)
+        {
+            Health = 0;
+            Time.timeScale = 0;
+            SaveObject so = SaveLoad.Load();
+            so.lvl2IsCompleted = true;
+            SaveLoad.Save(so);
+        }
     }
 }
