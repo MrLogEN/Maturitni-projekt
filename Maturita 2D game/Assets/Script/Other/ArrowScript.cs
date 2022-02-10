@@ -56,24 +56,24 @@ public class ArrowScript : MonoBehaviour
         if (boss.Health > (health/ 2))
         {
             velocity = 5f;
-            print("k1");
+            //print("k1");
         }
         else if (boss.Health <= (health/ 2) && boss.Health > health / 4)
         {
             velocity =7f;
-            print("k2");
+            //print("k2");
 
         }
         else if (boss.Health <= health/ 4 && boss.Health > health/ 8)
         {
             velocity = 10f;
-            print("k3");
+           // print("k3");
 
         }
         else if (boss.Health <= health/ 8)
         {
             velocity = 13f;
-            print("k4");
+            //print("k4");
 
         }
     }

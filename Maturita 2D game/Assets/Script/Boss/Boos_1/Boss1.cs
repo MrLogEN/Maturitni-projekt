@@ -16,12 +16,20 @@ public class Boss1 : MonoBehaviour,IBoss
     public void TakeDamage()
     {
         Health--;
+        if (Health <=0)
+        {
+            Health = 0;
+            Time.timeScale = 0;
+            SaveObject so = SaveLoad.Load();
+            so.lvl1IsCompleted = true;
+            SaveLoad.Save(so);
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Health = 100;
+        Health = 10;
     }
 
     // Update is called once per frame
