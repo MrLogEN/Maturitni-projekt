@@ -7,11 +7,13 @@ public class Boss1 : MonoBehaviour,IBoss
     int _health;
     int _damage;
     int _phases;
+    int _maxHealth = 10;
     public int Health { get => _health; set => _health = value; }
 
     public int Damage => _damage;
 
     public int Phases { get => _phases; set => _phases = value; }
+    public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
 
     public void TakeDamage()
     {
@@ -29,7 +31,7 @@ public class Boss1 : MonoBehaviour,IBoss
     // Start is called before the first frame update
     void Start()
     {
-        Health = 10;
+        Health = MaxHealth;
     }
 
     // Update is called once per frame
