@@ -17,7 +17,7 @@ public class CannonBallLauncher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        nextFire = Time.time + nextFire + fireRate;
     }
 
     // Update is called once per frame

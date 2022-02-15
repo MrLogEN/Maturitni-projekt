@@ -17,7 +17,7 @@ public class ProjectileLauncher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        nextFire = Time.time + fireRate+ nextFire;
     }
 
     // Update is called once per frame
