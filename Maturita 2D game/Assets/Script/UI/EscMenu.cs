@@ -8,6 +8,8 @@ using System;
 
 public class EscMenu : MonoBehaviour
 {
+    public Image winscreen;
+    public Image deathscreen;
     public bool paused = false;
     public GameObject escapeMenu;
     public Button resumeBut;
@@ -17,7 +19,7 @@ public class EscMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(paused == false)
+            if (paused == false && winscreen != true && deathscreen != true)
             {
                 escapeMenu.SetActive(true);
                 settings.SetActive(false);
@@ -25,7 +27,7 @@ public class EscMenu : MonoBehaviour
                 Time.timeScale = 0f;
                 paused = true;
             }
-            else if(paused == true)
+            else if(paused == true && winscreen != true && deathscreen != true)
             {
                 escapeMenu.SetActive(false);
                 settings.SetActive(false);
@@ -54,5 +56,13 @@ public class EscMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("level_select");
+    }
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        Time.timeScale = 1f;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 }

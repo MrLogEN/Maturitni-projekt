@@ -16,6 +16,7 @@ public class LevelSelectScript : MonoBehaviour
     public Transform player;
     private void Awake()
     {
+        Time.timeScale = 1f;
         ba.OnBindingChange += BindingChange;
         bo = new BindingObject();
         bo = ControlBinding.Load();
