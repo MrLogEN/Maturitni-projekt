@@ -52,11 +52,11 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
                 characterScale.x = sc;
             }
 
-            if (Input.GetKey(left) && Input.GetKey(up)) //Moving to the left
+            if (Input.GetKey(left) && Input.GetKey(up))
             {
                 characterScale.x = -sc;
             }
-            if (Input.GetKey(right) && Input.GetKey(up)) //Moving to ther right
+            if (Input.GetKey(right) && Input.GetKey(up))
             {
                 characterScale.x = sc;
             }
