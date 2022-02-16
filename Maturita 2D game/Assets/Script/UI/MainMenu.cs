@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     {
         //SaveLoad.SaveDefault();
         SaveObject so = SaveLoad.Load();
-        if (ContinueBut.active == false)
+        if (ContinueBut.activeInHierarchy == false)
         {
 
             SaveLoad.SaveDefault();

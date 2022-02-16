@@ -10,14 +10,18 @@ public static class SaveLoad
         string json;
 
         if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
-        if (!File.Exists(filePath))
-        {
-            File.Create(filePath);
-        }
+        //if (!File.Exists(filePath))
+        //{
+        //    File.Create(filePath);
+        //}
+        FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);
+        StreamWriter sw = new StreamWriter(fs);
 
         json = JsonUtility.ToJson(so);
-        File.WriteAllText(filePath, json);
-
+        //File.WriteAllText(filePath, json);
+        sw.WriteLine(json);
+        sw.Close();
+        fs.Close();
 
     }
     public static SaveObject Load()
@@ -25,12 +29,28 @@ public static class SaveLoad
         SaveObject so;
         if (File.Exists(filePath))
         {
-            string objData = File.ReadAllText(filePath);
+            FileStream fs = new FileStream(filePath,FileMode.Open);
+            StreamReader sr = new StreamReader(fs);
+            string objData;// = File.ReadAllText(filePath);
+            objData = sr.ReadLine();
+            sr.Close();
+            fs.Close();
             so = JsonUtility.FromJson<SaveObject>(objData);
         }
         else
         {
-            so = new SaveObject { position = new Vector3(0, 0, 0) };
+            if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
+            //so = new SaveObject { position = new Vector3(0, 0, 0) };
+            //FileStream fs = new FileStream(filePath, FileMode.Create);
+            SaveDefault();
+            //string objData = File.ReadAllText(filePath);
+            FileStream fs = new FileStream(filePath, FileMode.Open);
+            StreamReader sr = new StreamReader(fs);
+            string objData = sr.ReadLine();
+            sr.Close();
+            fs.Close();
+            so = JsonUtility.FromJson<SaveObject>(objData);
+            //Save(so);
         }
         return so;
     }
@@ -52,15 +72,36 @@ public static class SaveLoad
 
         };
         string json;
-
-        if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
-        if (!File.Exists(filePath))
-        {
-            File.Create(filePath);
-        }
-
         json = JsonUtility.ToJson(so);
-        File.WriteAllText(filePath, json);
+        if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
+        FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);
+        StreamWriter sw = new StreamWriter(fs);
+        sw.WriteLine(json);
+        sw.Close();
+        fs.Close();
+
+        //if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
+        //if (!File.Exists(filePath))
+        //{
+        //    //File.Create(filePath);
+        //    FileStream fs = new FileStream(filePath, FileMode.Create);
+        //    StreamWriter sw = new StreamWriter(fs);
+        //    sw.Write(json);
+        //    sw.Close();
+        //    fs.Close();
+        //}
+        //else
+        //{
+        //    FileStream fs = new FileStream(filePath, FileMode.Open);
+        //    StreamWriter sw = new StreamWriter(fs);
+        //    sw.Write(json);
+        //    sw.Close();
+        //    fs.Close();
+        //}
+
+        
+        
+        //File.WriteAllText(filePath, json);
     }
 }
 public class SaveObject
@@ -80,4 +121,17 @@ public class SaveObject
      * All of these variables will be stored on exit of a scene
      * and loaded when entering a scene
      */
+    //public void LoadDefault()
+    //{
+    //    position = new Vector3(-4.3f, -1.6f, 0);
+    //    tutorialCompleted = false;
+    //    lvl1IsCompleted = false;
+    //    lvl2IsCompleted = false;
+    //    lvl3IsCompleted = false;
+    //    lvl4IsCompleted = false;
+    //    lvl5IsCompleted = false;
+    //    damage = 1;
+    //    speed = 5f;
+    //    hasDoubleJump = false;
+    //}
 }
