@@ -1499,6 +1499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0df7196fca66f458ad249808306896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winscreen: {fileID: 0}
+  deathscreen: {fileID: 0}
   paused: 0
   escapeMenu: {fileID: 577316212814020866}
   resumeBut: {fileID: 577316211823561813}
@@ -1560,23 +1562,6 @@ MonoBehaviour:
   masterVolumeSlider: {fileID: 577316213138146136}
   musicVolumeSlider: {fileID: 577316211916948716}
   sfxVolumeSlider: {fileID: 577316212966071303}
-  jump: 0
-  right: 0
-  left: 0
-  crouch: 0
-  up: 0
-  shoot: 0
-  specialAbility: 0
-  selectUp: 0
-  selectDown: 0
-  selectLeft: 0
-  selectRight: 0
-  selectSelect: 0
-  musicVolume: 0
-  masterVolume: 0
-  sfxVolume: 0
-  screenMode: 0
-  resolution: 0
   escMenu: {fileID: 577316211351787307}
   backButton: {fileID: 577316213124341054}
   resumeButton: {fileID: 577316211823561813}
@@ -2224,8 +2209,8 @@ RectTransform:
   m_Father: {fileID: 577316212716545644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.7988212}
+  m_AnchorMax: {x: 1, y: 0.972321}
   m_AnchoredPosition: {x: 1, y: 0.038879395}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4176,8 +4161,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 577316211674490058}
   m_HandleRect: {fileID: 577316211674490059}
   m_Direction: 2
-  m_Value: 0.9665105
-  m_Size: 0.17349976
+  m_Value: 0.9665106
+  m_Size: 0.17349978
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8092,6 +8077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0df7196fca66f458ad249808306896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winscreen: {fileID: 0}
+  deathscreen: {fileID: 0}
   paused: 0
   escapeMenu: {fileID: 577316212814020866}
   resumeBut: {fileID: 577316211823561813}

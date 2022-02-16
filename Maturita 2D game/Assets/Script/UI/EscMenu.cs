@@ -19,21 +19,43 @@ public class EscMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (paused == false && winscreen != true && deathscreen != true)
+            if (winscreen != null && deathscreen != null)
             {
-                escapeMenu.SetActive(true);
-                settings.SetActive(false);
-                resumeBut.Select();
-                Time.timeScale = 0f;
-                paused = true;
+                if (paused == false && winscreen.IsActive() != true && deathscreen.IsActive() != true)
+                {
+                    escapeMenu.SetActive(true);
+                    settings.SetActive(false);
+                    resumeBut.Select();
+                    Time.timeScale = 0f;
+                    paused = true;
+                }
+                else if (paused == true && winscreen.IsActive() != true && deathscreen.IsActive() != true)
+                {
+                    escapeMenu.SetActive(false);
+                    settings.SetActive(false);
+                    Time.timeScale = 1f;
+                    paused = false;
+                }
             }
-            else if(paused == true && winscreen != true && deathscreen != true)
+            else
             {
-                escapeMenu.SetActive(false);
-                settings.SetActive(false);
-                Time.timeScale = 1f;
-                paused = false;
+                if (paused == false)
+                {
+                    escapeMenu.SetActive(true);
+                    settings.SetActive(false);
+                    resumeBut.Select();
+                    Time.timeScale = 0f;
+                    paused = true;
+                }
+                else if (paused == true)
+                {
+                    escapeMenu.SetActive(false);
+                    settings.SetActive(false);
+                    Time.timeScale = 1f;
+                    paused = false;
+                }
             }
+            
         }
     }
     public void Resume()

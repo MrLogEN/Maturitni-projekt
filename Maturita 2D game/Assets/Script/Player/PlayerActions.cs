@@ -19,6 +19,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     private float nextFire = 0f;
     private float bulletVelocity = 30f;
 
+    public ButtonsActions ba;
     public GameObject bullet;
     public Animator playerAnim;
     public Animator handAnim;
@@ -63,22 +64,39 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     #region inputs
     KeyCode left, right, up, jump, crouch, shoot, special;
     #endregion
-
+    BindingObject bo;
+    void BindigChanged(object sender, EventArgs e)
+    {
+        bo = ControlBinding.Load();
+        left = bo.left;
+        right = bo.right;
+        up = bo.up;
+        jump = bo.jump;
+        crouch = bo.crouch;
+        shoot = bo.shoot;
+        special = bo.specialAbility;
+    }
     void Start()
     {
+        ba = FindObjectOfType<ButtonsActions>();
+        if (ba != null)
+        {
+            ba.OnBindingChange += BindigChanged;
+        }
         
         Health = 3; // default settings
         Damage = 1;
         rb = GetComponent<Rigidbody2D>();
         OnChangeLook += HandleDir;
+        bo = ControlBinding.Load();
 
-        left = KeyCode.LeftArrow;
-        right = KeyCode.RightArrow;
-        up = KeyCode.UpArrow;
-        jump = KeyCode.Z;
-        crouch = KeyCode.C;
-        shoot = KeyCode.X;
-        special = KeyCode.V;
+        left = bo.left;
+        right = bo.right;
+        up = bo.up;
+        jump = bo.jump;
+        crouch = bo.crouch;
+        shoot = bo.shoot;
+        special = bo.specialAbility;
 
         heartList = new List<GameObject>();
         SpawnHearts();
@@ -298,7 +316,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     public void Shoot()
     {
         float sc = gameObject.transform.localScale.x;
-        if (spawnerPlayer.active)
+        if (spawnerPlayer.activeInHierarchy)
         {
             GameObject bulletInstace = Instantiate(bullet, spawnerPlayer.transform.position, spawnerPlayer.transform.rotation);
             Rigidbody2D rb = bulletInstace.GetComponent<Rigidbody2D>();
@@ -323,7 +341,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             //GameObject bulletInstace = Instantiate(bullet, spawnerHand.transform.position, handParent.transform.rotation);
 
         }
-        else if (spawnerHand.active)
+        else if (spawnerHand.activeInHierarchy)
         {
             float xCon = 0;
             if (sc > 0)

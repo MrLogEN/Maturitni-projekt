@@ -18,7 +18,10 @@ public class LevelSelectScript : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1f;
-        ba.OnBindingChange += BindingChange;
+        if (ba != null)
+        {
+            ba.OnBindingChange += BindingChange;
+        }
         bo = new BindingObject();
         bo = ControlBinding.Load();
         SaveObject so = SaveLoad.Load();

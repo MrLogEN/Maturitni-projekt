@@ -348,6 +348,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpForce: 11
+  ba: {fileID: 0}
 --- !u!114 &7111481021066047305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b706ddbe6683499007c7d556d7b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ba: {fileID: 1656125897811494921, guid: 048cde13ca369c046a344f4780430d13, type: 3}
   bullet: {fileID: 1064487732038298866, guid: 3c5198bc875c0514ba8436ad315a25ab, type: 3}
   playerAnim: {fileID: 7111481021066047311}
   handAnim: {fileID: 7111481020735411960}

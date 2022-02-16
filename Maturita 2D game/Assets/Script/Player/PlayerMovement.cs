@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour, IPlayerSkills
 {
@@ -13,24 +14,46 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     private bool isGrounded;
     private int extraJump = 1;
     public float jumpForce = 15f;
+    public ButtonsActions ba;
 
     private bool isJumping = false;
     public float Speed { get => _moveSpeed; set => _moveSpeed = value; }
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
     KeyCode left, right, up, jump, crouch, shoot, special;
+    BindingObject bo;
+
+    void BindigChanged(object sender, EventArgs e)
+    {
+        bo = ControlBinding.Load();
+        left = bo.left;
+        right = bo.right;
+        up = bo.up;
+        jump = bo.jump;
+        crouch = bo.crouch;
+        shoot = bo.shoot;
+        special = bo.specialAbility;
+    }
     void Start()
     {
+        ba = FindObjectOfType<ButtonsActions>();
+        if (ba != null)
+        {
+            ba.OnBindingChange += BindigChanged;
+
+        }
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         Speed = 5f;
         HasDoubleJump = true;
-        left = KeyCode.LeftArrow;
-        right = KeyCode.RightArrow;
-        up = KeyCode.UpArrow;
-        jump = KeyCode.Z;
-        crouch = KeyCode.C;
-        shoot = KeyCode.X;
-        special = KeyCode.V;
+
+        bo = ControlBinding.Load();
+        left = bo.left;
+        right = bo.right;
+        up = bo.up;
+        jump = bo.jump;
+        crouch = bo.crouch;
+        shoot = bo.shoot;
+        special = bo.specialAbility;
 
     }
     void Update()
