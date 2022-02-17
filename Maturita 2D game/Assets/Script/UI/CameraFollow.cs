@@ -10,6 +10,10 @@ public class CameraFollow : MonoBehaviour
     private Vector3 offset = new Vector3(0,0,-10);
     private float smoothFactor = 3f;
     // Update is called once per frame
+    private void Start()
+    {
+        transform.position = target.position + offset;
+    }
     void Update()
     {
 

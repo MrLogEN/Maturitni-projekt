@@ -14,8 +14,9 @@ public class DeathWin : MonoBehaviour
     public PlayerActions pa;
     private int bossHP;
     public IBoss bossS;
-     
-   
+    private SaveObject so;
+
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -23,6 +24,7 @@ public class DeathWin : MonoBehaviour
         bossS = boss.GetComponent<IBoss>();
         pa = player.GetComponent<PlayerActions>();
         bossHP = bossS.Health;
+        so = SaveLoad.Load();
     }
     void Update()
     {
@@ -33,6 +35,7 @@ public class DeathWin : MonoBehaviour
 
             Time.timeScale = 0f;
             winscreen.gameObject.SetActive(true);
+
            
         }
         if(pa.Health <= 0  )

@@ -26,6 +26,7 @@ public class Boss3Script : MonoBehaviour, IBoss
     public bool isInvincible;
 
     public GameObject player;
+    SaveObject so;
     public void TakeDamage()
     {
         
@@ -44,8 +45,12 @@ public class Boss3Script : MonoBehaviour, IBoss
             Health = 0;
             CurrentPhase = 3;
             Time.timeScale = 0f;
-            SaveObject so = SaveLoad.Load();
-            so.lvl3IsCompleted = true;
+            //so = SaveLoad.Load();
+            if (!so.lvl3IsCompleted)
+            {
+                so.lvl3IsCompleted = true;
+                so.skillPoints++;
+            }
             SaveLoad.Save(so);
         }
         Debug.Log("Boss health: " + Health);
@@ -57,6 +62,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         Health = bossMaxHealth;
         CurrentPhase = 1;
         isInvincible = true;
+        so = SaveLoad.Load();
     }
     // Update is called once per frame
     void Update()

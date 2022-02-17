@@ -68,7 +68,10 @@ public static class SaveLoad
 
             damage = 1,
             speed = 5f,
-            hasDoubleJump = false
+            hasDoubleJump = false,
+            skillPoints = 0,
+            hasDamage = false,
+            hasSwiftness = false
 
         };
         string json;
@@ -117,6 +120,9 @@ public class SaveObject
     public int damage; //damage of player from skill tree or default
     public float speed; //speed of the player from skill tree or default
     public bool hasDoubleJump; //bool saying if the player has double jump or not - also skill tree
+    public bool hasSwiftness;
+    public bool hasDamage;
+    public int skillPoints;
     /*
      * All of these variables will be stored on exit of a scene
      * and loaded when entering a scene
