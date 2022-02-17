@@ -15,8 +15,11 @@ public class LevelSelectScript : MonoBehaviour
     BindingObject bo;
     public Transform player;
     private bool tutorialC, level1C, level2C, level3C, level4C, level5C;
+    public Sprite lvlUnlcoked, lvlLocked;
+    private SpriteRenderer sr;
     private void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
         Time.timeScale = 1f;
         if (ba != null)
         {
@@ -33,6 +36,10 @@ public class LevelSelectScript : MonoBehaviour
         level4C = so.lvl4IsCompleted;
         level5C = so.lvl5IsCompleted;
         
+    }
+    private void Update()
+    {
+        ShowLockedUnlockedSprite();
     }
     void BindingChange(object sender, EventArgs e)
     {
@@ -127,6 +134,7 @@ public class LevelSelectScript : MonoBehaviour
                 if (level1C)
                 {
                     PopUpButton();
+
                 }
                 else
                 {
@@ -174,6 +182,65 @@ public class LevelSelectScript : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         tm.gameObject.SetActive(false);
+    }
+    void ShowLockedUnlockedSprite()
+    {
+        switch (sc)
+        {
+            case 3:
+                if (tutorialC)
+                {
+                    sr.sprite = lvlUnlcoked;
+                }
+                else
+                {
+                    sr.sprite = lvlLocked;
+                }
+                break;
+            case 4:
+                if (level1C)
+                {
+                    sr.sprite = lvlUnlcoked;
+
+                }
+                else
+                {
+                    sr.sprite = lvlLocked;
+                }
+                break;
+            case 5:
+                if (level2C)
+                {
+                    sr.sprite = lvlUnlcoked;
+                }
+                else
+                {
+                    sr.sprite = lvlLocked;
+                }
+                break;
+            case 6:
+                if (level3C)
+                {
+                    sr.sprite = lvlUnlcoked;
+                }
+                else
+                {
+                    sr.sprite = lvlLocked;
+                }
+                break;
+            case 7:
+                if (level4C)
+                {
+                    sr.sprite = lvlUnlcoked;
+                }
+                else
+                {
+                    sr.sprite = lvlLocked;
+                }
+                break;
+            default:
+                break;
+        }
     }
 
 }

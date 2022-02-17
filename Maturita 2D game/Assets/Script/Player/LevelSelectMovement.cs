@@ -6,38 +6,53 @@ using System;
 public class LevelSelectMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float moveSpeed = 5f;
+    private float moveSpeed = 2f;
     BindingObject bo;
     public ButtonsActions actions;
+    public GameObject mapGo;
+    private SpriteRenderer map;
+    private float minX,maxX, minY, maxY;
     void Start()
     {
         bo = new BindingObject();
         bo = ControlBinding.Load();
         actions.OnBindingChange += ChangeBindings;
+        map = mapGo.GetComponent<SpriteRenderer>();
+        minX = map.bounds.min.x;
+        maxX = map.bounds.max.x;
+        minY = map.bounds.min.y;
+        maxY = map.bounds.max.y;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        PosClamp();
         if (Input.GetKey(bo.selectLeft)) //Moving to the left
         {
-            transform.position -= transform.right * (Time.deltaTime * moveSpeed);
+            transform.position -= transform.right.normalized * (Time.fixedDeltaTime * moveSpeed);
         }
         if (Input.GetKey(bo.selectRight)) //Moving to ther right
         {
-            transform.position += transform.right * (Time.deltaTime * moveSpeed);
+            transform.position += transform.right.normalized * (Time.fixedDeltaTime * moveSpeed);
         }
         if (Input.GetKey(bo.selectUp)) //Moving up
         {
-            transform.position += transform.up * (Time.deltaTime * moveSpeed);
+            transform.position += transform.up.normalized * (Time.fixedDeltaTime * moveSpeed);
         }
         if (Input.GetKey(bo.selectDown)) //Moving down
         {
-            transform.position -= transform.up * (Time.deltaTime * moveSpeed);
+            transform.position -= transform.up.normalized * (Time.fixedDeltaTime * moveSpeed);
         }
     }
     public void ChangeBindings(object sender, EventArgs e)
     {
         bo = ControlBinding.Load();
     }
+    void PosClamp()
+    {
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,minX,maxX), Mathf.Clamp(transform.position.y, minY, maxY),transform.position.z);
+    }
+
 }
