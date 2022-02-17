@@ -410,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 1656125897402660673, guid: 048cde13ca369c046a344f4780430d13,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -533.8
+      value: -572.12006
       objectReference: {fileID: 0}
     - target: {fileID: 1656125898152432496, guid: 048cde13ca369c046a344f4780430d13,
         type: 3}
@@ -527,6 +527,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6182887701374374694, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182887701374374694, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9198254675521219042, guid: 048cde13ca369c046a344f4780430d13,
         type: 3}
       propertyPath: m_RootOrder
@@ -534,6 +544,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 048cde13ca369c046a344f4780430d13, type: 3}
+--- !u!114 &727093774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3089886144524283578, guid: 048cde13ca369c046a344f4780430d13,
+    type: 3}
+  m_PrefabInstance: {fileID: 727093773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &811082408
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7ce54f7fdd2341a0340063930edc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pa: {fileID: 132004793}
 --- !u!95 &811082413
 Animator:
   serializedVersion: 3
@@ -1030,6 +1053,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7111481021066047318, guid: 9db859fd7b68b3f418778a2163c32a12,
+        type: 3}
+      propertyPath: specialBar
+      value: 
+      objectReference: {fileID: 727093774}
     - target: {fileID: 7111481021066047319, guid: 9db859fd7b68b3f418778a2163c32a12,
         type: 3}
       propertyPath: m_Name

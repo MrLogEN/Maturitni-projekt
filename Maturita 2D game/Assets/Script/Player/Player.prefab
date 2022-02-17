@@ -376,6 +376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ba: {fileID: 1656125897811494921, guid: 048cde13ca369c046a344f4780430d13, type: 3}
   bullet: {fileID: 1064487732038298866, guid: 3c5198bc875c0514ba8436ad315a25ab, type: 3}
+  specialBullet: {fileID: 3833629276040814655, guid: 4ffe2e5ca28fb9d4ea2c272ee3982d80,
+    type: 3}
   playerAnim: {fileID: 7111481021066047311}
   handAnim: {fileID: 7111481020735411960}
   handParent: {fileID: 7111481020964248515}
@@ -384,6 +386,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 5669180292627713515, guid: a600346b6f23dbf47aa2c4ecf095df0b,
     type: 3}
   heartList: []
+  specialLoad: 0
 --- !u!95 &7111481021066047311
 Animator:
   serializedVersion: 3

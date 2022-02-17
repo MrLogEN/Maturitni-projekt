@@ -14,10 +14,11 @@ public class Boss1 : MonoBehaviour,IBoss
 
     public int Phases { get => _phases; set => _phases = value; }
     public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
-
+    public PlayerActions pa;
     public void TakeDamage(float damage)
     {
         Health-=damage;
+        pa.specialLoad++;
         if (Health <=0)
         {
             Health = 0;

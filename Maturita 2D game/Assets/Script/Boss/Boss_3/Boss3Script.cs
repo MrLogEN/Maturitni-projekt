@@ -27,6 +27,8 @@ public class Boss3Script : MonoBehaviour, IBoss
 
     public GameObject player;
     SaveObject so;
+
+    private PlayerActions pa;
     public void TakeDamage(float damage)
     {
         
@@ -39,6 +41,8 @@ public class Boss3Script : MonoBehaviour, IBoss
         {
             //CurrentPhase = 2;
             Health-=damage;
+            pa.specialLoad++;
+            print(pa.specialLoad);
         }
         if (Health <= 0)
         {
@@ -62,6 +66,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         Health = bossMaxHealth;
         CurrentPhase = 1;
         isInvincible = true;
+        pa = player.GetComponent<PlayerActions>();
         so = SaveLoad.Load();
     }
     // Update is called once per frame

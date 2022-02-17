@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 public class PlayerActions : MonoBehaviour, IPlayerStats
 {
 
@@ -21,6 +21,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
 
     public ButtonsActions ba;
     public GameObject bullet;
+    public GameObject specialBullet;
     public Animator playerAnim;
     public Animator handAnim;
     public GameObject handParent;
@@ -61,6 +62,10 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         }
     }
 
+    public int specialLoad = 0;
+    private int specialLoadCap = 10;
+    public Slider specialBar;
+
     #region inputs
     KeyCode left, right, up, jump, crouch, shoot, special;
     #endregion
@@ -83,7 +88,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         {
             ba.OnBindingChange += BindigChanged;
         }
-        
+        specialLoad = 0;
         Health = 3; // default settings
         Damage = 1;
         rb = GetComponent<Rigidbody2D>();
@@ -100,10 +105,15 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
 
         heartList = new List<GameObject>();
         SpawnHearts();
+
+        specialBar.wholeNumbers = true;
+        specialBar.minValue = 0;
+        specialBar.maxValue = specialLoadCap;
     }
 
     void Update()
     {
+        specialBar.value = specialLoad;
         //Debug.Log(rb.velocity);
         if (Health <= 0)
         {
@@ -118,7 +128,25 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             handAnim.SetBool("isFiring", true);
             playerAnim.SetBool("isShooting", true);
 
-            Shoot();
+            Shoot(bullet);
+            //Boolich();
+        }
+        else
+        {
+            handAnim.SetBool("isFiring", false);
+            playerAnim.SetBool("isShooting", false);
+            //CheckInputs();
+        }
+
+
+
+        if (Input.GetKey(special) && specialLoad >= specialLoadCap)
+        {
+            specialLoad = 0;
+            handAnim.SetBool("isFiring", true);
+            playerAnim.SetBool("isShooting", true);
+
+            Shoot(specialBullet);
             //Boolich();
         }
         else
@@ -313,7 +341,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     {
         isInvincible = false;
     }
-    public void Shoot()
+    public void Shoot(GameObject bullet)
     {
         float sc = gameObject.transform.localScale.x;
         if (spawnerPlayer.activeInHierarchy)
