@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
     public bool HasDoubleJump { get => _hasDoubleJump; set => _hasDoubleJump = value; }
     KeyCode left, right, up, jump, crouch, shoot, special;
     BindingObject bo;
+    SaveObject so;
 
     void BindigChanged(object sender, EventArgs e)
     {
@@ -43,10 +44,21 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         }
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        Speed = 5f;
-        HasDoubleJump = true;
-
+        so = SaveLoad.Load();
         bo = ControlBinding.Load();
+
+        HasDoubleJump = so.hasDoubleJump;
+        if (so.hasSwiftness)
+        {
+            Speed = 7f;
+
+        }
+        else
+        {
+            Speed = 5f;
+
+        }
+
         left = bo.left;
         right = bo.right;
         up = bo.up;
