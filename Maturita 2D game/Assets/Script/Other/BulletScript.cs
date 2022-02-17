@@ -19,11 +19,21 @@ public class BulletScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+        
         if (collision.gameObject.tag == "Boss")
         {
+            SaveObject so = SaveLoad.Load();
+            float damage;
+            if (so.hasDamage)
+            {
+                damage = 1.3f;
+            }
+            else
+            {
+                damage = 1;
+            }
             //CollisionEnter(gameObject.name, collision.gameObject);
-            collision.gameObject.GetComponent<IBoss>().TakeDamage();
+            collision.gameObject.GetComponent<IBoss>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag != "Player")

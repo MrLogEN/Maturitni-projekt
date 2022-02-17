@@ -12,7 +12,7 @@ public class DeathWin : MonoBehaviour
     public Image winscreen;
     public Image deathscreen;
     public PlayerActions pa;
-    private int bossHP;
+    private float bossHP;
     public IBoss bossS;
     private SaveObject so;
 
@@ -28,7 +28,7 @@ public class DeathWin : MonoBehaviour
     }
     void Update()
     {
-        int bosshealth = bossS.Health;
+        float bosshealth = bossS.Health;
 
         if (bosshealth <= 0  )
         {

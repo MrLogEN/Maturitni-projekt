@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss3Script : MonoBehaviour, IBoss
 {
     #region private
-    private int _health;
+    private float _health;
     private int _damage;
     private readonly int _phases = 2;
     private int _currentPhase;
@@ -14,7 +14,7 @@ public class Boss3Script : MonoBehaviour, IBoss
     #endregion
 
 
-    public int Health { get => _health; set => _health = value; }
+    public float Health { get => _health; set => _health = value; }
 
     public int Damage => _damage;
 
@@ -27,7 +27,7 @@ public class Boss3Script : MonoBehaviour, IBoss
 
     public GameObject player;
     SaveObject so;
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
         
         if (isInvincible)
@@ -38,7 +38,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         if (!isInvincible)
         {
             //CurrentPhase = 2;
-            Health--;
+            Health-=damage;
         }
         if (Health <= 0)
         {

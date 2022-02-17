@@ -21,10 +21,10 @@ public interface ICollisonHandler //Collision handling structure
 }
 public interface IBoss
 {
-    int Health { get; set; }
+    float Health { get; set; }
     int Damage { get; }
     int Phases { get; set; }
     int MaxHealth { get; set; }
-    void TakeDamage();
+    void TakeDamage(float damage);
 }
 

@@ -1276,6 +1276,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 577316211351787307, guid: 51ec600df8338854d8f9f22336bee8bf,
+        type: 3}
+      propertyPath: SkillPointMenu
+      value: 
+      objectReference: {fileID: 44799724}
     - target: {fileID: 577316211674490059, guid: 51ec600df8338854d8f9f22336bee8bf,
         type: 3}
       propertyPath: m_AnchorMax.x
