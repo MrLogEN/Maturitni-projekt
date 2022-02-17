@@ -58,7 +58,7 @@ public static class SaveLoad
     {
         SaveObject so = new SaveObject
         {
-            position = new Vector3(0, 0, 0),
+            position = new Vector3(-2f, 2f, 0),
             tutorialCompleted = false,
             lvl1IsCompleted = false,
             lvl2IsCompleted = false,

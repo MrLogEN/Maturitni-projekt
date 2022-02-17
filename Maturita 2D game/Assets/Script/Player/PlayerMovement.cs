@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         }
         if (_hasDoubleJump) //Checking if the player has Double jump skill unlocked
         {
-            if (Input.GetKeyDown(jump) && extraJump > 0) //Checking for extra jumps
+            if (Input.GetKeyDown(jump) && extraJump > 0 && !Input.GetKey(crouch)) //Checking for extra jumps
             {
                 //rb.velocity = Vector2.up * jumpForce;
                 isJumping = true;
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
         else
         {
 
-            if (Input.GetKeyDown(jump) && isGrounded) //If the player is on the ground and Z key is being pressed, the player will jump
+            if (Input.GetKeyDown(jump) && isGrounded && !Input.GetKey(crouch)) //If the player is on the ground and Z key is being pressed, the player will jump
             {
                 isJumping = true;
                 //rb.velocity = Vector2.up * jumpForce;

@@ -6,7 +6,7 @@ using System;
 public class LevelSelectMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float moveSpeed = 2f;
+    private float moveSpeed = 3f;
     BindingObject bo;
     public ButtonsActions actions;
     public GameObject mapGo;
@@ -31,19 +31,19 @@ public class LevelSelectMovement : MonoBehaviour
         PosClamp();
         if (Input.GetKey(bo.selectLeft)) //Moving to the left
         {
-            transform.position -= transform.right.normalized * (Time.fixedDeltaTime * moveSpeed);
+            transform.position -= transform.right.normalized * (Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(bo.selectRight)) //Moving to ther right
         {
-            transform.position += transform.right.normalized * (Time.fixedDeltaTime * moveSpeed);
+            transform.position += transform.right.normalized * (Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(bo.selectUp)) //Moving up
         {
-            transform.position += transform.up.normalized * (Time.fixedDeltaTime * moveSpeed);
+            transform.position += transform.up.normalized * (Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(bo.selectDown)) //Moving down
         {
-            transform.position -= transform.up.normalized * (Time.fixedDeltaTime * moveSpeed);
+            transform.position -= transform.up.normalized * (Time.deltaTime * moveSpeed);
         }
     }
     public void ChangeBindings(object sender, EventArgs e)
@@ -54,5 +54,18 @@ public class LevelSelectMovement : MonoBehaviour
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x,minX,maxX), Mathf.Clamp(transform.position.y, minY, maxY),transform.position.z);
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Water")
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Water")
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+    }
 }

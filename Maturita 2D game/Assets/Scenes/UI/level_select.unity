@@ -572,8 +572,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914957112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.07, y: 2.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2, y: 2, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1667720162}
   m_Father: {fileID: 0}
@@ -613,7 +613,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.022494748, y: -0.000000014901161}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -624,7 +624,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3251609, y: 0.32516095}
   m_EdgeRadius: 0
 --- !u!1 &1003750966
 GameObject:
@@ -814,7 +814,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1400329, y: -3.877582}
+  m_Offset: {x: -1.369992, y: -3.7212098}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -825,7 +825,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.582404, y: 3.8231192}
+  m_Size: {x: 4.012105, y: 2.7377105}
   m_EdgeRadius: 0
 --- !u!114 &1008298268
 MonoBehaviour:
@@ -923,7 +923,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1429024, y: -3.4705086}
+  m_Offset: {x: -1.0969105, y: -3.5624924}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -934,7 +934,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.081071, y: 1.2653065}
+  m_Size: {x: 2.8051195, y: 1.0813389}
   m_EdgeRadius: 0
 --- !u!1 &1209533657
 GameObject:
@@ -969,7 +969,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.114468, y: 1.532942}
+  m_Offset: {x: -4.08705, y: 1.8345399}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -980,7 +980,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.3578463, y: 5.0531316}
+  m_Size: {x: 2.6030931, y: 3.8467388}
   m_EdgeRadius: 0
 --- !u!114 &1209533659
 MonoBehaviour:
@@ -1124,7 +1124,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.7531924, y: 3.5901637}
+  m_Offset: {x: 2.923715, y: 3.8175273}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1135,7 +1135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.336095, y: 5.200185}
+  m_Size: {x: 4.9950495, y: 4.7454576}
   m_EdgeRadius: 0
 --- !u!114 &1586363635
 MonoBehaviour:
@@ -1263,7 +1263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1667720162
 Transform:
   m_ObjectHideFlags: 0
@@ -1375,7 +1375,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -15.617453, y: 1.5077517}
+  m_Offset: {x: -15.653186, y: 1.57922}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1386,7 +1386,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.60252, y: 5.478253}
+  m_Size: {x: 2.423849, y: 4.370498}
   m_EdgeRadius: 0
 --- !u!114 &1693964942
 MonoBehaviour:
@@ -1484,7 +1484,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -15.655838, y: 1.5842464}
+  m_Offset: {x: -15.629038, y: 1.5842464}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1495,7 +1495,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3080559, y: 2.8487105}
+  m_Size: {x: 1.0400515, y: 2.8487105}
   m_EdgeRadius: 0
 --- !u!1 &1808580656
 GameObject:
@@ -1624,7 +1624,7 @@ GameObject:
   - component: {fileID: 2011603546}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
