@@ -1097,6 +1097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 86398786126065240, guid: b2cbeaedec2ae4c409b5efe39b34799a,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 86398786126065240, guid: b2cbeaedec2ae4c409b5efe39b34799a,
+        type: 3}
       propertyPath: m_TagString
       value: BossAttack
       objectReference: {fileID: 0}
