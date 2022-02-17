@@ -13,9 +13,9 @@ public class Skillpoints : MonoBehaviour
     private SpriteState ssDouble = new SpriteState();
     private SpriteState ssSwiftness = new SpriteState();
     private SpriteState ssDamage = new SpriteState();
-    private int doublePrice = 2;
-    private int speedPrice = 2;
-    private int damagePrice = 3;
+    public int doublePrice = 2;
+    public int speedPrice = 2;
+    public int damagePrice = 3;
     public Text dmgPriceText, swPriceText, djPriceText;
     void Start()
     {

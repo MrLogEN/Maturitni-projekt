@@ -216,13 +216,14 @@ GameObject:
   - component: {fileID: 44799727}
   - component: {fileID: 44799726}
   - component: {fileID: 44799728}
+  - component: {fileID: 44799729}
   m_Layer: 5
   m_Name: SkillPointsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &44799725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -310,9 +311,25 @@ MonoBehaviour:
   dmgCan: {fileID: 21300000, guid: 908501937e5a51648a6e540488225c75, type: 3}
   dmgCant: {fileID: 21300000, guid: 85af77294abb83245bed61f903d58276, type: 3}
   dmgA: {fileID: 21300000, guid: e94e99d0b5acaec419506d69871115d6, type: 3}
+  doublePrice: 2
+  speedPrice: 2
+  damagePrice: 3
   dmgPriceText: {fileID: 1752972971}
   swPriceText: {fileID: 630995725}
   djPriceText: {fileID: 1308485610}
+--- !u!114 &44799729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44799724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd848133859e8749a95a375c40440f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sp: {fileID: 44799728}
 --- !u!1 &150689940
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +493,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 200060566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 44799729}
+        m_TargetAssemblyTypeName: SkillsButtons, Assembly-CSharp
+        m_MethodName: DoubleJumpClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &200060566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,10 +686,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.67058825, g: 0.67058825, b: 0.67058825, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -811,7 +840,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 366713589}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 44799729}
+        m_TargetAssemblyTypeName: SkillsButtons, Assembly-CSharp
+        m_MethodName: SwiftnessClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &366713589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,8 +2158,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.7909454, b: 0, a: 1}
-    m_PressedColor: {r: 0.20544481, g: 1, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2349,7 +2390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1132594471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 44799729}
+        m_TargetAssemblyTypeName: SkillsButtons, Assembly-CSharp
+        m_MethodName: DamageClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1132594471
 MonoBehaviour:
   m_ObjectHideFlags: 0

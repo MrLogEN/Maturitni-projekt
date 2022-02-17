@@ -14,6 +14,7 @@ public class EscMenu : MonoBehaviour
     public GameObject escapeMenu;
     public Button resumeBut;
     public GameObject settings;
+    public GameObject SkillPointMenu;
     public event EventHandler OnSettingsEnter;
     void Update()
     {
@@ -39,21 +40,50 @@ public class EscMenu : MonoBehaviour
             }
             else
             {
-                if (paused == false)
+                if (SkillPointMenu != null)
                 {
-                    escapeMenu.SetActive(true);
-                    settings.SetActive(false);
-                    resumeBut.Select();
-                    Time.timeScale = 0f;
-                    paused = true;
+                    if (SkillPointMenu.activeInHierarchy == true)
+                    {
+                        SkillPointMenu.SetActive(false);
+                    }
+                    else
+                    {
+                        if (paused == false)
+                        {
+                            escapeMenu.SetActive(true);
+                            settings.SetActive(false);
+                            resumeBut.Select();
+                            Time.timeScale = 0f;
+                            paused = true;
+                        }
+                        else if (paused == true)
+                        {
+                            escapeMenu.SetActive(false);
+                            settings.SetActive(false);
+                            Time.timeScale = 1f;
+                            paused = false;
+                        }
+                    }
                 }
-                else if (paused == true)
+                else
                 {
-                    escapeMenu.SetActive(false);
-                    settings.SetActive(false);
-                    Time.timeScale = 1f;
-                    paused = false;
+                    if (paused == false)
+                    {
+                        escapeMenu.SetActive(true);
+                        settings.SetActive(false);
+                        resumeBut.Select();
+                        Time.timeScale = 0f;
+                        paused = true;
+                    }
+                    else if (paused == true)
+                    {
+                        escapeMenu.SetActive(false);
+                        settings.SetActive(false);
+                        Time.timeScale = 1f;
+                        paused = false;
+                    }
                 }
+                
             }
             
         }
