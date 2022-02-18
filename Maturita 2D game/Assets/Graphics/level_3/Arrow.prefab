@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9052277960619386354}
   - component: {fileID: -4429485543618932733}
   - component: {fileID: 2791556604140201184}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,4 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd42c8dd9a47e347bd514549c9ce723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: 5
   dir: {x: 0, y: 0, z: 0}

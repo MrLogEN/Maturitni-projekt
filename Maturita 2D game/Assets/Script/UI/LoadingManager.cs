@@ -27,26 +27,20 @@ public class LoadingManager : MonoBehaviour
     {
         _target = 0;
         _progressBar.value = 0;
-        _transitionCanvas.SetActive(true);
+        _loaderCanvas.SetActive(true);
+
         var scene = SceneManager.LoadSceneAsync(sceneName);
         scene.allowSceneActivation = false;
 
-        _loaderCanvas.SetActive(true);
-        
+
         do
         {
-            //await Task.Delay(100);
+            await Task.Delay(100);
             _target = scene.progress;
         } while (scene.progress < 0.9f);
-        await Task.Delay(200);
         scene.allowSceneActivation = true;
-
-        _animator.SetTrigger("Start");
         await Task.Delay(1000);
         _loaderCanvas.SetActive(false);
-        _animator.SetTrigger("End");
-        await Task.Delay(1000);
-        _transitionCanvas.SetActive(false);
     }
     void Update()
     {

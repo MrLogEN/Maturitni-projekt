@@ -7,7 +7,7 @@ public class BulletScript : MonoBehaviour
     private float ttl = 3f;
     void Start()
     {
-
+        Physics2D.IgnoreLayerCollision(8, 10);
         ttl = Time.time+ttl;
     }
     void Update()

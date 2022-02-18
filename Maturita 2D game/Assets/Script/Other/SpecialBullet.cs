@@ -8,7 +8,7 @@ public class SpecialBullet : MonoBehaviour
     private float specialDamage = 5f;
     void Start()
     {
-
+        Physics2D.IgnoreLayerCollision(8, 10);
         ttl = Time.time + ttl;
     }
     void Update()

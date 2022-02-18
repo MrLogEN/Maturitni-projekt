@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1754391495870834518}
   - component: {fileID: 6371910571067238921}
   - component: {fileID: 5223282337961732734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CannonBall
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

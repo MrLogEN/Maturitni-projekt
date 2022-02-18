@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -4429485543618932733}
   - component: {fileID: 1685270906423802688}
   - component: {fileID: -821257820941108768}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArrowRigid
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
