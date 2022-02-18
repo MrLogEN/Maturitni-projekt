@@ -6,12 +6,28 @@ using System;
 
 public class AudioManager : MonoBehaviour
 { 
-    public Sound[] sounds;
     public static AudioManager instance;
-     
+    public AudioMixer am;
+    const string MASTER_NAME = "Master";
+    const string MUSIC_NAME = "Music";
+    const string SFX_NAME = "Sfx";
+    public ButtonsActions ba;
+    BindingObject bo;
+
+
+    //
+    public AudioSource movmentS, shootSource;
+    //všechny audio clipy, které budeme používat
+    public AudioClip jumpSfx, crouchSfx, shootSfx;
     void Awake()
     {
-        if(instance == null)
+        bo = ControlBinding.Load();
+        
+        am.SetFloat(MASTER_NAME, Mathf.Log10(bo.masterVolume)*20);
+        am.SetFloat(MUSIC_NAME, Mathf.Log10(bo.musicVolume) * 20);
+        am.SetFloat(SFX_NAME, Mathf.Log10(bo.sfxVolume) * 20);
+
+        if (instance == null)
         {
             instance = this;
         }
@@ -19,25 +35,33 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
 
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.loop = s.loop;
+        DontDestroyOnLoad(gameObject);
+
+        if (ba != null)
+        {
+            ba.OnBindingChange += OnVolumeChanged;
         }
+
     }
-    //FindObjectOfType<AudioManager>()Play("soundname")
-    public void Play(string name)
+    public void PlayJumpSfx()
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null) return;
-        s.source.Play();
+        movmentS.clip = jumpSfx;
+        movmentS.Play();
     }
-    void Start()
+    public void PlayShootSfx()
     {
-        Play("plastic");
+        shootSource.clip = shootSfx;
+        shootSource.Play();
+    }
+
+    //Za tohle nelez Ivo
+    void OnVolumeChanged(object sender, EventArgs e)
+    {
+        bo = ControlBinding.Load();
+        am.SetFloat(MASTER_NAME, Mathf.Log10(bo.masterVolume) * 20);
+        am.SetFloat(MUSIC_NAME, Mathf.Log10(bo.musicVolume) * 20);
+        am.SetFloat(SFX_NAME, Mathf.Log10(bo.sfxVolume) * 20);
+
     }
 }

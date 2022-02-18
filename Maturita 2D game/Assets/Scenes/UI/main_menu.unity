@@ -1636,6 +1636,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
+      propertyPath: am
+      value: 
+      objectReference: {fileID: 24100000, guid: 9425eefa66c6c44468113fbd4d45b684,
+        type: 2}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
@@ -3724,7 +3730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -14.000015}
+  m_AnchoredPosition: {x: 0, y: -14}
   m_SizeDelta: {x: -335.0502, y: -136.5019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &778802580
@@ -8391,7 +8397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -14.000015}
+  m_AnchoredPosition: {x: 0, y: -14}
   m_SizeDelta: {x: -335.0502, y: -136.5019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1494197249
