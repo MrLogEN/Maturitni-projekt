@@ -14,9 +14,9 @@ public class SpawnerTarget : MonoBehaviour
     
     private void Spawn(object sender, GameManagerTutorial.OnStateChangedEventArgs e)
     {
-        if (e.state == GameManagerTutorial.TutorialState.End && !isInstantiated)
+        if (e.state == GameManagerTutorial.TutorialState.Special && !isInstantiated)
         {
-            Instantiate(prefab, new Vector3(7.32f, -2.12f, 0), Quaternion.identity);
+            Instantiate(prefab, new Vector3(7.32f, -2.76f, 0), Quaternion.identity);
             isInstantiated = true;
         }
     }

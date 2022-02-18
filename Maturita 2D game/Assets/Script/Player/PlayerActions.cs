@@ -1,6 +1,6 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 public class PlayerActions : MonoBehaviour, IPlayerStats
 {
@@ -323,7 +323,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isJumpingUp", false);
             }
         }
-       
+
     }
     public void TakeHit()
     {
@@ -351,7 +351,9 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             float rot = spawnerPlayer.transform.rotation.eulerAngles.z;
             if (rot == 90)
             {
+
                 rb.AddForce(new Vector2(0, 1) * bulletVelocity, ForceMode2D.Impulse);
+
             }
             else
             {
@@ -362,6 +364,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 }
                 else
                 {
+
                     rb.AddForce(new Vector2(-1, 0) * bulletVelocity, ForceMode2D.Impulse);
 
                 }

@@ -111,7 +111,7 @@ public class HandleInputsTutorial : MonoBehaviour
                 if (Input.GetKey(shoot))
                 {
                     await Task.Delay(delay);
-                    stateText.text = "Shoot special ability by pressing " + special.ToString();
+                    stateText.text = "Shoot the target by pressing " +shoot.ToString()+ " until the blue bar is full. Then shoot special ability by pressing " + special.ToString();
                     await Task.Delay(delay);
                     GameManagerTutorial.instance.ChangeState(GameManagerTutorial.TutorialState.Special);
 
@@ -125,7 +125,7 @@ public class HandleInputsTutorial : MonoBehaviour
                         await Task.Delay(delay);
                         stateText.text = "";
                         await Task.Delay(delay);
-                        GameManagerTutorial.instance.ChangeState(GameManagerTutorial.TutorialState.End);
+                        //GameManagerTutorial.instance.ChangeState(GameManagerTutorial.TutorialState.End);
                         
 
                 }
