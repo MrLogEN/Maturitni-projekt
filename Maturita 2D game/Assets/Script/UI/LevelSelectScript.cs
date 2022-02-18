@@ -65,42 +65,45 @@ public class LevelSelectScript : MonoBehaviour
                 switch (sc)
                 {
                     case 0:
-                        SceneManager.LoadScene("main_menu");
+                        //SceneManager.LoadScene("main_menu");
+                        LoadingManager.instance.LoadScene("main_menu");
                         break;
                     case 1:
-                        SceneManager.LoadScene("level_select");
+                        //SceneManager.LoadScene("level_select");
+                        LoadingManager.instance.LoadScene("level_select");
+
                         break;
                     case 2:
-                        SceneManager.LoadScene("level_tutorial");
+                        LoadingManager.instance.LoadScene("level_tutorial");
                         break;
                     case 3:
                         if (tutorialC)
                         {
-                            SceneManager.LoadScene("level_1");
+                            LoadingManager.instance.LoadScene("level_1");
                         }
                         break;
                     case 4:
                         if (level1C)
                         {
-                            SceneManager.LoadScene("level_2");
+                            LoadingManager.instance.LoadScene("level_2");
                         }
                         break;
                     case 5:
                         if (level2C)
                         {
-                            SceneManager.LoadScene("level_3");
+                            LoadingManager.instance.LoadScene("level_3");
                         }
                         break;
                     case 6:
                         if (level3C)
                         {
-                            SceneManager.LoadScene("level_4");
+                            LoadingManager.instance.LoadScene("level_4");
                         }
                         break;
                     case 7:
                         if (level4C)
                         {
-                            SceneManager.LoadScene("level_5");
+                            LoadingManager.instance.LoadScene("level_5");
                         }
                         break;
                     default:

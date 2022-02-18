@@ -98,7 +98,7 @@ public class EscMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("main_menu");
+        LoadingManager.instance.LoadScene("main_menu");
     }
     public void Settings()
     {
@@ -107,14 +107,14 @@ public class EscMenu : MonoBehaviour
     public void LoadLevelSelect()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("level_select");
+        LoadingManager.instance.LoadScene("level_select");
     }
     public void RestartLevel()
     {
         Time.timeScale = 1f;
         Time.timeScale = 1f;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        LoadingManager.instance.LoadScene(SceneManager.GetActiveScene().name);
         
     }
 }

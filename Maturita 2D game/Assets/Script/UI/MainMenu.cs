@@ -32,7 +32,8 @@ public class MainMenu : MonoBehaviour
         {
 
             SaveLoad.SaveDefault();
-            SceneManager.LoadScene("level_tutorial");
+            //SceneManager.LoadScene("level_tutorial");
+            LoadingManager.instance.LoadScene("level_tutorial");
         }
         else
         {
@@ -42,11 +43,13 @@ public class MainMenu : MonoBehaviour
     public void Yes()
     {
         SaveLoad.SaveDefault();
-        SceneManager.LoadScene("level_tutorial");
+        //SceneManager.LoadScene("level_tutorial");
+        LoadingManager.instance.LoadScene("level_tutorial");
     }
     public void Continue()
     {
-        SceneManager.LoadScene("level_select");
+        //SceneManager.LoadScene("level_select");
+        LoadingManager.instance.LoadScene("level_select");
     }
     public void QuitGame()
     {
