@@ -18,7 +18,9 @@ public class AudioManager : MonoBehaviour
     //
     public AudioSource movmentS, shootSource;
     //všechny audio clipy, které budeme používat
-    public AudioClip jumpSfx, crouchSfx, shootSfx, walkSfx, bigshootSfx, playerhitSfx;
+    public AudioClip jumpSfx, crouchSfx, shootSfx, walkSfx, bigshootSfx, playerhitSfx, tomatosplashSfx, cannonSfx, mortarSfx, melonsplashSfx,
+                     rootgroundSfx, roothandSfx, tornadospinSfx, swordchargeSfx, swordslashSfx, lampionpopSfx, arrowshoot, multiplearrowshootSfx, molotovthrowSfx,
+                     molotovsplashSfx, ak47shootSfx, hoverUISfx, clickUI, escUISfx;
     void Awake()
     {
         bo = ControlBinding.Load();
