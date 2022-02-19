@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using UnityEngine.Localization;
 
 public class HandleInputsTutorial : MonoBehaviour
 {
     // Start is called before the first frame update
     public event EventHandler<OnKeyPressedEventArgs> OnKeyPressed;
+    public LocalizedString myStr;
     public class OnKeyPressedEventArgs
     {
         public KeyCode keyCode;

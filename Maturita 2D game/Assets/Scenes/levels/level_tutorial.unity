@@ -542,6 +542,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d967da0d18db2c14d895d0acdb0dbc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myStr:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   left: 0
   right: 0
   up: 0
@@ -550,6 +559,8 @@ MonoBehaviour:
   shoot: 0
   special: 0
   gm: {fileID: 1898411971}
+  references:
+    version: 1
 --- !u!1 &411257177
 GameObject:
   m_ObjectHideFlags: 0
