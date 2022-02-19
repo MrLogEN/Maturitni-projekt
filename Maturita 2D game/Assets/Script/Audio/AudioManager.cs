@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     //
     public AudioSource movmentS, shootSource;
     //všechny audio clipy, které budeme používat
-    public AudioClip jumpSfx, crouchSfx, shootSfx;
+    public AudioClip jumpSfx, crouchSfx, shootSfx, walkSfx, bigshootSfx, playerhitSfx;
     void Awake()
     {
         bo = ControlBinding.Load();
