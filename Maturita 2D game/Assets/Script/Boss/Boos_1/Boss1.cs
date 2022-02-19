@@ -24,7 +24,11 @@ public class Boss1 : MonoBehaviour,IBoss
             Health = 0;
             Time.timeScale = 0;
             SaveObject so = SaveLoad.Load();
-            so.lvl1IsCompleted = true;
+            if (!so.lvl1IsCompleted)
+            {
+                so.lvl1IsCompleted = true;
+                so.skillPoints++;
+            }
             SaveLoad.Save(so);
         }
     }
