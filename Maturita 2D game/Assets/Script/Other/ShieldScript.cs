@@ -10,6 +10,9 @@ public class ShieldScript : MonoBehaviour
     public GameObject balloon;
     private bool ds;
     Boss3Script boss;
+    float ttl = 7f;
+    float ttlCurrent;
+    bool setTime = false;
     void Start()
     {
         boss = FindObjectOfType<Boss3Script>();
@@ -23,10 +26,23 @@ public class ShieldScript : MonoBehaviour
         if (balloon != null)
         {
             ds = balloon.GetComponent<BalloonScript>().isDestroyed;
+            ttlCurrent = Time.time + ttl;
+        }
+        else
+        {
+            if (!setTime)
+            {
+                setTime = true;
+                ttlCurrent = Time.time + ttl;
+            }
         }
         if (ds == true)
         {
             rb.gravityScale = 1;
+        }
+        if (ttlCurrent < Time.time)
+        {
+            Destroy(gameObject);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

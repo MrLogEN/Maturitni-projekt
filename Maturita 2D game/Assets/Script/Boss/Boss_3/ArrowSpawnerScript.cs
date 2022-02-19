@@ -6,7 +6,7 @@ public class ArrowSpawnerScript : MonoBehaviour
 {
     public GameObject arrow;
     private System.Random rn;
-    private float spawnRate = 2.5f;
+    private float spawnRate = 2f;
     private float t;
     public Transform player;
 
@@ -39,7 +39,7 @@ public class ArrowSpawnerScript : MonoBehaviour
 
             if (Time.time >= t)
             {
-                int randomAttack = rn.Next(3);
+                int randomAttack = rn.Next(4);
                 switch (randomAttack)
                 {
                     case 0:
@@ -51,7 +51,9 @@ public class ArrowSpawnerScript : MonoBehaviour
                         break;
                     case 2:
                         SpawnArrow(3);
-
+                        break;
+                    case 3:
+                        SpawnArrow(3);
                         break;
                     default:
                         break;

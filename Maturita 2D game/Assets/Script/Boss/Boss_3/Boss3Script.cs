@@ -9,7 +9,7 @@ public class Boss3Script : MonoBehaviour, IBoss
     private int _damage;
     private readonly int _phases = 2;
     private int _currentPhase;
-    public int bossMaxHealth = 20;
+    public int bossMaxHealth = 50;
 
     #endregion
     public static Boss3Script instance;
@@ -47,6 +47,7 @@ public class Boss3Script : MonoBehaviour, IBoss
     public float goal = -7.8f;
     float nextRushPeriod = 10f;
     float nextRush = 5f;
+    Vector3 lastPos = new Vector3(6.71f,-2.67f,0);
     public void TakeDamage(float damage)
     {
 
@@ -88,7 +89,8 @@ public class Boss3Script : MonoBehaviour, IBoss
         so = SaveLoad.Load();
         animator = GetComponent<Animator>();
         ChangeAnimationState(IDLE);
-        nextRush = Time.time+5;
+        nextRush = Time.time+3;
+        Physics2D.IgnoreLayerCollision(10, 11);
     }
     // Update is called once per frame
     void Update()
@@ -105,10 +107,6 @@ public class Boss3Script : MonoBehaviour, IBoss
         if (CurrentPhase == 1)
         {
             //actions for phase 1
-            //if ()
-            //{
-
-            //}
             //checking if the boss is not in animation is needed.
             float distance = (player.transform.position - gameObject.transform.position).magnitude;//checking how far is the player from the boss
             if (distance <= 3f && !isSlashed && !isRushing) // if the player is far 3f or less - execute following code
@@ -122,8 +120,11 @@ public class Boss3Script : MonoBehaviour, IBoss
             else if (!isSlashed && !isRushing && Time.time > nextRush)
             {
                 nextRush = Time.time + nextRushPeriod;
-                Rush();
+                //Rush();
+                isRushing = true;
+                ChangeAnimationState(RUN);
             }
+            Rush2();
 
         }
         if (CurrentPhase == 2)
@@ -175,5 +176,35 @@ public class Boss3Script : MonoBehaviour, IBoss
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         isRushing = false;
         ChangeAnimationState(IDLE);
+    }
+    private void Rush2()
+    {
+        if (isRushing)
+        {
+            if (lastPos == new Vector3(6.71f, lastPos.y, lastPos.z))
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                transform.position -= new Vector3(1, 0, 0) * 5f*Time.deltaTime;
+                if (transform.position.x <= -7.8f)
+                {
+                    lastPos = new Vector3(-7.8f, lastPos.y, lastPos.z);
+                    
+                }
+            }
+            if (lastPos == new Vector3(-7.8f, lastPos.y, lastPos.z))
+            {
+                transform.localScale = new Vector3(-1 * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                transform.position += new Vector3(1, 0, 0) * 5f * Time.deltaTime;
+                if (transform.position.x >= 6.71f)
+                {
+                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    lastPos = new Vector3(6.71f, lastPos.y, lastPos.z);
+                    isRushing = false;
+                    ChangeAnimationState(IDLE);
+                }
+            }
+        }
+       
+        //transform.position -=
     }
 }

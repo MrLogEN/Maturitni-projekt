@@ -11,7 +11,7 @@ public class BalloonSpawner : MonoBehaviour
     public GameObject boss;
     void Start()
     {
-        t = Time.time;
+        t = Time.time+spawnRate;
     }
 
     // Update is called once per frame
