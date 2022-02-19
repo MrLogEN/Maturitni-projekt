@@ -8,6 +8,7 @@ TagManager:
   - BossAttack
   - Boss
   - Water
+  - Animator
   layers:
   - Default
   - TransparentFX

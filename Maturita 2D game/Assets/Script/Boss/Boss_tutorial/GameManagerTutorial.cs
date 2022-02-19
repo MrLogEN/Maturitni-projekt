@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class GameManagerTutorial : MonoBehaviour
 {
+    public Animator animator;
+    public GameObject background;
+
     public static GameManagerTutorial instance;
     public event EventHandler<OnStateChangedEventArgs> OnStateChaged;
     public class OnStateChangedEventArgs : EventArgs
@@ -33,13 +37,14 @@ public class GameManagerTutorial : MonoBehaviour
     }
     void Start()
     {
+        background.SetActive(false);
         //canInstantiate = false;
         instance.ChangeState(TutorialState.Starting);
     }
 
     public void ChangeState(TutorialState newState)
     {
-        OnStateChaged?.Invoke(this,new OnStateChangedEventArgs { state = newState });
+        OnStateChaged?.Invoke(this, new OnStateChangedEventArgs { state = newState });
         GetState = newState;
         //Debug.Log(GetState);
         switch (newState)
@@ -68,18 +73,22 @@ public class GameManagerTutorial : MonoBehaviour
         }
     }
 
-    private void HandleStart()
+    private async void HandleStart()
     {
         //smth on start
+        background.SetActive(true);
 
+        animator.SetTrigger("playStory");
+        await Task.Delay(45000);
         ChangeState(TutorialState.Movement);
+        background.SetActive(false);
     }
     private void HandleEnd()
     {
         //Instantiate(targetPrefab, new Vector3(7.32f, -2.12f, 0), Quaternion.identity);
         //ChangeState(TutorialState.Exit);
     }
-    
+
     void Update()
     {
     }

@@ -22,6 +22,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru
+  - m_GUID: a52b213408b6fc947bc04ffeb4784ea1
+    m_Address: Story_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 2248251ec631b934ab366b4bde6f57f2, type: 2}
   m_SchemaSet:

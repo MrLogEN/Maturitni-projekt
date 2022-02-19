@@ -99,7 +99,7 @@ public class HandleInputsTutorial : MonoBehaviour
                 break;
             case GameManagerTutorial.TutorialState.LookDiagonal:
                 //stateText.text = "Look diagonal by pressing " + left.ToString() + " or " + right.ToString() + " and " + up.ToString();
-                if ((Input.GetKey(left)||Input.GetKey(right))&&Input.GetKey(up))
+                if ((Input.GetKey(left) || Input.GetKey(right)) && Input.GetKey(up))
                 {
                     await Task.Delay(delay);
                     stateText.text = "Shoot by pressing " + shoot.ToString();
@@ -113,7 +113,7 @@ public class HandleInputsTutorial : MonoBehaviour
                 if (Input.GetKey(shoot))
                 {
                     await Task.Delay(delay);
-                    stateText.text = "Shoot the target by pressing " +shoot.ToString()+ " until the blue bar is full. Then shoot special ability by pressing " + special.ToString();
+                    stateText.text = "Shoot the target by pressing " + shoot.ToString() + " until the blue bar is full. Then shoot special ability by pressing " + special.ToString();
                     await Task.Delay(delay);
                     GameManagerTutorial.instance.ChangeState(GameManagerTutorial.TutorialState.Special);
 
@@ -123,12 +123,12 @@ public class HandleInputsTutorial : MonoBehaviour
                 //stateText.text = "Shoot special ability by pressing " + special.ToString();
                 if (Input.GetKey(special))
                 {
-                    
-                        await Task.Delay(delay);
-                        stateText.text = "";
-                        await Task.Delay(delay);
-                        //GameManagerTutorial.instance.ChangeState(GameManagerTutorial.TutorialState.End);
-                        
+
+                    await Task.Delay(delay);
+                    stateText.text = "";
+                    await Task.Delay(delay);
+                    //GameManagerTutorial.instance.ChangeState(GameManagerTutorial.TutorialState.End);
+
 
                 }
                 break;
