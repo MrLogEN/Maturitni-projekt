@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: b2975d10e88dbb842bed27f8bcda065d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2855932994804915975
+    second: flamesSprites-removebg-preview_0
+  - first:
+      213: -4761830167058942582
+    second: flamesSprites-removebg-preview_1
+  - first:
+      213: 3140947442981114916
+    second: flamesSprites-removebg-preview_2
+  - first:
+      213: 2475819889724342324
+    second: flamesSprites-removebg-preview_3
+  - first:
+      213: 4512554255769150964
+    second: flamesSprites-removebg-preview_4
+  - first:
+      213: -3566581125144339636
+    second: flamesSprites-removebg-preview_5
+  - first:
+      213: -803476625891175606
+    second: flamesSprites-removebg-preview_6
+  - first:
+      213: 6800049572058807012
+    second: flamesSprites-removebg-preview_7
+  - first:
+      213: -6134741193482833472
+    second: flamesSprites-removebg-preview_8
+  - first:
+      213: -2436410897414441596
+    second: flamesSprites-removebg-preview_9
+  - first:
+      213: 313387876269640109
+    second: flamesSprites-removebg-preview_10
+  - first:
+      213: -3528274599485157350
+    second: flamesSprites-removebg-preview_11
+  - first:
+      213: -3744185339031203171
+    second: flamesSprites-removebg-preview_12
+  - first:
+      213: 3038946451764902108
+    second: flamesSprites-removebg-preview_13
+  - first:
+      213: 3954158631643748609
+    second: flamesSprites-removebg-preview_14
+  - first:
+      213: -1704935942914024283
+    second: flamesSprites-removebg-preview_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 351
+        width: 156
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f1aa96def42a720800000000000000
+      internalID: 2855932994804915975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 386
+        width: 70
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8576bb31b49aedb0800000000000000
+      internalID: -4761830167058942582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 290
+        width: 106
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4249f05de03e69b20800000000000000
+      internalID: 3140947442981114916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 471
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430cdde7211eb5220800000000000000
+      internalID: 2475819889724342324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 353
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f52cc4ef20df9e30800000000000000
+      internalID: 4512554255769150964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 279
+        width: 79
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b982dfc55f08ec0800000000000000
+      internalID: -3566581125144339636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 193
+        width: 118
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a435d68044a79d4f0800000000000000
+      internalID: -803476625891175606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 201
+        width: 74
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eabc9dbe01ae5e50800000000000000
+      internalID: 6800049572058807012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 283
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1ff7543650ddaa0800000000000000
+      internalID: -6134741193482833472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 187
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485b8bc8231203ed0800000000000000
+      internalID: -2436410897414441596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 241
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da947f1fc90695400800000000000000
+      internalID: 313387876269640109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 122
+        width: 75
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1057a302fc090fc0800000000000000
+      internalID: -3528274599485157350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 30
+        width: 208
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92d1dd854bf90cc0800000000000000
+      internalID: -3744185339031203171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 86
+        width: 56
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd871e462b18c2a20800000000000000
+      internalID: 3038946451764902108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 35
+        width: 70
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1099ba0535effd630800000000000000
+      internalID: 3954158631643748609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamesSprites-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 36
+        width: 49
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac50d50bc9d658e0800000000000000
+      internalID: -1704935942914024283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
