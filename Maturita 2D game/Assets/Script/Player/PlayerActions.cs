@@ -109,6 +109,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         specialBar.wholeNumbers = true;
         specialBar.minValue = 0;
         specialBar.maxValue = specialLoadCap;
+        Physics2D.IgnoreLayerCollision(8, 8);
     }
 
     void Update()

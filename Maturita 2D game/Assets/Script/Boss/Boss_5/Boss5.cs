@@ -1,25 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
-public class Boss5 : MonoBehaviour,IBoss
+public class Boss5 : MonoBehaviour, IBoss
 {
-    public float Health { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    private float _health;
+    private int _maxHealth = 20;
+    private int _damage;
+    private int _phases;
+    public float Health { get => _health; set => _health = value; }
 
-    public int Damage => throw new System.NotImplementedException();
+    public int Damage => _damage;
 
-    public int Phases { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int MaxHealth { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public int Phases { get => _phases; set => _phases = value; }
+    public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
 
     PlayerActions pa;
     [SerializeField] private GameObject flameSpawner;
     [SerializeField] private GameObject fireBall;
+    [SerializeField] private Transform[] coconutSpawners;
+    [SerializeField] private GameObject coconut;
     System.Random rn = new System.Random();
     public void TakeDamage(float damage)
     {
-            Health -= damage;
-            pa.specialLoad++;
-            //print(pa.specialLoad);
+        Health -= damage;
+        pa.specialLoad++;
+        //print(pa.specialLoad);
         if (Health <= 0)
         {
             SaveObject so = SaveLoad.Load();
@@ -40,8 +45,10 @@ public class Boss5 : MonoBehaviour,IBoss
     void Start()
     {
         pa = FindObjectOfType<PlayerActions>();
-        nextAttack = Time.time+nextAttackPeriod;
+        nextAttack = Time.time + nextAttackPeriod;
         Physics2D.IgnoreLayerCollision(10, 9);
+        Physics2D.IgnoreLayerCollision(10, 10);
+        _health = _maxHealth;
     }
     // Update is called once per frame
 
@@ -54,7 +61,7 @@ public class Boss5 : MonoBehaviour,IBoss
             case Level5Manager.Level5State.Phase1:
                 if (nextAttack < Time.time)
                 {
-                    nextAttack = Time.time+nextAttackPeriod;
+                    nextAttack = Time.time + nextAttackPeriod;
                     int g = Random.Range(0, 3);
                     //print(g);
                     switch (g)
@@ -63,17 +70,44 @@ public class Boss5 : MonoBehaviour,IBoss
                             SpawnFireBall();
                             break;
                         case 1:
+                            //grab
                             break;
                         case 2:
-                           
+                            //head slam
 
                             break;
                         default:
                             break;
                     }
                 }
+                if (Health <= MaxHealth * 0.5)
+                {
+                    //udelej animaci pichnuti
+                    //chnage to phase 2
+                    Level5Manager.instance.ChangeState(Level5Manager.Level5State.Phase2);
+                }
                 break;
             case Level5Manager.Level5State.Phase2:
+                if (nextAttack < Time.time)
+                {
+                    nextAttack = Time.time + nextAttackPeriod;
+                    int g = Random.Range(0, 3);
+                    //print(g);
+                    switch (g)
+                    {
+                        case 0:
+                            SpawnCoconuts();
+                            break;
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        default:
+                            break;
+                    }
+
+                    
+                }
                 break;
             case Level5Manager.Level5State.End:
                 break;
@@ -84,5 +118,15 @@ public class Boss5 : MonoBehaviour,IBoss
     void SpawnFireBall()
     {
         Instantiate(fireBall, flameSpawner.transform.position, Quaternion.identity);
+    }
+    async void SpawnCoconuts()
+    {
+        int d = 200;
+        for (int i = 0; i < 10; i++)
+        {
+            Transform t = coconutSpawners[Random.Range(0, coconutSpawners.Length)];
+            Instantiate(coconut, t.position, Quaternion.identity);
+            await Task.Delay(d);
+        }
     }
 }
