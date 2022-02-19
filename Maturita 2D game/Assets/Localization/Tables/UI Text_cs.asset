@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_cs
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: cs
+  m_SharedData: {fileID: 11400000, guid: da2358a0a7be56c4dbc5e9e476106d45, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1048214425600
+    m_Localized: "Hr\xE1t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1496912678912
+    m_Localized: "Odej\xEDt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1413957734400
+    m_Localized: "Nastaven\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831875756032
+    m_Localized: "Zp\u011Bt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2943960141824
+    m_Localized: "Ulo\u017Eit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2972481409024
+    m_Localized: "V\xFDchoz\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3023890993152
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3691863265280
+    m_Localized: Obrazovka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5072091271168
+    m_Localized: "Ovl\xE1d\xE1n\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12085105971200
+    m_Localized: Hra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12125769748480
+    m_Localized: "V\xFDb\u011Br \xFArovn\u011B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3426850361344
+    m_Localized: "Celkov\xE1 hlasitost"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3498803646464
+    m_Localized: Hlasitost hudby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3537798090752
+    m_Localized: "Zvukov\xE9 efekty"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889443043364864
+    m_Localized: "Cel\xE1 obrazovka"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889502422126592
+    m_Localized: Okno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2889552841854976
+    m_Localized: "Okno bez r\xE1me\u010Dku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891826343366656
+    m_Localized: "Vysok\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891861906870272
+    m_Localized: "St\u0159edn\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2891892021972992
+    m_Localized: "N\xEDzk\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893005093785600
+    m_Localized: "J\xEDt doleva"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893056734056448
+    m_Localized: "J\xEDt doprava"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894129645408256
+    m_Localized: "J\xEDt nahoru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2894186255929344
+    m_Localized: "J\xEDt dolu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893097741766656
+    m_Localized: "St\u0159\xEDlet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893149386231808
+    m_Localized: "St\u0159ilet GG"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893196098195456
+    m_Localized: "Sk\xE1kat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2893225835810816
+    m_Localized: Vybrat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2918785995689984
+    m_Localized: "Hlavn\xED menu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2918554277171200
+    m_Localized: "Pokra\u010Dovat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2923182305759232
+    m_Localized: "Pod\xEDvat se nahoru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924079131840512
+    m_Localized: "Cel\xE1 obrazovka"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924114481434624
+    m_Localized: Okno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924130608533504
+    m_Localized: "Okno bez r\xE1me\u010Dku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924786018865152
+    m_Localized: "Vysok\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924823658549248
+    m_Localized: "St\u0159edn\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2924844101586944
+    m_Localized: "N\xEDzk\xE9"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1
