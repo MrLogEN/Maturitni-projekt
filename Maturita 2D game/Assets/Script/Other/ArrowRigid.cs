@@ -10,6 +10,8 @@ public class ArrowRigid : MonoBehaviour
     void Start()
     {
         estTime = Time.time+ttl;
+        Physics2D.IgnoreLayerCollision(9, 10);
+
     }
 
     // Update is called once per frame
@@ -25,8 +27,8 @@ public class ArrowRigid : MonoBehaviour
         else
         {
             z = Vector2.Angle(new Vector2(1, 0), GetComponent<Rigidbody2D>().velocity);
+            z += 180;
         }
-        
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(0,0,z));
         if (Time.time > estTime)
         {

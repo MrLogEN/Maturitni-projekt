@@ -34,9 +34,9 @@ public class HandleInputsTutorial : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    async void Update()
     {
-        ChangeInstruction(GameManagerTutorial.instance.GetState);
+        await ChangeInstruction(GameManagerTutorial.instance.GetState);
     }
     private List<KeyCode> pressed = new List<KeyCode>();
     private async Task ChangeInstruction(GameManagerTutorial.TutorialState state)

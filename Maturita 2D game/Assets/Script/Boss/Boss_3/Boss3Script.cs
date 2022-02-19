@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 
 public class Boss3Script : MonoBehaviour, IBoss
@@ -12,14 +12,14 @@ public class Boss3Script : MonoBehaviour, IBoss
     public int bossMaxHealth = 20;
 
     #endregion
-
+    public static Boss3Script instance;
 
     public float Health { get => _health; set => _health = value; }
 
     public int Damage => _damage;
 
     public int Phases => _phases;
-    public int CurrentPhase { get => _currentPhase; set => _currentPhase=value; }
+    public int CurrentPhase { get => _currentPhase; set => _currentPhase = value; }
     int IBoss.Phases { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public int MaxHealth { get => bossMaxHealth; set => bossMaxHealth = value; }
 
@@ -28,10 +28,28 @@ public class Boss3Script : MonoBehaviour, IBoss
     public GameObject player;
     SaveObject so;
 
+    public Animator animator;
+    public string _currenState;
+    public string SHOOT_STREIGHT = "boss3_shootStreight";
+    public string IDLE_BOW = "boss3_idleBow";
+    public string SHOOT_UP = "boss3_shootUp";
+    public string SLASH = "boss3_slash";
+    public string IDLE = "boss3_idle";
+    public string CHANGE = "boss3_changeForm";
+    public string CHANGE_BACK = "boss3_ChangeFormBack";
+    public string RUN = "boss3_run";
+
     private PlayerActions pa;
+
+    private bool isSlashed = false;
+    private bool isRushing = false;
+    float x;
+    public float goal = -7.8f;
+    float nextRushPeriod = 10f;
+    float nextRush = 5f;
     public void TakeDamage(float damage)
     {
-        
+
         if (isInvincible)
         {
             //CurrentPhase = 1;
@@ -40,7 +58,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         if (!isInvincible)
         {
             //CurrentPhase = 2;
-            Health-=damage;
+            Health -= damage;
             pa.specialLoad++;
             print(pa.specialLoad);
         }
@@ -68,6 +86,9 @@ public class Boss3Script : MonoBehaviour, IBoss
         isInvincible = true;
         pa = player.GetComponent<PlayerActions>();
         so = SaveLoad.Load();
+        animator = GetComponent<Animator>();
+        ChangeAnimationState(IDLE);
+        nextRush = Time.time+5;
     }
     // Update is called once per frame
     void Update()
@@ -76,7 +97,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         {
             CurrentPhase = 1;
         }
-        if (!isInvincible&&Health>0)
+        if (!isInvincible && Health > 0)
         {
             CurrentPhase = 2;
         }
@@ -84,18 +105,30 @@ public class Boss3Script : MonoBehaviour, IBoss
         if (CurrentPhase == 1)
         {
             //actions for phase 1
+            //if ()
+            //{
 
+            //}
             //checking if the boss is not in animation is needed.
             float distance = (player.transform.position - gameObject.transform.position).magnitude;//checking how far is the player from the boss
-            if (distance <= 3f) // if the player is far 3f or less - execute following code
+            if (distance <= 3f && !isSlashed && !isRushing) // if the player is far 3f or less - execute following code
             {
-                Debug.Log("Slash");
+                //Debug.Log("Slash");
                 //Slash animation
+                //ChangeAnimationState()
+                isSlashed = true;
+                Slash();
             }
-            
+            else if (!isSlashed && !isRushing && Time.time > nextRush)
+            {
+                nextRush = Time.time + nextRushPeriod;
+                Rush();
+            }
+
         }
         if (CurrentPhase == 2)
         {
+            
             //actions for phase 2
             //random generator for deciding - straight arrow fire or 3 arrows fired at once
         }
@@ -107,5 +140,40 @@ public class Boss3Script : MonoBehaviour, IBoss
         {
             collision.GetComponent<PlayerActions>().TakeHit();
         }
+    }
+
+    public void ChangeAnimationState(string newState)
+    {
+        if (_currenState == newState) return;
+        animator.Play(newState);
+        _currenState = newState;
+    }
+    private async void Slash()
+    {
+        ChangeAnimationState(SLASH);
+        await Task.Delay(840);
+        ChangeAnimationState(IDLE);
+        isSlashed = false;
+    }
+    private async void Rush()
+    {
+        isRushing = true;
+        ChangeAnimationState(RUN);
+        do
+        {
+            if (CurrentPhase == 2) break;
+            transform.position -= new Vector3(1,0,0) * .2f;
+            await Task.Delay(50);
+        } while (transform.position.x > goal);
+        transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
+        do
+        {
+            if (CurrentPhase == 2)break;
+            transform.position += new Vector3(1, 0, 0) * .2f;
+            await Task.Delay(50);
+        } while (transform.position.x < 6.71);
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        isRushing = false;
+        ChangeAnimationState(IDLE);
     }
 }

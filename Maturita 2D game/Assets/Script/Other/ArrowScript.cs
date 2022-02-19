@@ -18,23 +18,26 @@ public class ArrowScript : MonoBehaviour
         health = boss.bossMaxHealth;
         //print(boss.name);
         SetVelocityByHealth();
+        Physics2D.IgnoreLayerCollision(9, 10);
 
     }
     void Update()
     {
         //transform.position -= new Vector3(1, 0, 0) * 2f * Time.deltaTime;
-        if (transform.rotation.eulerAngles.z == 5f)
-        {
-            transform.position -= new Vector3(1,0.1f, 0) * velocity * Time.deltaTime;
-        }
-        if (transform.rotation.eulerAngles.z == 0f)
-        {
-            transform.position -= new Vector3(1f,0,0) * velocity * Time.deltaTime;
-        }
-        if (transform.rotation.eulerAngles.z == 355f)
-        {
-            transform.position -= new Vector3(1, -0.1f, 0) * velocity * Time.deltaTime;
-        }
+        //if (transform.rotation.eulerAngles.z == 5f)
+        //{
+        //    transform.position -= new Vector3(1,0.1f, 0) * velocity * Time.deltaTime;
+        //}
+        //if (transform.rotation.eulerAngles.z == 0f)
+        //{
+
+        //}
+        //if (transform.rotation.eulerAngles.z == 355f)
+        //{
+        //    transform.position -= new Vector3(1, -0.1f, 0) * velocity * Time.deltaTime;
+        //}
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.position -= new Vector3(1f, 0, 0) * velocity * Time.deltaTime;
         if (Time.time > startTime + ttl)
         {
             Destroy(this.gameObject);

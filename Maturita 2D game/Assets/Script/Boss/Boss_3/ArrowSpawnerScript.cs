@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class ArrowSpawnerScript : MonoBehaviour
 {
@@ -16,9 +17,6 @@ public class ArrowSpawnerScript : MonoBehaviour
 
 
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +29,7 @@ public class ArrowSpawnerScript : MonoBehaviour
     void Update()
     {
         //print(boss.CurrentPhase);
-        if (boss.CurrentPhase == 2)
+        if (boss.CurrentPhase == 2 && boss._currenState == boss.IDLE_BOW)
         {
             if (i==0)
             {
@@ -68,29 +66,46 @@ public class ArrowSpawnerScript : MonoBehaviour
         //Debug.Log("Direction is: "+ dir + "Odchylka: " + dif + (char)0176);
         if (num == 1)
         {
-            GameObject go;
-
-            go = Instantiate(arrow, transform.position, Quaternion.identity, this.gameObject.transform);
-
+            LaunchNormal();
         }
         if (num == 3)
         {
 
-            Vector3 pos1 = target.position - new Vector3(4, 0, 0);
-            Vector3 pos2 = target.position + new Vector3(4, 0, 0);
 
-            Launch(pos1);
-            Launch(target.position);
-            Launch(pos2);
+            Launch(target);
         }
 
     }
-  
-    private void Launch(Vector3 target)
+ 
+    private async void LaunchNormal()
     {
-        Vector2 Vo = CalculateLaunchVelocity(target, transform.position, 3f);
-        GameObject go = Instantiate(projectileGameobject, transform.position, Quaternion.identity);
+        boss.ChangeAnimationState(boss.SHOOT_STREIGHT);
+        await Task.Delay(630);
+        GameObject go = Instantiate(arrow, transform.position, Quaternion.identity);
+        await Task.Delay(260);
+        boss.ChangeAnimationState(boss.IDLE_BOW);
+    }
+    private async void Launch(Transform target)
+    {
+        boss.ChangeAnimationState(boss.SHOOT_UP);
+        await Task.Delay(630);
+        Vector3 pos1 = target.position - new Vector3(4, 0, 0);
+        Vector3 pos2 = target.position + new Vector3(4, 0, 0);
+
+        Vector2 Vo = CalculateLaunchVelocity(pos1, transform.position, 3f);
+        Vector2 Vo1 = CalculateLaunchVelocity(target.position, transform.position, 3f);
+        Vector2 Vo2 = CalculateLaunchVelocity(pos2, transform.position, 3f);
+
+        GameObject go = Instantiate(projectileGameobject, transform.position,Quaternion.identity);
         go.GetComponent<Rigidbody2D>().velocity = Vo;
+
+        GameObject go1 = Instantiate(projectileGameobject, transform.position, Quaternion.identity);
+        go1.GetComponent<Rigidbody2D>().velocity = Vo1;
+
+        GameObject go2 = Instantiate(projectileGameobject, transform.position, Quaternion.identity);
+        go2.GetComponent<Rigidbody2D>().velocity = Vo2;
+        await Task.Delay(260);
+        boss.ChangeAnimationState(boss.IDLE_BOW);
     }
     private Vector2 CalculateLaunchVelocity(Vector2 target, Vector2 origin, float time)
     {
