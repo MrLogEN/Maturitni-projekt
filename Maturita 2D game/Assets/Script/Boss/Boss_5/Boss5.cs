@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+using System.Collections;
 
 public class Boss5 : MonoBehaviour, IBoss
 {
@@ -31,9 +32,9 @@ public class Boss5 : MonoBehaviour, IBoss
             Health = 0;
             Time.timeScale = 0f;
             //so = SaveLoad.Load();
-            if (!so.lvl3IsCompleted)
+            if (!so.lvl5IsCompleted)
             {
-                so.lvl3IsCompleted = true;
+                so.lvl5IsCompleted = true;
                 so.skillPoints++;
             }
             SaveLoad.Save(so);
@@ -96,7 +97,7 @@ public class Boss5 : MonoBehaviour, IBoss
                     switch (g)
                     {
                         case 0:
-                            SpawnCoconuts();
+                            StartCoroutine(SpawnCoconuts());
                             break;
                         case 1:
                             break;
@@ -105,7 +106,6 @@ public class Boss5 : MonoBehaviour, IBoss
                         default:
                             break;
                     }
-
                     
                 }
                 break;
@@ -119,14 +119,15 @@ public class Boss5 : MonoBehaviour, IBoss
     {
         Instantiate(fireBall, flameSpawner.transform.position, Quaternion.identity);
     }
-    async void SpawnCoconuts()
+    IEnumerator SpawnCoconuts()
     {
-        int d = 200;
+        //int d = 200;
+        print("kokot");
         for (int i = 0; i < 10; i++)
         {
             Transform t = coconutSpawners[Random.Range(0, coconutSpawners.Length)];
             Instantiate(coconut, t.position, Quaternion.identity);
-            await Task.Delay(d);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
