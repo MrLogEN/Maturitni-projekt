@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class ButtonsActions : MonoBehaviour
 {
     // Start is called before the first frame update
+    #region public 
     public Button jumpButton;
     public Button rightButton;
     public Button leftButton;
@@ -33,11 +35,10 @@ public class ButtonsActions : MonoBehaviour
     private KeyCode up;
     private KeyCode shoot;
     private KeyCode specialAbility;
-
-
+    #endregion
 
     //level select
-
+    #region private
     private KeyCode selectUp;
     private KeyCode selectDown;
     private KeyCode selectLeft;
@@ -63,6 +64,7 @@ public class ButtonsActions : MonoBehaviour
     private bool isClickedSelectLeft = false;
     private bool isClickedSelectRight = false;
     private bool isClickedSelectSelect = false;
+    #endregion
     BindingObject bo;
     public event EventHandler OnBindingChange;
     public EscMenu escMenu;
@@ -76,7 +78,6 @@ public class ButtonsActions : MonoBehaviour
         {
             escMenu.OnSettingsEnter += SelectButton;
         }
-
         bo = ControlBinding.Load();
         Debug.Log(bo.masterVolume + " " + bo.musicVolume + " " + bo.sfxVolume);
 
@@ -186,7 +187,6 @@ public class ButtonsActions : MonoBehaviour
         }
         else if (isClickedSelectLeft)
         {
-
             WaitongForKey(ref selectLeft, selectLeftButton, ref isClickedSelectLeft);
             selectLeftButton.GetComponentInChildren<Text>().text = selectLeft.ToString();
         }
