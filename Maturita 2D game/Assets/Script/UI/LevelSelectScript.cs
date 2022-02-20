@@ -61,7 +61,7 @@ public class LevelSelectScript : MonoBehaviour
             if (Input.GetKey(bo.selectSelect))
             {
                  
-                Debug.Log("Loading...");
+                //Debug.Log("Loading...");
                 switch (sc)
                 {
                     case 0:
