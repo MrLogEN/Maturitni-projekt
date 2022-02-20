@@ -52,6 +52,7 @@ MonoBehaviour:
   bossshootS: {fileID: 0}
   bossattackS: {fileID: 0}
   UIS: {fileID: 0}
+  musicS: {fileID: 0}
   jumpSfx: {fileID: 8300000, guid: fcc47fd6e9f52c6449c18eaf40eac4c6, type: 3}
   crouchSfx: {fileID: 8300000, guid: 011b76cac7ceb2447b26a28927f653be, type: 3}
   shootSfx: {fileID: 8300000, guid: 96e7607737506694aab39c3bee3c4e52, type: 3}
@@ -97,3 +98,10 @@ MonoBehaviour:
   whoosh1Sfx: {fileID: 8300000, guid: f7f7cb9ac9fe2774e95e319e6f3e87d5, type: 3}
   whoosh2Sfx: {fileID: 8300000, guid: d80ea5b5eafa8704dbff58d86b4965c9, type: 3}
   whoosh3Sfx: {fileID: 8300000, guid: 993b1327218790d48b62ee3284f44b10, type: 3}
+  level5Music: {fileID: 8300000, guid: fc04c9a8bf646c34ca85591aea292134, type: 3}
+  level4Music: {fileID: 8300000, guid: cbc36c0cc7aaae14ba587dec0567708a, type: 3}
+  level3Music: {fileID: 8300000, guid: 66209c57f58d81d4c9543b68698fe7c9, type: 3}
+  level2Music: {fileID: 8300000, guid: ffa6ced10670fa84cbeb4c80f081dd84, type: 3}
+  level1Music: {fileID: 8300000, guid: 3c63b86b752813b40a4c2a7c4cc602db, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 2ccad00995bd3f841bebad8320f190a2, type: 3}
+  levelSelectMusic: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}

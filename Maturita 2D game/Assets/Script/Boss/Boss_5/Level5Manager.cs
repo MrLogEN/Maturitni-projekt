@@ -44,6 +44,7 @@ public class Level5Manager : MonoBehaviour
         switch (newState)
         {
             case Level5State.Start:
+                AudioManager.instance.PlayMusicL5();
                 titleCanvas.SetActive(false);
                 instance.ChangeState(Level5State.Phase1);
                 break;
