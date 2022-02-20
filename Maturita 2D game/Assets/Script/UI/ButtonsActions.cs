@@ -72,6 +72,8 @@ public class ButtonsActions : MonoBehaviour
     public Button resumeButton;
     public Dropdown resolutionDropdown;
     public Dropdown screenModeDropdown;
+    private int localeIndex;
+    public LanguageChange lc;
     private void Start()
     {
         if (escMenu != null)
@@ -98,7 +100,9 @@ public class ButtonsActions : MonoBehaviour
         masterVolume = bo.masterVolume;
         screenMode = bo.screenMode;
         resolution = bo.quality;
-
+        localeIndex = bo.localizationIndex;
+        print(bo.localizationIndex);
+        lc.SetLocale(localeIndex);
 
         jumpButton.GetComponentInChildren<Text>().text = jump.ToString();
         rightButton.GetComponentInChildren<Text>().text = right.ToString();
@@ -267,22 +271,23 @@ public class ButtonsActions : MonoBehaviour
     public void SaveSettings()
     {
         if (jump != KeyCode.None) bo.jump = jump;
-        if(shoot != KeyCode.None ) bo.shoot = shoot;
-        if(crouch != KeyCode.None ) bo.crouch = crouch;
-        if(left != KeyCode.None) bo.left = left;
-        if(right != KeyCode.None) bo.right = right;
-        if(up != KeyCode.None) bo.up = up;
-        if(specialAbility != KeyCode.None) bo.specialAbility = specialAbility;
-        if(selectDown != KeyCode.None) bo.selectDown = selectDown;
-        if(selectUp != KeyCode.None) bo.selectUp = selectUp;
-        if(selectLeft != KeyCode.None) bo.selectLeft = selectLeft;
-        if(selectRight != KeyCode.None) bo.selectRight = selectRight;
-        if(selectSelect != KeyCode.None) bo.selectSelect = selectSelect;
+        if (shoot != KeyCode.None) bo.shoot = shoot;
+        if (crouch != KeyCode.None) bo.crouch = crouch;
+        if (left != KeyCode.None) bo.left = left;
+        if (right != KeyCode.None) bo.right = right;
+        if (up != KeyCode.None) bo.up = up;
+        if (specialAbility != KeyCode.None) bo.specialAbility = specialAbility;
+        if (selectDown != KeyCode.None) bo.selectDown = selectDown;
+        if (selectUp != KeyCode.None) bo.selectUp = selectUp;
+        if (selectLeft != KeyCode.None) bo.selectLeft = selectLeft;
+        if (selectRight != KeyCode.None) bo.selectRight = selectRight;
+        if (selectSelect != KeyCode.None) bo.selectSelect = selectSelect;
         bo.sfxVolume = sfxVolume;
         bo.musicVolume = musicVolume;
         bo.masterVolume = masterVolume;
         bo.screenMode = screenMode;
         bo.quality = resolution;
+        bo.localizationIndex = localeIndex;
         ControlBinding.Save(bo);
         OnBindingChange?.Invoke(this, EventArgs.Empty);
     }
@@ -321,7 +326,7 @@ public class ButtonsActions : MonoBehaviour
         sfxVolume = bo.sfxVolume;
         musicVolume = bo.musicVolume;
         masterVolume = bo.masterVolume;
-
+        localeIndex = bo.localizationIndex;
 
         jumpButton.GetComponentInChildren<Text>().text = jump.ToString();
         rightButton.GetComponentInChildren<Text>().text = right.ToString();
@@ -381,5 +386,9 @@ public class ButtonsActions : MonoBehaviour
     public void OnResolutionChanged()
     {
         resolution = resolutionDropdown.value;
+    }
+    public void OnLanguageClicked(int index)
+    {
+        localeIndex = index;
     }
 }

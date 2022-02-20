@@ -75,6 +75,8 @@ public class BindingObject
     public int screenMode;
     public int quality;
 
+    public int localizationIndex;
+
     public void LoadDefault()
     {
         jump = KeyCode.Z;
@@ -100,5 +102,7 @@ public class BindingObject
         //display
         screenMode = 0;
         quality = 0;
-}
+
+        localizationIndex = 0;
+    }
 }
