@@ -269,6 +269,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1785384485441498144, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384485770710449, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384485770710449, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59ca7dd0d4281eb478009646a2527afa, type: 3}
 --- !u!1 &64168260
@@ -917,6 +932,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b697a3a9babb4aa42ba6cefd2e72d164, type: 3}
