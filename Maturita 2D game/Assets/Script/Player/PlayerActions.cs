@@ -131,7 +131,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             nextFire = Time.time + fireRate;
             handAnim.SetBool("isFiring", true);
             playerAnim.SetBool("isShooting", true);
-
+            AudioManager.instance.PlayShootSfx();
             Shoot(bullet);
             //Boolich();
         }

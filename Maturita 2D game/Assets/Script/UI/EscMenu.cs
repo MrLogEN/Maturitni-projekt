@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+ 
 
 
 public class EscMenu : MonoBehaviour
 {
+     
     public Image winscreen;
     public Image deathscreen;
     public bool paused = false;
@@ -22,8 +24,10 @@ public class EscMenu : MonoBehaviour
         {
             if (winscreen != null && deathscreen != null)
             {
+                 
                 if (paused == false && winscreen.IsActive() != true && deathscreen.IsActive() != true)
                 {
+                     
                     escapeMenu.SetActive(true);
                     settings.SetActive(false);
                     resumeBut.Select();
@@ -32,6 +36,7 @@ public class EscMenu : MonoBehaviour
                 }
                 else if (paused == true && winscreen.IsActive() != true && deathscreen.IsActive() != true)
                 {
+                     
                     escapeMenu.SetActive(false);
                     settings.SetActive(false);
                     Time.timeScale = 1f;
@@ -69,6 +74,7 @@ public class EscMenu : MonoBehaviour
                 {
                     if (paused == false)
                     {
+                        AudioManager.instance.PlayClickUISfx();
                         escapeMenu.SetActive(true);
                         settings.SetActive(false);
                         resumeBut.Select();
@@ -77,6 +83,7 @@ public class EscMenu : MonoBehaviour
                     }
                     else if (paused == true)
                     {
+                        AudioManager.instance.PlayClickUISfx();
                         escapeMenu.SetActive(false);
                         settings.SetActive(false);
                         Time.timeScale = 1f;
@@ -88,6 +95,8 @@ public class EscMenu : MonoBehaviour
             
         }
     }
+     
+
     public void Resume()
     {
         Time.timeScale = 1f;
@@ -108,13 +117,28 @@ public class EscMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         LoadingManager.instance.LoadScene("level_select");
+        AudioManager.instance.PlayClickUISfx();
     }
     public void RestartLevel()
     {
         Time.timeScale = 1f;
         Time.timeScale = 1f;
         Time.timeScale = 1f;
+        AudioManager.instance.PlayClickUISfx();
         LoadingManager.instance.LoadScene(SceneManager.GetActiveScene().name);
         
     }
+    public void PlayHoverSound()
+    {
+        AudioManager.instance.PlayHoverUISfx();
+    }
+    public void PlayClickSound()
+    {
+        AudioManager.instance.PlayClickUISfx();
+    }
+    public void PlayEscSound()
+    {
+        AudioManager.instance.PlayEscUISfx();
+    }
+
 }

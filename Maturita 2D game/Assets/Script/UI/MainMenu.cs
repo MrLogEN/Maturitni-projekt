@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         //SceneManager.LoadScene("level_select");
+        AudioManager.instance.PlayClickUISfx();
         SaveObject so = SaveLoad.Load();
         if (so.tutorialCompleted == false)
         {
@@ -27,6 +28,7 @@ public class MainMenu : MonoBehaviour
     public void NewGame()
     {
         //SaveLoad.SaveDefault();
+        AudioManager.instance.PlayClickUISfx();
         SaveObject so = SaveLoad.Load();
         if (ContinueBut.activeInHierarchy == false)
         {
@@ -42,6 +44,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Yes()
     {
+        AudioManager.instance.PlayClickUISfx();
         SaveLoad.SaveDefault();
         //SceneManager.LoadScene("level_tutorial");
         LoadingManager.instance.LoadScene("level_tutorial");
@@ -49,10 +52,13 @@ public class MainMenu : MonoBehaviour
     public void Continue()
     {
         //SceneManager.LoadScene("level_select");
+        AudioManager.instance.PlayClickUISfx();
         LoadingManager.instance.LoadScene("level_select");
+        
     }
     public void QuitGame()
     {
+        AudioManager.instance.PlayClickUISfx();
         Application.Quit();
     }
     Button[] buttons;
@@ -60,4 +66,9 @@ public class MainMenu : MonoBehaviour
     {
         //OnSettingsEnterMenu?.Invoke(this,EventArgs.Empty);
     }
+    public void PlayClickSound()
+    {
+        AudioManager.instance.PlayClickUISfx();
+    }
+     
 }
