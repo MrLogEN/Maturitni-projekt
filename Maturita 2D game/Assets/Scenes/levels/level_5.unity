@@ -269,11 +269,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 1785384485441498144, guid: 59ca7dd0d4281eb478009646a2527afa,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1785384485770710449, guid: 59ca7dd0d4281eb478009646a2527afa,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1168,6 +1163,12 @@ PrefabInstance:
       propertyPath: specialBar
       value: 
       objectReference: {fileID: 959389070}
+    - target: {fileID: 7111481021066047318, guid: 9db859fd7b68b3f418778a2163c32a12,
+        type: 3}
+      propertyPath: damagePopupPref
+      value: 
+      objectReference: {fileID: 415194907784569677, guid: 3076c19dbd9712f4b9491efd58b62cfa,
+        type: 3}
     - target: {fileID: 7111481021066047319, guid: 9db859fd7b68b3f418778a2163c32a12,
         type: 3}
       propertyPath: m_Name
@@ -1462,7 +1463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704990309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 3.35, z: 0}
+  m_LocalPosition: {x: 0, y: 3.34, z: 0}
   m_LocalScale: {x: 7.82, y: 3.05, z: 1}
   m_Children:
   - {fileID: 1850714188}

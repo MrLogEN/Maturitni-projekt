@@ -33,6 +33,8 @@ public class BulletScript : MonoBehaviour
                 damage = 1;
             }
             //CollisionEnter(gameObject.name, collision.gameObject);
+            DamagePopUp.Create(transform.position, damage);
+            //Instantiate(PlayerActions.instance.damagePopupPref, transform.position, Quaternion.identity);
             collision.gameObject.GetComponent<IBoss>().TakeDamage(damage);
             Destroy(this.gameObject);
         }

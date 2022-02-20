@@ -32,7 +32,7 @@ public class DeathWin : MonoBehaviour
 
         if (bosshealth <= 0  )
         {
-            if (bossS is Boss5) return;
+            //if (bossS is Boss5) return;
             Time.timeScale = 0f;
             winscreen.gameObject.SetActive(true);
 

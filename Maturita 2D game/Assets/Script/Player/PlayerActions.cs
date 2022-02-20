@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerActions : MonoBehaviour, IPlayerStats
 {
-
+    public static PlayerActions instance;
     private int _health;
     private int _damage;
     private bool _isDead;
@@ -31,6 +31,8 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     public GameObject heartPrefab;
     public List<GameObject> heartList;
     public event EventHandler<OnChangeLookArgs> OnChangeLook;
+
+    public Transform damagePopupPref;
     public class OnChangeLookArgs : EventArgs
     {
         public enum Direction
@@ -83,6 +85,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     }
     void Start()
     {
+        instance = this;
         ba = FindObjectOfType<ButtonsActions>();
         if (ba != null)
         {
