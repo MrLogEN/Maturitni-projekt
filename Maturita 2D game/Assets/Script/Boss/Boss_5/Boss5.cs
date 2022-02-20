@@ -83,6 +83,8 @@ public class Boss5 : MonoBehaviour, IBoss
                             SpawnFireBall();
                             break;
                         case 1:
+                            //anim.Play("boss5_torch");
+                            StartCoroutine(SwingTorch());
                             //grab
                             break;
                         case 2:
@@ -112,17 +114,18 @@ public class Boss5 : MonoBehaviour, IBoss
                     switch (g)
                     {
                         case 0:
-                            StartCoroutine(SpawnCoconuts());
+                            //StartCoroutine(SpawnCoconuts());
                             break;
                         case 1:
-                            SpawnCarrot();
+                            //SpawnCarrot();
                             break;
                         case 2:
-                            SpawnBouncing();
+                            //SpawnBouncing();
                             break;
                         default:
                             break;
                     }
+                    SpawnCarrot();
                 }
                 break;
             case Level5Manager.Level5State.End:
@@ -147,6 +150,13 @@ public class Boss5 : MonoBehaviour, IBoss
         rbBomb.AddForce(new Vector2(-force, -force),ForceMode2D.Impulse);
 
     }
+    IEnumerator SwingTorch()
+    {
+        anim.Play("boss5_torch");
+        yield return new WaitForSeconds(2500);
+        anim.Play("boss5_idle");
+
+    }
     IEnumerator SpawnCoconuts()
     {
         //int d = 200;
@@ -163,5 +173,13 @@ public class Boss5 : MonoBehaviour, IBoss
         anim.Play("boss5_headslam");
         yield return new WaitForSeconds(1.5f);
         anim.Play("boss5_idle");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<PlayerActions>().TakeHit();
+        }
     }
 }

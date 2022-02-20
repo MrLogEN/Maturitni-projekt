@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2023993231506760082}
   - component: {fileID: 2023993231506760085}
   - component: {fileID: 2023993231506760084}
-  - component: {fileID: 2023993231506760087}
   - component: {fileID: 2023993231506760083}
+  - component: {fileID: 2566970528196130610}
   m_Layer: 10
   m_Name: Coconut
   m_TagString: BossAttack
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2023993231506760086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.58, y: 0.39, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
+  m_Sprite: {fileID: -2213187775201173543, guid: 1f17eee43a7e26f4ba42d54d69ae56bf,
     type: 3}
   m_Color: {r: 0.3301887, g: 0.25161925, b: 0.24110004, a: 1}
   m_FlipX: 0
@@ -107,7 +107,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &2023993231506760087
+--- !u!114 &2023993231506760083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023993231506760086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378c796bd445ebd4189047463bd6f3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &2566970528196130610
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,16 +134,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &2023993231506760083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023993231506760086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378c796bd445ebd4189047463bd6f3ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 5.2650003
