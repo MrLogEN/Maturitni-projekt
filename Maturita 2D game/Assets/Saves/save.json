@@ -1,4 +1,5 @@
-{"position":{"x":-2.0,"y":2.0,"z":0.0},"tutorialCompleted":false,"lvl1IsCompleted":false,"lvl2IsCompleted":false,"lvl3IsCompleted":false,"lvl4IsCompleted":false,"lvl5IsCompleted":false,"damage":1,"speed":5.0,"hasDoubleJump":false,"hasSwiftness":false,"hasDamage":false,"skillPoints":0}
+{"position":{"x":-2.0,"y":2.0,"z":0.0},"tutorialCompleted":false,"lvl1IsCompleted":false,"lvl2IsCompleted":false,"lvl3IsCompleted":false,"lvl4IsCompleted":false,"lvl5IsCompleted":true,"damage":1,"speed":5.0,"hasDoubleJump":false,"hasSwiftness":false,"hasDamage":false,"skillPoints":1}
+
 :true,"skillPoints":0}
 
 

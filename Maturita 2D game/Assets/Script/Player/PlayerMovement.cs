@@ -113,6 +113,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
             if (Input.GetKeyDown(jump) && extraJump > 0 && !Input.GetKey(crouch)) //Checking for extra jumps
             {
                 //rb.velocity = Vector2.up * jumpForce;
+                AudioManager.instance.PlayJumpSfx();
                 isJumping = true;
                 extraJump--;
                 //isJumping = false;
@@ -124,6 +125,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerSkills
             if (Input.GetKeyDown(jump) && isGrounded && !Input.GetKey(crouch)) //If the player is on the ground and Z key is being pressed, the player will jump
             {
                 isJumping = true;
+                AudioManager.instance.PlayJumpSfx();
+
                 //rb.velocity = Vector2.up * jumpForce;
             }
         }

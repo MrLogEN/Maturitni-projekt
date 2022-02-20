@@ -52,9 +52,9 @@ MonoBehaviour:
   bossshootS: {fileID: 0}
   bossattackS: {fileID: 0}
   UIS: {fileID: 0}
-  jumpSfx: {fileID: 8300000, guid: 61d07162ba994b742885f1f12e18a2f3, type: 3}
-  crouchSfx: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
-  shootSfx: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
+  jumpSfx: {fileID: 8300000, guid: fcc47fd6e9f52c6449c18eaf40eac4c6, type: 3}
+  crouchSfx: {fileID: 8300000, guid: 011b76cac7ceb2447b26a28927f653be, type: 3}
+  shootSfx: {fileID: 8300000, guid: 96e7607737506694aab39c3bee3c4e52, type: 3}
   walkSfx: {fileID: 8300000, guid: e175b168f422e154492ab41bfd8a57a5, type: 3}
   bigshootSfx: {fileID: 8300000, guid: 91450000e35805a4b9e99c088ab94f6c, type: 3}
   playerhitSfx: {fileID: 8300000, guid: f5df3e753c7edc4469040d1e3e55d30a, type: 3}

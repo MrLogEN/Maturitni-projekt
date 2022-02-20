@@ -149,7 +149,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
             specialLoad = 0;
             handAnim.SetBool("isFiring", true);
             playerAnim.SetBool("isShooting", true);
-
+            AudioManager.instance.PlayBigShootSfx();
             Shoot(specialBullet);
             //Boolich();
         }
@@ -333,6 +333,7 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
     {
         if (isInvincible == false)
         {
+            AudioManager.instance.PlayPlayerHitSfx();
             isInvincible = true;
             Health--;
             Destroy(heartList[heartList.Count - 1]);
@@ -395,6 +396,14 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         }
 
     }
+    System.Collections.IEnumerator WalkSound()
+    {
+        isPlayingWalk = true;
+        AudioManager.instance.PlayWalkSfx();
+        yield return new WaitForSeconds(.45f);
+        isPlayingWalk = false;
+    }
+    private bool isPlayingWalk = false;
     public void HandleDir(object sender, OnChangeLookArgs e)
     {
         float sc = Mathf.Abs(transform.localScale.x);
@@ -454,6 +463,10 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isLookingUp", false);
                 playerAnim.SetBool("isJumpingDown", false);
                 playerAnim.SetBool("isWalking", true);
+                if (!isPlayingWalk)
+                {
+                    StartCoroutine(WalkSound());
+                }
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.leftPressed:
@@ -462,6 +475,10 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
                 playerAnim.SetBool("isJumpingUp", false);
                 playerAnim.SetBool("isJumpingDown", false);
                 playerAnim.SetBool("isWalking", true);
+                if (!isPlayingWalk)
+                {
+                    StartCoroutine(WalkSound());
+                }
                 handParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case OnChangeLookArgs.Direction.jumpUpLeft:
@@ -593,4 +610,5 @@ public class PlayerActions : MonoBehaviour, IPlayerStats
         //nejake ty death screeny s menickem
 
     }
+   
 }

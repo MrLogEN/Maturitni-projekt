@@ -16,13 +16,14 @@ public class AudioManager : MonoBehaviour
     int rand;
     System.Random rn = new System.Random();
     //
-    public AudioSource movementS, shootS, playerhitS, splashS, bossshootS, bossattackS, UIS;
+    public AudioSource movementS, shootS, playerhitS, splashS, bossshootS, bossattackS, UIS,musicS;
     //všechny audio clipy, které budeme používat
     public AudioClip jumpSfx, crouchSfx, shootSfx, walkSfx, bigshootSfx, playerhitSfx, tomatosplashSfx, cannonSfx, mortarSfx, melonsplashSfx,
                      rootgroundSfx, roothandSfx, tornadospinSfx, swordchargeSfx, lampionpopSfx, arrowshootSfx, multiplearrowshootSfx, molotovthrowSfx,
                      molotovsplashSfx, ak47singleshootSfx, hoverUISfx, clickUISfx, escUISfx, carrotmissileSfx, coconutfall1Sfx, coconutfall2Sfx, coconutfall3Sfx,
                      coconutspawn1Sfx, coconutspawn2Sfx, coconutspawn3Sfx, drinkwaterSfx, fireballlandSfx, fireballshoot1Sfx, fireballshoot2Sfx, fireballshoot3Sfx,
-                     groundslamSfx, groundwaveSfx, jumpbossSfx, swordslash1Sfx, swordslash2Sfx, swordslash3Sfx, whoosh1Sfx, whoosh2Sfx, whoosh3Sfx;
+                     groundslamSfx, groundwaveSfx, jumpbossSfx, swordslash1Sfx, swordslash2Sfx, swordslash3Sfx, whoosh1Sfx, whoosh2Sfx, whoosh3Sfx,level5Music,level4Music,level3Music,level2Music,
+                     level1Music,mainMenuMusic,levelSelectMusic;
     void Awake()
     {
          
@@ -301,9 +302,41 @@ public class AudioManager : MonoBehaviour
                 break;
         }
     }
-
-
-
+    public void PlayMusicL1()
+    {
+        musicS.clip = level1Music;
+        musicS.Play();
+    }
+    public void PlayMusicL2()
+    {
+        musicS.clip = level2Music;
+        musicS.Play();
+    }
+    public void PlayMusicL3()
+    {
+        musicS.clip = level3Music;
+        musicS.Play();
+    }
+    public void PlayMusicL4()
+    {
+        musicS.clip = level4Music;
+        musicS.Play();
+    }
+    public void PlayMusicL5()
+    {
+        musicS.clip = level5Music;
+        musicS.Play();
+    }
+    public void PlayMusicLevelSelect()
+    {
+        musicS.clip = levelSelectMusic;
+        musicS.Play();
+    }
+    public void PlayMusicMainMenu()
+    {
+        musicS.clip = mainMenuMusic;
+        musicS.Play();
+    }
 
     #endregion
 
