@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8848837096307833761}
   - component: {fileID: 8848837096307833790}
   - component: {fileID: 8848837096307833762}
-  - component: {fileID: 8848837096307833765}
+  - component: {fileID: 7719628920776122160}
   m_Layer: 10
   m_Name: BouncingBomb
   m_TagString: BossAttack
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8848837096307833791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.648085, y: 1.5251124, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
+  m_Sprite: {fileID: -6720060915171793535, guid: 7f0a510dad903e1459e7976906fe6252,
     type: 3}
   m_Color: {r: 0.124154516, g: 0.5849056, b: 0.2672637, a: 1}
   m_FlipX: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75561299332d0ad4c8347eb9bb63a749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &8848837096307833765
+--- !u!58 &7719628920776122160
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,4 +134,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 5.525

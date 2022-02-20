@@ -25,6 +25,7 @@ public class Boss5 : MonoBehaviour, IBoss
     [SerializeField] private Transform bouncingSpawner;
     [SerializeField] private GameObject bouncingBomb;
     System.Random rn = new System.Random();
+    private Animator anim;
     public void TakeDamage(float damage)
     {
         Health -= damage;
@@ -60,6 +61,7 @@ public class Boss5 : MonoBehaviour, IBoss
         Physics2D.IgnoreLayerCollision(10, 9);
         Physics2D.IgnoreLayerCollision(10, 10);
         _health = _maxHealth;
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
 
@@ -81,15 +83,20 @@ public class Boss5 : MonoBehaviour, IBoss
                             SpawnFireBall();
                             break;
                         case 1:
+                            //anim.Play("boss5_torch");
+                            StartCoroutine(SwingTorch());
                             //grab
                             break;
                         case 2:
                             //head slam
-
+                            //anim.Play("boss5_headslam");
+                            StartCoroutine(DoHeadSlam());
                             break;
                         default:
                             break;
                     }
+                    
+                   
                 }
                 if (Health <= MaxHealth * 0.5)
                 {
@@ -107,17 +114,21 @@ public class Boss5 : MonoBehaviour, IBoss
                     switch (g)
                     {
                         case 0:
+                            StartCoroutine(DoButtonAnim());
                             StartCoroutine(SpawnCoconuts());
                             break;
                         case 1:
+                            StartCoroutine(DoButtonAnim());
                             SpawnCarrot();
                             break;
                         case 2:
+                            StartCoroutine(DoButtonAnim());
                             SpawnBouncing();
                             break;
                         default:
                             break;
                     }
+                    //SpawnCarrot();
                 }
                 break;
             case Level5Manager.Level5State.End:
@@ -142,6 +153,13 @@ public class Boss5 : MonoBehaviour, IBoss
         rbBomb.AddForce(new Vector2(-force, -force),ForceMode2D.Impulse);
 
     }
+    IEnumerator SwingTorch()
+    {
+        anim.Play("boss5_torch");
+        yield return new WaitForSeconds(2500);
+        anim.Play("boss5_idle");
+
+    }
     IEnumerator SpawnCoconuts()
     {
         //int d = 200;
@@ -151,6 +169,25 @@ public class Boss5 : MonoBehaviour, IBoss
             Transform t = coconutSpawners[Random.Range(0, coconutSpawners.Length)];
             Instantiate(coconut, t.position, Quaternion.identity);
             yield return new WaitForSeconds(0.2f);
+        }
+    }
+    IEnumerator DoHeadSlam()
+    {
+        anim.Play("boss5_headslam");
+        yield return new WaitForSeconds(1.5f);
+        anim.Play("boss5_idle");
+    }
+    IEnumerator DoButtonAnim()
+    {
+        anim.Play("boss5_button");
+        yield return new WaitForSeconds(1f);
+        anim.Play("boss5_idle2");
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<PlayerActions>().TakeHit();
         }
     }
 }

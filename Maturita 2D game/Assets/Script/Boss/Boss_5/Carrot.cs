@@ -16,6 +16,7 @@ public class Carrot : MonoBehaviour
         player = FindObjectOfType<PlayerActions>().gameObject;
         rb = GetComponent<Rigidbody2D>();
         ttl += Time.time;
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
     }
     private void Update()
     {
