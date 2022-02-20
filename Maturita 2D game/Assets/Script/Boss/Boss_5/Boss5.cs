@@ -35,12 +35,17 @@ public class Boss5 : MonoBehaviour, IBoss
             SaveObject so = SaveLoad.Load();
             Health = 0;
             Time.timeScale = 0f;
-            Level5Manager.instance.ChangeState(Level5Manager.Level5State.End);
+            
             //so = SaveLoad.Load();
             if (!so.lvl5IsCompleted)
             {
+                Level5Manager.instance.ChangeState(Level5Manager.Level5State.End);
                 so.lvl5IsCompleted = true;
                 so.skillPoints++;
+            }
+            else
+            {
+                Level5Manager.instance.ChangeState(Level5Manager.Level5State.End2);
             }
             SaveLoad.Save(so);
         }

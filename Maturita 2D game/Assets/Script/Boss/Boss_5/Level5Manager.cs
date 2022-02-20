@@ -21,7 +21,8 @@ public class Level5Manager : MonoBehaviour
         Start,
         Phase1,
         Phase2,
-        End
+        End,
+        End2
     }
     public Level5State GetState { get; private set; }
     private void Awake()
@@ -53,6 +54,8 @@ public class Level5Manager : MonoBehaviour
             case Level5State.End:
                 titleCanvas.SetActive(true);
                 PlayTitles();
+                break;
+            case Level5State.End2:
                 break;
             default:
                 break;

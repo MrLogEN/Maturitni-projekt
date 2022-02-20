@@ -45,8 +45,6 @@ public class SpecialBullet : MonoBehaviour
             }
             catch (System.Exception)
             {
-
-                throw;
             }
             DamagePopUp.Create(transform.position, damage, true);
             //CollisionEnter(gameObject.name, collision.gameObject);

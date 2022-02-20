@@ -46,8 +46,6 @@ public class BulletScript : MonoBehaviour
             }
             catch (System.Exception)
             {
-
-                throw;
             }
             DamagePopUp.Create(transform.position, damage, false);
             boss.TakeDamage(damage);
