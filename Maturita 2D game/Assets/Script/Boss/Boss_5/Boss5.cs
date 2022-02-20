@@ -61,6 +61,7 @@ public class Boss5 : MonoBehaviour, IBoss
         Physics2D.IgnoreLayerCollision(10, 9);
         Physics2D.IgnoreLayerCollision(10, 10);
         _health = _maxHealth;
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
 
@@ -86,11 +87,14 @@ public class Boss5 : MonoBehaviour, IBoss
                             break;
                         case 2:
                             //head slam
-
+                            //anim.Play("boss5_headslam");
+                            StartCoroutine(DoHeadSlam());
                             break;
                         default:
                             break;
                     }
+                    
+                   
                 }
                 if (Health <= MaxHealth * 0.5)
                 {
@@ -153,5 +157,11 @@ public class Boss5 : MonoBehaviour, IBoss
             Instantiate(coconut, t.position, Quaternion.identity);
             yield return new WaitForSeconds(0.2f);
         }
+    }
+    IEnumerator DoHeadSlam()
+    {
+        anim.Play("boss5_headslam");
+        yield return new WaitForSeconds(1.5f);
+        anim.Play("boss5_idle");
     }
 }
