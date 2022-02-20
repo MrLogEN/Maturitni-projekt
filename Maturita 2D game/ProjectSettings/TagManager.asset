@@ -7,6 +7,11 @@ TagManager:
   - PlayerAttack
   - BossAttack
   - Boss
+  - Ground
+  - Molotov
+  - Bullet
+  - BossHand
+  - BossStage2
   layers:
   - Default
   - TransparentFX
