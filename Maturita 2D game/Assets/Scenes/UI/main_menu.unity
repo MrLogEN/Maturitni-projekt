@@ -915,6 +915,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1159230163}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &353997078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,6 +1383,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1159230163}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &427373629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1689,15 +1713,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477339440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 335.7102}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_Children: []
-  m_Father: {fileID: 650838123}
-  m_RootOrder: 5
+  m_Father: {fileID: 508315620}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 282.38098, y: -341.55865}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &508315619
@@ -1805,6 +1829,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b697a3a9babb4aa42ba6cefd2e72d164, type: 3}
+--- !u!4 &508315620 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6635354476439878645, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+    type: 3}
+  m_PrefabInstance: {fileID: 508315619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &508700500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2600,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1159230163}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &600822042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2838,7 +2880,6 @@ RectTransform:
   - {fileID: 1454545108}
   - {fileID: 759207787}
   - {fileID: 973013467}
-  - {fileID: 477339442}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3103,6 +3144,7 @@ GameObject:
   - component: {fileID: 683257361}
   - component: {fileID: 683257360}
   - component: {fileID: 683257359}
+  - component: {fileID: 683257362}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -3217,6 +3259,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683257357}
   m_CullTransparentMesh: 1
+--- !u!114 &683257362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683257357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba2c0995c997564bb4cacc5994ff77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  am: {fileID: 24100000, guid: 9425eefa66c6c44468113fbd4d45b684, type: 2}
+  ba: {fileID: 0}
+  movementS: {fileID: 0}
+  shootS: {fileID: 0}
+  playerhitS: {fileID: 0}
+  splashS: {fileID: 0}
+  bossshootS: {fileID: 0}
+  bossattackS: {fileID: 0}
+  UIS: {fileID: 0}
+  jumpSfx: {fileID: 0}
+  crouchSfx: {fileID: 0}
+  shootSfx: {fileID: 0}
+  walkSfx: {fileID: 0}
+  bigshootSfx: {fileID: 0}
+  playerhitSfx: {fileID: 0}
+  tomatosplashSfx: {fileID: 0}
+  cannonSfx: {fileID: 0}
+  mortarSfx: {fileID: 0}
+  melonsplashSfx: {fileID: 0}
+  rootgroundSfx: {fileID: 0}
+  roothandSfx: {fileID: 0}
+  tornadospinSfx: {fileID: 0}
+  swordchargeSfx: {fileID: 0}
+  lampionpopSfx: {fileID: 0}
+  arrowshootSfx: {fileID: 0}
+  multiplearrowshootSfx: {fileID: 0}
+  molotovthrowSfx: {fileID: 0}
+  molotovsplashSfx: {fileID: 0}
+  ak47singleshootSfx: {fileID: 0}
+  hoverUISfx: {fileID: 0}
+  clickUISfx: {fileID: 0}
+  escUISfx: {fileID: 0}
+  carrotmissileSfx: {fileID: 0}
+  coconutfall1Sfx: {fileID: 0}
+  coconutfall2Sfx: {fileID: 0}
+  coconutfall3Sfx: {fileID: 0}
+  coconutspawn1Sfx: {fileID: 0}
+  coconutspawn2Sfx: {fileID: 0}
+  coconutspawn3Sfx: {fileID: 0}
+  drinkwaterSfx: {fileID: 0}
+  fireballlandSfx: {fileID: 0}
+  fireballshoot1Sfx: {fileID: 0}
+  fireballshoot2Sfx: {fileID: 0}
+  fireballshoot3Sfx: {fileID: 0}
+  groundslamSfx: {fileID: 0}
+  groundwaveSfx: {fileID: 0}
+  jumpbossSfx: {fileID: 0}
+  swordslash1Sfx: {fileID: 0}
+  swordslash2Sfx: {fileID: 0}
+  swordslash3Sfx: {fileID: 0}
+  whoosh1Sfx: {fileID: 0}
+  whoosh2Sfx: {fileID: 0}
+  whoosh3Sfx: {fileID: 0}
 --- !u!1 &696674299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,6 +3550,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1159230163}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3973,6 +4092,18 @@ MonoBehaviour:
       - m_Target: {fileID: 650838124}
         m_TargetAssemblyTypeName: ButtonsActions, Assembly-CSharp
         m_MethodName: SaveSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1159230163}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4654,18 +4785,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1159230163}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1753910218}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayClickUISfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7209,9 +7328,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1753910218}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayClickUISfx
+      - m_Target: {fileID: 1159230163}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9474,6 +9593,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1159230163}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1645726484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10081,18 +10212,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741105452}
   m_CullTransparentMesh: 1
---- !u!114 &1753910218 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
-    type: 3}
-  m_PrefabInstance: {fileID: 508315619}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba2c0995c997564bb4cacc5994ff77a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1783952707
 GameObject:
   m_ObjectHideFlags: 0
