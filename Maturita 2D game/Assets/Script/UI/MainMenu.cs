@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         //SceneManager.LoadScene("level_select");
+        //AudioManager.instance.PlayClickUISfx();
         SaveObject so = SaveLoad.Load();
         if (so.tutorialCompleted == false)
         {

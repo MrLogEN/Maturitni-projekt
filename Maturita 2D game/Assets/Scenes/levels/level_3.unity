@@ -609,6 +609,11 @@ PrefabInstance:
       objectReference: {fileID: 2011921325}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
+      propertyPath: shootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 96e7607737506694aab39c3bee3c4e52, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
       propertyPath: movementS
       value: 
       objectReference: {fileID: 7111481020412306973}
