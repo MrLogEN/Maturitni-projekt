@@ -114,18 +114,21 @@ public class Boss5 : MonoBehaviour, IBoss
                     switch (g)
                     {
                         case 0:
-                            //StartCoroutine(SpawnCoconuts());
+                            StartCoroutine(DoButtonAnim());
+                            StartCoroutine(SpawnCoconuts());
                             break;
                         case 1:
-                            //SpawnCarrot();
+                            StartCoroutine(DoButtonAnim());
+                            SpawnCarrot();
                             break;
                         case 2:
-                            //SpawnBouncing();
+                            StartCoroutine(DoButtonAnim());
+                            SpawnBouncing();
                             break;
                         default:
                             break;
                     }
-                    SpawnCarrot();
+                    //SpawnCarrot();
                 }
                 break;
             case Level5Manager.Level5State.End:
@@ -174,7 +177,12 @@ public class Boss5 : MonoBehaviour, IBoss
         yield return new WaitForSeconds(1.5f);
         anim.Play("boss5_idle");
     }
-
+    IEnumerator DoButtonAnim()
+    {
+        anim.Play("boss5_button");
+        yield return new WaitForSeconds(1f);
+        anim.Play("boss5_idle2");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
