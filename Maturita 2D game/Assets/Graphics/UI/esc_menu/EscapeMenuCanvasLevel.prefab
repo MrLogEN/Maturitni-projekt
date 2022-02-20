@@ -7181,6 +7181,7 @@ GameObject:
   - component: {fileID: 1656125898152432507}
   - component: {fileID: 1656125898152432506}
   - component: {fileID: 1656125897811494921}
+  - component: {fileID: 9203081791700162504}
   m_Layer: 5
   m_Name: EscapeMenuCanvasLevel
   m_TagString: Untagged
@@ -7355,7 +7356,18 @@ MonoBehaviour:
   resumeButton: {fileID: 1656125898624108549}
   resolutionDropdown: {fileID: 1656125898828240614}
   screenModeDropdown: {fileID: 1656125897153577836}
-  lc: {fileID: 0}
+--- !u!114 &9203081791700162504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656125898152432496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27819a733617df241b5d7e734746f2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1656125898210717437
 GameObject:
   m_ObjectHideFlags: 0

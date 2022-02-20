@@ -73,7 +73,6 @@ public class ButtonsActions : MonoBehaviour
     public Dropdown resolutionDropdown;
     public Dropdown screenModeDropdown;
     private int localeIndex;
-    public LanguageChange lc;
     private void Start()
     {
         if (escMenu != null)
@@ -101,8 +100,7 @@ public class ButtonsActions : MonoBehaviour
         screenMode = bo.screenMode;
         resolution = bo.quality;
         localeIndex = bo.localizationIndex;
-        print(bo.localizationIndex);
-        lc.SetLocale(localeIndex);
+        LanguageChange.instance.SetLocale(localeIndex);
 
         jumpButton.GetComponentInChildren<Text>().text = jump.ToString();
         rightButton.GetComponentInChildren<Text>().text = right.ToString();

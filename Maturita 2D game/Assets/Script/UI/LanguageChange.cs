@@ -7,7 +7,7 @@ using UnityEngine.Localization.Settings;
 public class LanguageChange : MonoBehaviour
 {
     public static LanguageChange instance;
-    private void Start()
+    private void Awake()
     {
         instance = this;
 
