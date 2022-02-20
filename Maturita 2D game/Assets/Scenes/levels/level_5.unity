@@ -1368,6 +1368,7 @@ GameObject:
   - component: {fileID: 704990310}
   - component: {fileID: 704990313}
   - component: {fileID: 704990314}
+  - component: {fileID: 704990315}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Boss
@@ -1463,8 +1464,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704990309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.34, z: 0}
-  m_LocalScale: {x: 7.82, y: 3.05, z: 1}
+  m_LocalPosition: {x: 0, y: -0.63, z: 0}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_Children:
   - {fileID: 1850714188}
   m_Father: {fileID: 0}
@@ -1483,18 +1484,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -3.50589, y: 16.51459}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 80, y: 45}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12.440275, y: 7.089176}
   m_EdgeRadius: 0
 --- !u!114 &704990314
 MonoBehaviour:
@@ -1514,6 +1515,25 @@ MonoBehaviour:
   winscreen: {fileID: 2098417793}
   deathscreen: {fileID: 344845241}
   pa: {fileID: 1347375281}
+--- !u!95 &704990315
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704990309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9be19b8046c9e83439bc1f37ef559717, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &959389070 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3089886144524283578, guid: 048cde13ca369c046a344f4780430d13,
@@ -2406,7 +2426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850714187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.284, y: -0.94, z: 0}
+  m_LocalPosition: {x: 2.9, y: 19.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 704990312}

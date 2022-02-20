@@ -25,6 +25,7 @@ public class Boss5 : MonoBehaviour, IBoss
     [SerializeField] private Transform bouncingSpawner;
     [SerializeField] private GameObject bouncingBomb;
     System.Random rn = new System.Random();
+    private Animator anim;
     public void TakeDamage(float damage)
     {
         Health -= damage;
