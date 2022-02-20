@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
                      groundslamSfx, groundwaveSfx, jumpbossSfx, swordslash1Sfx, swordslash2Sfx, swordslash3Sfx, whoosh1Sfx, whoosh2Sfx, whoosh3Sfx;
     void Awake()
     {
+         
         bo = ControlBinding.Load();
         
         am.SetFloat(MASTER_NAME, Mathf.Log10(bo.masterVolume)*20);

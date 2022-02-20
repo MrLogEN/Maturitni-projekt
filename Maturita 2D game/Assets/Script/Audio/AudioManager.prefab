@@ -43,9 +43,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba2c0995c997564bb4cacc5994ff77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: plastic
-    clip: {fileID: 8300000, guid: 61d07162ba994b742885f1f12e18a2f3, type: 3}
-    volume: 0.418
-    loop: 1
-    source: {fileID: 0}
+  am: {fileID: 24100000, guid: 9425eefa66c6c44468113fbd4d45b684, type: 2}
+  ba: {fileID: 0}
+  movementS: {fileID: 0}
+  shootS: {fileID: 0}
+  playerhitS: {fileID: 0}
+  splashS: {fileID: 0}
+  bossshootS: {fileID: 0}
+  bossattackS: {fileID: 0}
+  UIS: {fileID: 0}
+  jumpSfx: {fileID: 8300000, guid: 61d07162ba994b742885f1f12e18a2f3, type: 3}
+  crouchSfx: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
+  shootSfx: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
+  walkSfx: {fileID: 8300000, guid: e175b168f422e154492ab41bfd8a57a5, type: 3}
+  bigshootSfx: {fileID: 8300000, guid: 91450000e35805a4b9e99c088ab94f6c, type: 3}
+  playerhitSfx: {fileID: 8300000, guid: f5df3e753c7edc4469040d1e3e55d30a, type: 3}
+  tomatosplashSfx: {fileID: 8300000, guid: 68879354ee7d1f045b607f70db7ce710, type: 3}
+  cannonSfx: {fileID: 8300000, guid: 9b7b6f2911f871f4fb6db2220e8c5b05, type: 3}
+  mortarSfx: {fileID: 8300000, guid: 88ffd4ea554fd664e8c5b4c32c8ce11c, type: 3}
+  melonsplashSfx: {fileID: 8300000, guid: cbc1c444beedab549a36be5acda7bda6, type: 3}
+  rootgroundSfx: {fileID: 8300000, guid: 295dd86105fedf64cb36444da4136d64, type: 3}
+  roothandSfx: {fileID: 8300000, guid: 4c2c8a342eef9804ca62c30f1880fb38, type: 3}
+  tornadospinSfx: {fileID: 8300000, guid: abbb340525c827a4fadd9f5dc22e5ee2, type: 3}
+  swordchargeSfx: {fileID: 8300000, guid: 8358d7d228ba5b34da9b5630ab5df0fe, type: 3}
+  lampionpopSfx: {fileID: 8300000, guid: 3b1f65b57706f52428aac25f07d41381, type: 3}
+  arrowshootSfx: {fileID: 8300000, guid: 82f0f88ea33e89744a56e486150639ff, type: 3}
+  multiplearrowshootSfx: {fileID: 8300000, guid: a886e726b15113646a1be3e2216a9260,
+    type: 3}
+  molotovthrowSfx: {fileID: 8300000, guid: 8ae999aacb811b445b67e3036901751e, type: 3}
+  molotovsplashSfx: {fileID: 8300000, guid: 1bd3b94045667f9488640874a248942d, type: 3}
+  ak47singleshootSfx: {fileID: 8300000, guid: 816186d726c662d4abd9c72ce8768c32, type: 3}
+  hoverUISfx: {fileID: 8300000, guid: 234c2e90038b1254a849100694c1fce9, type: 3}
+  clickUISfx: {fileID: 8300000, guid: da111f1b8fbe6d248ba1146aec7f83ca, type: 3}
+  escUISfx: {fileID: 8300000, guid: 33eae567a2a84d142a6b63806bd2f1c1, type: 3}
+  carrotmissileSfx: {fileID: 8300000, guid: 3fe49da4383d5ad4db4def7cdbed0cbb, type: 3}
+  coconutfall1Sfx: {fileID: 8300000, guid: 537cf56391acd8b4c8cb673a1aa565b6, type: 3}
+  coconutfall2Sfx: {fileID: 8300000, guid: 456b3b13307d55a4d9bc3b48441ae19a, type: 3}
+  coconutfall3Sfx: {fileID: 8300000, guid: 1aa711ef97ab85245a4de292f3f0da34, type: 3}
+  coconutspawn1Sfx: {fileID: 8300000, guid: d8eb3ceae0880454d866fef12743b37c, type: 3}
+  coconutspawn2Sfx: {fileID: 8300000, guid: 9d9a352ffec566e4abd8b49484cefc31, type: 3}
+  coconutspawn3Sfx: {fileID: 8300000, guid: 9aaf4854d387ed746b5dcf6bc843b3c9, type: 3}
+  drinkwaterSfx: {fileID: 8300000, guid: 7fc5903b1c89a994a8056191ee416402, type: 3}
+  fireballlandSfx: {fileID: 8300000, guid: f66c690bce2f098438c96c2d03af2372, type: 3}
+  fireballshoot1Sfx: {fileID: 8300000, guid: b8a281984a85c4f4088070eb59355d2d, type: 3}
+  fireballshoot2Sfx: {fileID: 8300000, guid: df1eea9613cb67d479c538f5f41d0e85, type: 3}
+  fireballshoot3Sfx: {fileID: 8300000, guid: b6351c90da4f2f04d91a0553d081291d, type: 3}
+  groundslamSfx: {fileID: 8300000, guid: dab4f1cbca13e094689296b207ba4288, type: 3}
+  groundwaveSfx: {fileID: 8300000, guid: 53c555d79855e2a4092c927217b69133, type: 3}
+  jumpbossSfx: {fileID: 8300000, guid: 14783d53e29773549b4dc0ba85389ce6, type: 3}
+  swordslash1Sfx: {fileID: 8300000, guid: d611f16d2f7651a47855956ca95e6f2b, type: 3}
+  swordslash2Sfx: {fileID: 8300000, guid: 511f02a598acc3741bbb6a6ad4af0eb1, type: 3}
+  swordslash3Sfx: {fileID: 8300000, guid: a0e9c82d8f9b207408f933bf3f8b3330, type: 3}
+  whoosh1Sfx: {fileID: 8300000, guid: f7f7cb9ac9fe2774e95e319e6f3e87d5, type: 3}
+  whoosh2Sfx: {fileID: 8300000, guid: d80ea5b5eafa8704dbff58d86b4965c9, type: 3}
+  whoosh3Sfx: {fileID: 8300000, guid: 993b1327218790d48b62ee3284f44b10, type: 3}
