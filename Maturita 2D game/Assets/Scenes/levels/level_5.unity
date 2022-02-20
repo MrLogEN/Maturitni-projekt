@@ -1105,6 +1105,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7111481021066047308, guid: 9db859fd7b68b3f418778a2163c32a12,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111481021066047308, guid: 9db859fd7b68b3f418778a2163c32a12,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111481021066047308, guid: 9db859fd7b68b3f418778a2163c32a12,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.277112
       objectReference: {fileID: 0}
@@ -1165,6 +1175,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db859fd7b68b3f418778a2163c32a12, type: 3}
+--- !u!1 &594772086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594772087}
+  m_Layer: 0
+  m_Name: BouncingBombSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &594772087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594772086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.71, y: -1.76, z: -1.0304613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &643390723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 643390724}
+  m_Layer: 0
+  m_Name: Carrot spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &643390724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643390723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.94, y: 1.5251124, z: -1.0304613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &655110102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1397,11 @@ MonoBehaviour:
   - {fileID: 1096207890}
   - {fileID: 1950025642}
   coconut: {fileID: 2023993231506760086, guid: edb2562d40d40c64097aebb51ed914b9, type: 3}
+  carrotSpawner: {fileID: 643390724}
+  carrot: {fileID: 1918068321783695114, guid: ab9dbfc41b6f29f4494c7bbf1b94c77f, type: 3}
+  bouncingSpawner: {fileID: 594772087}
+  bouncingBomb: {fileID: 8848837096307833791, guid: 6939432cfd3653643bc5fe48dfa1bceb,
+    type: 3}
 --- !u!212 &704990311
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2366,6 +2441,12 @@ Transform:
   m_Father: {fileID: 655110103}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1990859856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7111481020735411910, guid: 9db859fd7b68b3f418778a2163c32a12,
+    type: 3}
+  m_PrefabInstance: {fileID: 503362708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029516553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,6 +2640,7 @@ MonoBehaviour:
   titleAnimator: {fileID: 1686804125}
   groundFlamesPrefab: {fileID: 9042213740240635279, guid: 21d6c0d615cc72d45a0a36de13b0bbd0,
     type: 3}
+  playerHandTransform: {fileID: 1990859856}
 --- !u!4 &2094748423
 Transform:
   m_ObjectHideFlags: 0

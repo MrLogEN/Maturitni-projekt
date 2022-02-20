@@ -347,7 +347,7 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  jumpForce: 11
+  jumpForce: 14
   ba: {fileID: 0}
 --- !u!114 &7111481021066047305
 MonoBehaviour:
@@ -387,6 +387,7 @@ MonoBehaviour:
     type: 3}
   heartList: []
   specialLoad: 0
+  specialBar: {fileID: 0}
 --- !u!95 &7111481021066047311
 Animator:
   serializedVersion: 3

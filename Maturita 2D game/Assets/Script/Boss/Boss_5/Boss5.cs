@@ -20,6 +20,10 @@ public class Boss5 : MonoBehaviour, IBoss
     [SerializeField] private GameObject fireBall;
     [SerializeField] private Transform[] coconutSpawners;
     [SerializeField] private GameObject coconut;
+    [SerializeField] private Transform carrotSpawner;
+    [SerializeField] private GameObject carrot;
+    [SerializeField] private Transform bouncingSpawner;
+    [SerializeField] private GameObject bouncingBomb;
     System.Random rn = new System.Random();
     public void TakeDamage(float damage)
     {
@@ -101,13 +105,14 @@ public class Boss5 : MonoBehaviour, IBoss
                             StartCoroutine(SpawnCoconuts());
                             break;
                         case 1:
+                            SpawnCarrot();
                             break;
                         case 2:
+                            SpawnBouncing();
                             break;
                         default:
                             break;
                     }
-                    
                 }
                 break;
             case Level5Manager.Level5State.End:
@@ -120,11 +125,23 @@ public class Boss5 : MonoBehaviour, IBoss
     {
         Instantiate(fireBall, flameSpawner.transform.position, Quaternion.identity);
     }
+    void SpawnCarrot()
+    {
+        Instantiate(carrot, carrotSpawner.transform.position, Quaternion.identity);
+    }
+    void SpawnBouncing()
+    {
+        float force = 5f;
+        GameObject go = Instantiate(bouncingBomb,bouncingSpawner.transform.position,Quaternion.identity);
+        Rigidbody2D rbBomb = go.GetComponent<Rigidbody2D>();
+        rbBomb.AddForce(new Vector2(-force, -force),ForceMode2D.Impulse);
+
+    }
     IEnumerator SpawnCoconuts()
     {
         //int d = 200;
         print("kokot");
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             Transform t = coconutSpawners[Random.Range(0, coconutSpawners.Length)];
             Instantiate(coconut, t.position, Quaternion.identity);

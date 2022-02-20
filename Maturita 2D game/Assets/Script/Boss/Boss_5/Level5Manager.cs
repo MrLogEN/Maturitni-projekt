@@ -15,6 +15,7 @@ public class Level5Manager : MonoBehaviour
     public GameObject titleCanvas;
     public Animator titleAnimator;
     public GameObject groundFlamesPrefab;
+    public Transform playerHandTransform;
     public enum Level5State
     {
         Start,
