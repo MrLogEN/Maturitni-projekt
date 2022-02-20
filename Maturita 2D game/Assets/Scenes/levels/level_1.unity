@@ -521,9 +521,24 @@ PrefabInstance:
       objectReference: {fileID: 282944073}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
+      propertyPath: shootS
+      value: 
+      objectReference: {fileID: 1602722946}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
       propertyPath: jumpSfx
       value: 
       objectReference: {fileID: 8300000, guid: 61d07162ba994b742885f1f12e18a2f3, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: walkSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: e175b168f422e154492ab41bfd8a57a5, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: escUISfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 33eae567a2a84d142a6b63806bd2f1c1, type: 3}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: movmentS
@@ -536,14 +551,209 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
+      propertyPath: cannonSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b7b6f2911f871f4fb6db2220e8c5b05, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
       propertyPath: crouchSfx
       value: 
       objectReference: {fileID: 8300000, guid: c873f21dfbb7a144fbec5469d27e058b, type: 3}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
+      propertyPath: mortarSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 88ffd4ea554fd664e8c5b4c32c8ce11c, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: movementS
+      value: 
+      objectReference: {fileID: 1916632036}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: clickUISfx
+      value: 
+      objectReference: {fileID: 8300000, guid: da111f1b8fbe6d248ba1146aec7f83ca, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: hoverUISfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 234c2e90038b1254a849100694c1fce9, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: playerhitS
+      value: 
+      objectReference: {fileID: 377627021}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: whoosh1Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: f7f7cb9ac9fe2774e95e319e6f3e87d5, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: whoosh2Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: d80ea5b5eafa8704dbff58d86b4965c9, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: whoosh3Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 993b1327218790d48b62ee3284f44b10, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: bigshootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 91450000e35805a4b9e99c088ab94f6c, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: jumpbossSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 14783d53e29773549b4dc0ba85389ce6, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: roothandSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c2c8a342eef9804ca62c30f1880fb38, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
       propertyPath: shootSource
       value: 
       objectReference: {fileID: 1602722946}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: playerhitSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: f5df3e753c7edc4469040d1e3e55d30a, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: arrowshootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 82f0f88ea33e89744a56e486150639ff, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: drinkwaterSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fc5903b1c89a994a8056191ee416402, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: groundslamSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: dab4f1cbca13e094689296b207ba4288, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: groundwaveSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 53c555d79855e2a4092c927217b69133, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: lampionpopSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b1f65b57706f52428aac25f07d41381, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: rootgroundSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 295dd86105fedf64cb36444da4136d64, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: melonsplashSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: cbc1c444beedab549a36be5acda7bda6, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: swordchargeSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 8358d7d228ba5b34da9b5630ab5df0fe, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: swordslash1Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: d611f16d2f7651a47855956ca95e6f2b, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: swordslash2Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 511f02a598acc3741bbb6a6ad4af0eb1, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: swordslash3Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: a0e9c82d8f9b207408f933bf3f8b3330, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: tornadospinSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: abbb340525c827a4fadd9f5dc22e5ee2, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: coconutfall1Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 537cf56391acd8b4c8cb673a1aa565b6, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: coconutfall2Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 456b3b13307d55a4d9bc3b48441ae19a, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: coconutfall3Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 1aa711ef97ab85245a4de292f3f0da34, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: fireballlandSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: f66c690bce2f098438c96c2d03af2372, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: molotovthrowSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ae999aacb811b445b67e3036901751e, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: tomatosplashSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 68879354ee7d1f045b607f70db7ce710, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: carrotmissileSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fe49da4383d5ad4db4def7cdbed0cbb, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: coconutspawn1Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: d8eb3ceae0880454d866fef12743b37c, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: coconutspawn2Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d9a352ffec566e4abd8b49484cefc31, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: coconutspawn3Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 9aaf4854d387ed746b5dcf6bc843b3c9, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: molotovsplashSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 1bd3b94045667f9488640874a248942d, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: fireballshoot1Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a281984a85c4f4088070eb59355d2d, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: fireballshoot2Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: df1eea9613cb67d479c538f5f41d0e85, type: 3}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: fireballshoot3Sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: b6351c90da4f2f04d91a0553d081291d, type: 3}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: player.Array.size
@@ -554,6 +764,11 @@ PrefabInstance:
       propertyPath: sounds.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: ak47singleshootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 816186d726c662d4abd9c72ce8768c32, type: 3}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: player.Array.data[0]
@@ -569,6 +784,11 @@ PrefabInstance:
       propertyPath: player.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
+        type: 3}
+      propertyPath: multiplearrowshootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: a886e726b15113646a1be3e2216a9260, type: 3}
     - target: {fileID: 8644423911459067642, guid: b697a3a9babb4aa42ba6cefd2e72d164,
         type: 3}
       propertyPath: sounds.Array.data[1].clip
@@ -616,6 +836,133 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b697a3a9babb4aa42ba6cefd2e72d164, type: 3}
+--- !u!1 &377627020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377627022}
+  - component: {fileID: 377627021}
+  m_Layer: 7
+  m_Name: PlayerhitSfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &377627021
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377627020}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &377627022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377627020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2110224904}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488392423
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +1184,7 @@ MonoBehaviour:
   projectileGameobject: {fileID: 3938597685561977273, guid: 2bbc7534f7b1f2649b699a7a6bb37daf,
     type: 3}
   target: {fileID: 2110224904}
+  animator: {fileID: 0}
   height: 5
   timeToLive: 3
   fireRate: 2
@@ -1494,6 +1842,8 @@ MonoBehaviour:
   cannonBallGameObject: {fileID: 5122096921446846692, guid: cebf14854eae4bb44a23ab349cfd4834,
     type: 3}
   target: {fileID: 2110224904}
+  hand: {fileID: 0}
+  animator: {fileID: 0}
   speed: 15
   timeToLive: 3
   fireRate: 2

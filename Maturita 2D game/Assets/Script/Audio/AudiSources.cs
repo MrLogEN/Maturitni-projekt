@@ -9,8 +9,8 @@ public class AudiSources : MonoBehaviour
     public AudioSource movementSfxSource, shootSfxSource;
     void Start()
     {
-        AudioManager.instance.movmentS = movementSfxSource;
-        AudioManager.instance.shootSource = shootSfxSource;
+        AudioManager.instance.movementS = movementSfxSource;
+        AudioManager.instance.shootS  = shootSfxSource;
     }
 
 }

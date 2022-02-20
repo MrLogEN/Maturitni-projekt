@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+ 
 
 
 public class EscMenu : MonoBehaviour
 {
+     
     public Image winscreen;
     public Image deathscreen;
     public bool paused = false;
@@ -88,6 +90,8 @@ public class EscMenu : MonoBehaviour
             
         }
     }
+     
+
     public void Resume()
     {
         Time.timeScale = 1f;
