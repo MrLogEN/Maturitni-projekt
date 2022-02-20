@@ -11,8 +11,14 @@ public class FireBall : MonoBehaviour
     {
         player = FindObjectOfType<PlayerActions>().gameObject;
         pos = new Vector3(player.transform.position.x,-4.68f,0);
-        float ang = Vector3.Angle(transform.position, pos);
-        print("Angle is " + ang);
+        //float ang = Vector3.Angle(transform.position, pos);
+        //print("Angle is " + ang);
+
+        Vector2 direction = pos - transform.position;
+        direction.Normalize();
+        float ang = Vector3.Cross(direction, transform.up).z;
+
+
         transform.rotation = Quaternion.Euler(0,0,ang);
     }
 
