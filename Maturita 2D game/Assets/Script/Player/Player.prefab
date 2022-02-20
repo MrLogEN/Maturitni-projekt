@@ -386,7 +386,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 5669180292627713515, guid: a600346b6f23dbf47aa2c4ecf095df0b,
     type: 3}
   heartList: []
-  damagePopupPref: {fileID: 3180577939424851957, guid: 3076c19dbd9712f4b9491efd58b62cfa,
+  damagePopupPref: {fileID: 415194907784569677, guid: 3076c19dbd9712f4b9491efd58b62cfa,
     type: 3}
   specialLoad: 0
   specialBar: {fileID: 0}

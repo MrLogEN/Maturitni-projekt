@@ -33,8 +33,24 @@ public class SpecialBullet : MonoBehaviour
             {
                 damage = 1*specialDamage;
             }
+            IBoss boss = collision.gameObject.GetComponent<IBoss>();
+            try
+            {
+                Boss3Script kokot = collision.gameObject.GetComponent<Boss3Script>();
+
+                if (kokot.isInvincible)
+                {
+                    damage = 0;
+                }
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            DamagePopUp.Create(transform.position, damage, true);
             //CollisionEnter(gameObject.name, collision.gameObject);
-            collision.gameObject.GetComponent<IBoss>().TakeDamage(damage);
+            boss.TakeDamage(damage);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag != "Player")

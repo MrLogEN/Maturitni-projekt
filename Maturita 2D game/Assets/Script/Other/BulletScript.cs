@@ -33,9 +33,24 @@ public class BulletScript : MonoBehaviour
                 damage = 1;
             }
             //CollisionEnter(gameObject.name, collision.gameObject);
-            DamagePopUp.Create(transform.position, damage);
             //Instantiate(PlayerActions.instance.damagePopupPref, transform.position, Quaternion.identity);
-            collision.gameObject.GetComponent<IBoss>().TakeDamage(damage);
+            IBoss boss = collision.gameObject.GetComponent<IBoss>();
+            try
+            {
+                Boss3Script kokot = collision.gameObject.GetComponent<Boss3Script>();
+               
+                if (kokot.isInvincible)
+                {
+                    damage = 0;
+                }
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            DamagePopUp.Create(transform.position, damage, false);
+            boss.TakeDamage(damage);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag != "Player")
