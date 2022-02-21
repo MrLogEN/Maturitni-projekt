@@ -51,6 +51,7 @@ public class BouncingBombBehavior : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioManager.instance.PlayTomatoSplashSfx();
         if (collision.gameObject.tag == "Player")
         {
             pa = collision.gameObject.GetComponent<PlayerActions>();

@@ -45,6 +45,7 @@ public class LevelSelectMovement : MonoBehaviour
         {
             transform.position -= transform.up.normalized * (Time.deltaTime * moveSpeed);
         }
+
     }
     public void ChangeBindings(object sender, EventArgs e)
     {

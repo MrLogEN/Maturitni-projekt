@@ -121,6 +121,7 @@ public class Boss4 : MonoBehaviour, IBoss
     {
         yield return new WaitForSeconds(1);
         postion_x = 5f;
+        AudioManager.instance.PlayGroundWaveSfx();
         for (int i = 0; i < 20; i++)
         {
             yield return new WaitForSeconds(0.3f);

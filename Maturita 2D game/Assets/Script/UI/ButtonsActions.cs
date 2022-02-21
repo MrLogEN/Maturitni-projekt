@@ -122,6 +122,7 @@ public class ButtonsActions : MonoBehaviour
 
         screenModeDropdown.value = screenMode;
         resolutionDropdown.value = resolution;
+        OnBindingChange?.Invoke(this, EventArgs.Empty);
 
     }
     private void Update()
