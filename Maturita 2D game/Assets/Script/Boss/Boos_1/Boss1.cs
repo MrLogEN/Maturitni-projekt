@@ -37,6 +37,7 @@ public class Boss1 : MonoBehaviour,IBoss
     void Start()
     {
         Health = MaxHealth;
+        Physics2D.IgnoreLayerCollision(8, 10);
         AudioManager.instance.PlayMusicL1();
     }
 

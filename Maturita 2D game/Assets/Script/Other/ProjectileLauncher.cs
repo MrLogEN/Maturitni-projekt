@@ -40,7 +40,8 @@ public class ProjectileLauncher : MonoBehaviour
         projectile = projectileClone.GetComponent<Rigidbody2D>(); // získání komponenty Rigidbody2D z vytvořené instance
                                                                   //Physics2D.gravity = Vector2.up * Physics2D.gravity; // přiřazení gravitace
         projectile.velocity = CalculateLaunchVelocity(); // přiřazení vypočítané rychlosti komponentě Rigidbody2D
-        print(CalculateLaunchVelocity());
+        AudioManager.instance.PlayMortarSfx();
+        //print(CalculateLaunchVelocity());
     }
 
     // metoda na výpočet trajektorie pohybu
