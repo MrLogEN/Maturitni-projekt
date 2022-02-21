@@ -189,6 +189,122 @@ MonoBehaviour:
     m_Key: Warning text
     m_Metadata:
       m_Items: []
+  - m_Id: 12255015700312064
+    m_Key: main_menu/Canvas/SettingsMenu/Viewport/ScrollbarContent/Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12255044800393216
+    m_Key: main_menu/Canvas/SettingsMenu/Viewport/ScrollbarContent/Fullscreen 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12255060097019904
+    m_Key: main_menu/Canvas/SettingsMenu/Viewport/ScrollbarContent/Fullscreen 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12255302624260096
+    m_Key: main_menu/Canvas/SettingsMenu/Viewport/ScrollbarContent/Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12255319531499520
+    m_Key: main_menu/Canvas/SettingsMenu/Viewport/ScrollbarContent/Resolution 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12255336715563008
+    m_Key: main_menu/Canvas/SettingsMenu/Viewport/ScrollbarContent/Resolution 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12256557572599808
+    m_Key: Loading text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12258007593824256
+    m_Key: Skills text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12258615797264384
+    m_Key: Double jump text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12258690665590784
+    m_Key: Swiftness text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12258779387703296
+    m_Key: Damage text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12258820932284416
+    m_Key: Available skill points text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265158685011968
+    m_Key: Level locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12265612940718080
+    m_Key: level_select/Player/Vildajegei
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12269214178521088
+    m_Key: level_5/EscapeMenuCanvasLevel/EscSettingBackGround/EscSettings/Viewport/ScrollbarContent/Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12269237368827904
+    m_Key: level_5/EscapeMenuCanvasLevel/EscSettingBackGround/EscSettings/Viewport/ScrollbarContent/Fullscreen
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12269247632289792
+    m_Key: level_5/EscapeMenuCanvasLevel/EscSettingBackGround/EscSettings/Viewport/ScrollbarContent/Fullscreen
+      2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12269465664794624
+    m_Key: level_5/EscapeMenuCanvasLevel/EscSettingBackGround/EscSettings/Viewport/ScrollbarContent/Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12269482005803008
+    m_Key: level_5/EscapeMenuCanvasLevel/EscSettingBackGround/EscSettings/Viewport/ScrollbarContent/Resolution
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12269499798040576
+    m_Key: level_5/EscapeMenuCanvasLevel/EscSettingBackGround/EscSettings/Viewport/ScrollbarContent/Resolution
+      2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12270907658121216
+    m_Key: Level failed text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12270952285515776
+    m_Key: Level completed text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12274091277463552
+    m_Key: Story text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12274177420079104
+    m_Key: Game mechanics text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12274280209887232
+    m_Key: Supervisor programmer text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12274454776819712
+    m_Key: Programmers text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12274544874663936
+    m_Key: Graphics text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12274658234118144
+    m_Key: School text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

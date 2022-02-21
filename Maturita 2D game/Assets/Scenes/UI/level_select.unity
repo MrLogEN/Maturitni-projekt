@@ -1517,6 +1517,8 @@ GameObject:
   - component: {fileID: 1667720162}
   - component: {fileID: 1667720164}
   - component: {fileID: 1667720163}
+  - component: {fileID: 1667720165}
+  - component: {fileID: 1667720166}
   m_Layer: 5
   m_Name: Vildajegei
   m_TagString: Untagged
@@ -1547,7 +1549,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667720161}
-  m_Text: ' '
+  m_Text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C \u0437\u0430\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u043D"
   m_OffsetZ: -1
   m_CharacterSize: 0.2
   m_LineSpacing: 1
@@ -1602,6 +1604,88 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1667720165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667720161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:da2358a0a7be56c4dbc5e9e476106d45
+    m_TableEntryReference:
+      m_KeyId: 12265158685011968
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 1
+--- !u!114 &1667720166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667720161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects,
+        asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 1667720165}
+        m_TrackedProperties:
+          items:
+          - id: 1
+          - id: 2
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    00000001:
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties,
+        asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:da2358a0a7be56c4dbc5e9e476106d45
+          m_TableEntryReference:
+            m_KeyId: 12265612940718080
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+    00000002:
+      type: {class: LongTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties,
+        asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: en
+          value: 12265158685011968
+        - localeIdentifier:
+            m_Code: ru
+          value: 12265158685011968
 --- !u!1 &1693964940
 GameObject:
   m_ObjectHideFlags: 0
