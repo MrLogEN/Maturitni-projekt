@@ -7,44 +7,62 @@ public static class ControlBinding
     static string filePath = Application.dataPath + "/defaults/binding.json";
     public static BindingObject Load()
     {
+
+        
         BindingObject bo;
         if (File.Exists(filePath))
         {
-            string str = File.ReadAllText(filePath);
-            if (str.Length > 0)
-            {
-                Debug.Log(File.ReadAllText(filePath));
-                bo = JsonUtility.FromJson<BindingObject>(str);
-                Debug.Log("Loaded from file");
-            }
-            else
-            {
-                bo = new BindingObject();
-                bo.LoadDefault();
-            }
+            FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);
+            StreamReader sr = new StreamReader(fs);
+            string str1 = sr.ReadLine();
+            sr.Close();
+            fs.Close();
+            bo = JsonUtility.FromJson<BindingObject>(str1);
         }
         else
         {
+            if (!Directory.Exists(directoryPath)) Directory.CreateDirectory(directoryPath);
             bo = new BindingObject();
             bo.LoadDefault();
-            Debug.Log("Loaded default");
+            Save(bo);
+            FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);
+            StreamReader sr = new StreamReader(fs);
+            string str1 = sr.ReadLine();
+            sr.Close();
+            fs.Close();
+            bo = JsonUtility.FromJson<BindingObject>(str1);
         }
-        Debug.Log(bo.left);
+        
+
+        //if (str1.Length > 0)
+        //{
+        //    bo = JsonUtility.FromJson<BindingObject>(str1);
+        //}
+        //else
+        //{
+        //    bo = new BindingObject();
+        //    bo.LoadDefault();
+        //}
+
+       
         return bo;
     }
     public static void Save(BindingObject bo)
     {
         if (!Directory.Exists(directoryPath))
         {
-            Debug.Log("doesn't exist");
             Directory.CreateDirectory(directoryPath);
-            Debug.Log("exists");
         }
-        if (!File.Exists(filePath)) File.Create(filePath);
 
+
+        FileStream fs = new FileStream(filePath,FileMode.OpenOrCreate);
+        StreamWriter sw = new StreamWriter(fs);
         string js = JsonUtility.ToJson(bo);
-        Debug.Log(js);
-        File.WriteAllText(filePath, js);
+        sw.WriteLine(js);
+        sw.Close();
+        fs.Close();
+        //Debug.Log(js);
+        //File.WriteAllText(filePath, js);
     }
 }
 public class BindingObject
