@@ -28,7 +28,6 @@ public class AudioManager : MonoBehaviour
     {
          
         bo = ControlBinding.Load();
-        
         am.SetFloat(MASTER_NAME, Mathf.Log10(bo.masterVolume)*20);
         am.SetFloat(MUSIC_NAME, Mathf.Log10(bo.musicVolume) * 20);
         am.SetFloat(SFX_NAME, Mathf.Log10(bo.sfxVolume) * 20);

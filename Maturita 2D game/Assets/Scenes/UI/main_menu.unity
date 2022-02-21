@@ -3401,7 +3401,6 @@ GameObject:
   - component: {fileID: 683257361}
   - component: {fileID: 683257360}
   - component: {fileID: 683257359}
-  - component: {fileID: 683257362}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -3516,79 +3515,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683257357}
   m_CullTransparentMesh: 1
---- !u!114 &683257362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683257357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba2c0995c997564bb4cacc5994ff77a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  am: {fileID: 24100000, guid: 9425eefa66c6c44468113fbd4d45b684, type: 2}
-  ba: {fileID: 0}
-  movementS: {fileID: 0}
-  shootS: {fileID: 0}
-  playerhitS: {fileID: 0}
-  splashS: {fileID: 0}
-  bossshootS: {fileID: 0}
-  bossattackS: {fileID: 0}
-  UIS: {fileID: 0}
-  musicS: {fileID: 0}
-  jumpSfx: {fileID: 0}
-  crouchSfx: {fileID: 0}
-  shootSfx: {fileID: 0}
-  walkSfx: {fileID: 0}
-  bigshootSfx: {fileID: 0}
-  playerhitSfx: {fileID: 0}
-  tomatosplashSfx: {fileID: 0}
-  cannonSfx: {fileID: 0}
-  mortarSfx: {fileID: 0}
-  melonsplashSfx: {fileID: 0}
-  rootgroundSfx: {fileID: 0}
-  roothandSfx: {fileID: 0}
-  tornadospinSfx: {fileID: 0}
-  swordchargeSfx: {fileID: 0}
-  lampionpopSfx: {fileID: 0}
-  arrowshootSfx: {fileID: 0}
-  multiplearrowshootSfx: {fileID: 0}
-  molotovthrowSfx: {fileID: 0}
-  molotovsplashSfx: {fileID: 0}
-  ak47singleshootSfx: {fileID: 0}
-  hoverUISfx: {fileID: 0}
-  clickUISfx: {fileID: 0}
-  escUISfx: {fileID: 0}
-  carrotmissileSfx: {fileID: 0}
-  coconutfall1Sfx: {fileID: 0}
-  coconutfall2Sfx: {fileID: 0}
-  coconutfall3Sfx: {fileID: 0}
-  coconutspawn1Sfx: {fileID: 0}
-  coconutspawn2Sfx: {fileID: 0}
-  coconutspawn3Sfx: {fileID: 0}
-  drinkwaterSfx: {fileID: 0}
-  fireballlandSfx: {fileID: 0}
-  fireballshoot1Sfx: {fileID: 0}
-  fireballshoot2Sfx: {fileID: 0}
-  fireballshoot3Sfx: {fileID: 0}
-  groundslamSfx: {fileID: 0}
-  groundwaveSfx: {fileID: 0}
-  jumpbossSfx: {fileID: 0}
-  swordslash1Sfx: {fileID: 0}
-  swordslash2Sfx: {fileID: 0}
-  swordslash3Sfx: {fileID: 0}
-  whoosh1Sfx: {fileID: 0}
-  whoosh2Sfx: {fileID: 0}
-  whoosh3Sfx: {fileID: 0}
-  level5Music: {fileID: 0}
-  level4Music: {fileID: 0}
-  level3Music: {fileID: 0}
-  level2Music: {fileID: 0}
-  level1Music: {fileID: 0}
-  mainMenuMusic: {fileID: 0}
-  levelSelectMusic: {fileID: 0}
 --- !u!1 &696674299
 GameObject:
   m_ObjectHideFlags: 0
