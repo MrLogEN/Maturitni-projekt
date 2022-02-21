@@ -9,7 +9,7 @@ public class Boss3Script : MonoBehaviour, IBoss
     private int _damage;
     private readonly int _phases = 2;
     private int _currentPhase;
-    public int bossMaxHealth = 50;
+    public int bossMaxHealth = 100;
 
     #endregion
     public static Boss3Script instance;

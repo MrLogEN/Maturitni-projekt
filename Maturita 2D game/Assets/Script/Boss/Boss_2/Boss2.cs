@@ -7,7 +7,7 @@ public class Boss2 : MonoBehaviour,IBoss
     private float _health;
     private int _damage = 1;
     private int _phases;
-    private int _maxHealth = 20;
+    private int _maxHealth = 100;
     public float Health { get => _health; set => _health = value; }
     public int Damage => _damage;
     public int Phases { get => _phases; set => _phases = value; }

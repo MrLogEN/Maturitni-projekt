@@ -95,7 +95,7 @@ public class Boss4 : MonoBehaviour, IBoss
             {
                 attack4 = true;
                 anim.Play("Stage2_Jump");
-                AudioManager.instance.PlayJumpBossSfx();
+                //AudioManager.instance.PlayJumpBossSfx();
                 Vector2 v = CalculateLaunchVelocity(player.transform.position, transform.position, 1.25f);
                 playerX = player.transform.position.x;
                 transform.GetComponent<Rigidbody2D>().velocity = v;
@@ -105,23 +105,23 @@ public class Boss4 : MonoBehaviour, IBoss
     }
     IEnumerator Play3timesShoot()
     {
-        AudioManager.instance.PlayAK47SingleShootSfx();
+        //AudioManager.instance.PlayAK47SingleShootSfx();
         yield return new WaitForSeconds(1);
-        AudioManager.instance.PlayAK47SingleShootSfx();
+        //AudioManager.instance.PlayAK47SingleShootSfx();
         yield return new WaitForSeconds(1);
-        AudioManager.instance.PlayAK47SingleShootSfx();
+        //AudioManager.instance.PlayAK47SingleShootSfx();
     }
     IEnumerator WaitSecond()
     {
         yield return new WaitForSeconds(1);
         Instantiate(molotov, transform.position, transform.rotation);
-        AudioManager.instance.PlayMolotovThrowSfx();
+        //AudioManager.instance.PlayMolotovThrowSfx();
     }
     IEnumerator Wait1Second()
     {
         yield return new WaitForSeconds(1);
         postion_x = 5f;
-        AudioManager.instance.PlayGroundWaveSfx();
+        //AudioManager.instance.PlayGroundWaveSfx();
         for (int i = 0; i < 20; i++)
         {
             yield return new WaitForSeconds(0.3f);
@@ -146,7 +146,7 @@ public class Boss4 : MonoBehaviour, IBoss
         yield return new WaitForSeconds(3f);
         attack4 = false;
         anim.Play("Stage2_Jump");
-        AudioManager.instance.PlayJumpBossSfx();
+        //AudioManager.instance.PlayJumpBossSfx();
         Vector2 v = CalculateLaunchVelocity(new Vector2(7.96f, -2.12f), transform.position, 1.25f);
         transform.GetComponent<Rigidbody2D>().velocity = v;
     }
@@ -154,7 +154,7 @@ public class Boss4 : MonoBehaviour, IBoss
     private float _health;
     private int _damage = 1;
     private int _phases;
-    private int _maxHealth = 20;
+    private int _maxHealth = 100;
     public int Damage => _damage;
     public int Phases { get => _phases; set => _phases = value; }
     float IBoss.Health { get => _health; set => _health = value; }
@@ -188,7 +188,7 @@ public class Boss4 : MonoBehaviour, IBoss
             _health = 0;
             Time.timeScale = 0;
             SaveObject so = SaveLoad.Load();
-            so.lvl2IsCompleted = true;
+            so.lvl4IsCompleted = true;
             SaveLoad.Save(so);
         }
     }

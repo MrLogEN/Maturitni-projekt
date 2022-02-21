@@ -5,7 +5,7 @@ using System.Collections;
 public class Boss5 : MonoBehaviour, IBoss
 {
     private float _health;
-    private int _maxHealth = 20;
+    private int _maxHealth = 100;
     private int _damage;
     private int _phases;
     public float Health { get => _health; set => _health = value; }
