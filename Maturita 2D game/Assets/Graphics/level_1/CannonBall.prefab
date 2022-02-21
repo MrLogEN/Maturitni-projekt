@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 573609208122810428}
   - component: {fileID: 1754391495870834518}
   - component: {fileID: 6371910571067238921}
-  - component: {fileID: 5223282337961732734}
+  - component: {fileID: 5685808703235368580}
   m_Layer: 10
   m_Name: CannonBall
   m_TagString: BossAttack
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5223282337961732734
+--- !u!114 &5685808703235368580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

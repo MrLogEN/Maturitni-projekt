@@ -26,13 +26,11 @@ public class AudioManager : MonoBehaviour
                      level1Music,mainMenuMusic,levelSelectMusic;
     void Awake()
     {
-         
+        ba = FindObjectOfType<ButtonsActions>();
         bo = ControlBinding.Load();
-        
         am.SetFloat(MASTER_NAME, Mathf.Log10(bo.masterVolume)*20);
         am.SetFloat(MUSIC_NAME, Mathf.Log10(bo.musicVolume) * 20);
         am.SetFloat(SFX_NAME, Mathf.Log10(bo.sfxVolume) * 20);
-
         if (instance == null)
         {
             instance = this;
@@ -106,6 +104,10 @@ public class AudioManager : MonoBehaviour
         bossattackS.clip = rootgroundSfx;
         bossattackS.Play();
     }
+    public void StopRootGroundSfx()
+    {
+        bossattackS.Stop();
+    }
     public void PlayRootHandSfx()
     {
         bossattackS.clip = roothandSfx;
@@ -118,8 +120,12 @@ public class AudioManager : MonoBehaviour
     }
     public void PlaySwordChargeSfx()
     {
-        bossattackS.clip = rootgroundSfx;
+        bossattackS.clip = swordchargeSfx;
         bossattackS.Play();
+    }
+    public void StopSwordCharge()
+    {
+        bossattackS.Stop();
     }
     public void PlaySwordSlashSfx()
     {

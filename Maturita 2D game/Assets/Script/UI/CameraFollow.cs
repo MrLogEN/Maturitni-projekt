@@ -13,6 +13,7 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         transform.position = target.position + offset;
+        AudioManager.instance.PlayMusicLevelSelect();
     }
     void Update()
     {

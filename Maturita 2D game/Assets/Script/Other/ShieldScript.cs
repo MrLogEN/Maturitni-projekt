@@ -64,6 +64,7 @@ public class ShieldScript : MonoBehaviour
     private async void ChangeForm()
     {
         boss = FindObjectOfType<Boss3Script>();
+        AudioManager.instance.StopSwordCharge();
         Destroy(this.gameObject);
         await Task.Delay(100);
         boss.ChangeAnimationState("boss3_ChangeFormBack");

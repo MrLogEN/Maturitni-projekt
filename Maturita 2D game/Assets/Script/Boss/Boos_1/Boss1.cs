@@ -37,6 +37,8 @@ public class Boss1 : MonoBehaviour,IBoss
     void Start()
     {
         Health = MaxHealth;
+        Physics2D.IgnoreLayerCollision(8, 10);
+        AudioManager.instance.PlayMusicL1();
     }
 
     // Update is called once per frame

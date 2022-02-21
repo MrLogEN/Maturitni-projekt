@@ -10,6 +10,10 @@ public class MainMenu : MonoBehaviour
     //public event EventHandler OnSettingsEnterMenu;
     public GameObject ContinueBut;
     public GameObject WarningPanel;
+    private void Start()
+    {
+        AudioManager.instance.PlayMusicMainMenu();
+    }
     public void PlayGame()
     {
         //SceneManager.LoadScene("level_select");

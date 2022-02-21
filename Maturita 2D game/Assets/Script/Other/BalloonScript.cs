@@ -26,6 +26,7 @@ public class BalloonScript : MonoBehaviour
         if (collision.tag == "PlayerAttack")
         {
             //Destroy(this.gameObject);
+            AudioManager.instance.PlayLampionPopSfx();
             isDestroyed = true;
         }
     }

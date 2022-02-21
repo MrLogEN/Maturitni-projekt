@@ -91,6 +91,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         ChangeAnimationState(IDLE);
         nextRush = Time.time+3;
         Physics2D.IgnoreLayerCollision(10, 11);
+        AudioManager.instance.PlayMusicL3();
     }
     // Update is called once per frame
     void Update()
@@ -123,6 +124,7 @@ public class Boss3Script : MonoBehaviour, IBoss
                 //Rush();
                 isRushing = true;
                 ChangeAnimationState(RUN);
+                AudioManager.instance.PlaySwordChargeSfx();
             }
             Rush2();
 
@@ -152,7 +154,9 @@ public class Boss3Script : MonoBehaviour, IBoss
     private async void Slash()
     {
         ChangeAnimationState(SLASH);
-        await Task.Delay(840);
+        await Task.Delay(500);
+        AudioManager.instance.PlaySwordSlashSfx();
+        await Task.Delay(340);
         ChangeAnimationState(IDLE);
         isSlashed = false;
     }
@@ -201,6 +205,7 @@ public class Boss3Script : MonoBehaviour, IBoss
                     lastPos = new Vector3(6.71f, lastPos.y, lastPos.z);
                     isRushing = false;
                     ChangeAnimationState(IDLE);
+                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
                 }
             }
         }
