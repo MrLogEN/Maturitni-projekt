@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8523118576199227745}
   - component: {fileID: 7630562851345014283}
   - component: {fileID: 3013048195567194964}
-  - component: {fileID: -3013226044339847840}
+  - component: {fileID: 3712531483291598474}
   m_Layer: 10
   m_Name: Projectile
   m_TagString: BossAttack
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-3013226044339847840
+--- !u!114 &3712531483291598474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +131,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3938597685561977273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af8f4438ed65d749af69d068c205473, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fbb62305c651254d9326a9f51e7988f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

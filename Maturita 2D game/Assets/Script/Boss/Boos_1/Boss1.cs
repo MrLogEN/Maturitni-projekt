@@ -37,6 +37,7 @@ public class Boss1 : MonoBehaviour,IBoss
     void Start()
     {
         Health = MaxHealth;
+        AudioManager.instance.PlayMusicL1();
     }
 
     // Update is called once per frame
