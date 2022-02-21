@@ -7,12 +7,10 @@ public class Spikes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         Destroy(gameObject, 1.75f);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

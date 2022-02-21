@@ -95,6 +95,7 @@ public class Boss4 : MonoBehaviour, IBoss
             {
                 attack4 = true;
                 anim.Play("Stage2_Jump");
+                AudioManager.instance.PlayJumpBossSfx();
                 Vector2 v = CalculateLaunchVelocity(player.transform.position, transform.position, 1.25f);
                 playerX = player.transform.position.x;
                 transform.GetComponent<Rigidbody2D>().velocity = v;
@@ -144,6 +145,7 @@ public class Boss4 : MonoBehaviour, IBoss
         yield return new WaitForSeconds(3f);
         attack4 = false;
         anim.Play("Stage2_Jump");
+        AudioManager.instance.PlayJumpBossSfx();
         Vector2 v = CalculateLaunchVelocity(new Vector2(7.96f, -2.12f), transform.position, 1.25f);
         transform.GetComponent<Rigidbody2D>().velocity = v;
     }

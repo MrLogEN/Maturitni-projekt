@@ -156,7 +156,11 @@ public class Boss5 : MonoBehaviour, IBoss
     IEnumerator SwingTorch()
     {
         anim.Play("boss5_torch");
-        yield return new WaitForSeconds(2500);
+        yield return new WaitForSeconds(0.75f);
+        AudioManager.instance.PlayWhooshSfx();
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.instance.PlayWhooshSfx();
+        yield return new WaitForSeconds(1f);
         anim.Play("boss5_idle");
 
     }
@@ -174,7 +178,9 @@ public class Boss5 : MonoBehaviour, IBoss
     IEnumerator DoHeadSlam()
     {
         anim.Play("boss5_headslam");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.4f);
+        AudioManager.instance.PlayGroundSlamSfx();
+        yield return new WaitForSeconds(1.1f);
         anim.Play("boss5_idle");
     }
     IEnumerator DoButtonAnim()

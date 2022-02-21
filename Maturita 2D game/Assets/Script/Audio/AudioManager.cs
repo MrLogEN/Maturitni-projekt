@@ -104,6 +104,10 @@ public class AudioManager : MonoBehaviour
         bossattackS.clip = rootgroundSfx;
         bossattackS.Play();
     }
+    public void StopRootGroundSfx()
+    {
+        bossattackS.Stop();
+    }
     public void PlayRootHandSfx()
     {
         bossattackS.clip = roothandSfx;
