@@ -1,9 +1,10 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 
 public class ExitTarget : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class ExitTarget : MonoBehaviour
                 LoadingManager.instance.LoadScene("level_select");
             }
 
-            
+
             if (GameManagerTutorial.instance.GetState == GameManagerTutorial.TutorialState.Special)
             {
                 BulletScript ba;
@@ -46,18 +47,45 @@ public class ExitTarget : MonoBehaviour
                 }
             }
             //OnExitTargetFinished?.Invoke(instance, EventArgs.Empty);
-           
+
         }
     }
     private void Update()
     {
         if (GameManagerTutorial.instance.GetState == GameManagerTutorial.TutorialState.Special)
         {
-            text.text = "Shoot the target";
+            switch (LocalizationSettings.SelectedLocale.Identifier.Code)
+            {
+                case "en":
+                    text.text = "Shoot the target";
+                    break;
+                case "cs":
+                    text.text = "Střílej do cíle";
+                    break;
+                case "ru":
+                    text.text = "Стрелай по цели";
+                    break;
+                default:
+                    break;
+            }
+
         }
         if (GameManagerTutorial.instance.GetState == GameManagerTutorial.TutorialState.End)
         {
-            text.text = "Shoot the target to exit";
+            switch (LocalizationSettings.SelectedLocale.Identifier.Code)
+            {
+                case "en":
+                    text.text = "Shoot the target to exit";
+                    break;
+                case "cs":
+                    text.text = "Střílej na cíl a opusť tutoriál";
+                    break;
+                case "ru":
+                    text.text = "Стрелай по цели для выхода из обучения";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
