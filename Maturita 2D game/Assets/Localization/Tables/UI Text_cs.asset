@@ -166,5 +166,30 @@ MonoBehaviour:
     m_Localized: "N\xEDzk\xE9"
     m_Metadata:
       m_Items: []
+  - m_Id: 11999221180313600
+    m_Localized: "P\u0159ikr\u010Dit se"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012345975418880
+    m_Localized: "Pokra\u010Dovat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012313201127424
+    m_Localized: "Nov\xE1 hra"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012794472345600
+    m_Localized: Ano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012847765172224
+    m_Localized: Ne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012979206270976
+    m_Localized: "Nov\xE1 hra p\u0159ep\xED\u0161e v\xE1\u0161 dosavadn\xED  postup
+      ve h\u0159e!\nChcete pokra\u010Dovat?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

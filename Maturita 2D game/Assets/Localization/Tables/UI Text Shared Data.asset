@@ -118,7 +118,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2894186255929344
-    m_Key: Walk down texxt
+    m_Key: Walk down text
     m_Metadata:
       m_Items: []
   - m_Id: 2893097741766656
@@ -131,6 +131,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2893196098195456
     m_Key: Jump text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11999221180313600
+    m_Key: Crouch text
     m_Metadata:
       m_Items: []
   - m_Id: 2893225835810816
@@ -163,6 +167,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2924844101586944
     m_Key: Escape menu - Low option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012313201127424
+    m_Key: New game button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012345975418880
+    m_Key: Continue button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012794472345600
+    m_Key: Yes button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012847765172224
+    m_Key: No button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012979206270976
+    m_Key: Warning text
     m_Metadata:
       m_Items: []
   m_Metadata:

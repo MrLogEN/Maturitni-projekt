@@ -166,5 +166,30 @@ MonoBehaviour:
     m_Localized: Low
     m_Metadata:
       m_Items: []
+  - m_Id: 11999221180313600
+    m_Localized: Crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012313201127424
+    m_Localized: New game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012345975418880
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012794472345600
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012847765172224
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12012979206270976
+    m_Localized: "Starting new game will overwrite yout current progress! \nDo you
+      still wish to continue?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
