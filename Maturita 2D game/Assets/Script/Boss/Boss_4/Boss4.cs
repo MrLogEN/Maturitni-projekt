@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss4 : MonoBehaviour, IBoss
@@ -21,13 +20,13 @@ public class Boss4 : MonoBehaviour, IBoss
     void Start()
     {
         Physics2D.IgnoreLayerCollision(8, 10);
-        _health = 20;
+        _health = MaxHealth;
         _phases = 2;
         stage = 1;
         Hand = GameObject.FindGameObjectWithTag("BossHand");
         player = GameObject.FindGameObjectWithTag("Player");
         used = true;
-        InvokeRepeating("RandomNumber", 1f, 2f);
+        InvokeRepeating("RandomNumber", 1f, 3f);
         b = true;
         AudioManager.instance.PlayMusicL4();
     }
@@ -35,7 +34,7 @@ public class Boss4 : MonoBehaviour, IBoss
     // Update is called once per frame
     void Update()
     {
-        if (_health == 9)
+        if (_health == (float)MaxHealth * 0.5f)
         {
             if (b)
             {
@@ -50,39 +49,40 @@ public class Boss4 : MonoBehaviour, IBoss
             if (transform.position.x == playerX)
             {
                 print("noob");
-                transform.GetComponent<Rigidbody2D>().velocity = new Vector3(0,0,0);
+                transform.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
                 transform.position = new Vector3(playerX, transform.position.y, transform.position.z);
             }
         }
     }
-     public void RandomNumber()
+    public void RandomNumber()
     {
         System.Random rn = new System.Random();
         int random = rn.Next(0, 2);
         //print(random);
         if (stage == 1)
         {
-                if (used == true)
+            if (used == true)
+            {
+                anim.SetBool("GunAnimation", false);
+                used = false;
+                if (random == 0)
                 {
-                    anim.SetBool("GunAnimation", false);
-                    used = false;
-                    if (random == 0)
+                    if (!GameObject.FindGameObjectWithTag("Molotov"))
                     {
-                        if (!GameObject.FindGameObjectWithTag("Molotov"))
-                        {
-                            anim.Play("Molotov");
-                            StartCoroutine(WaitSecond());
-                        }
-                    }
-                    else
-                    {
-                        anim.Play("Putin-Gun");
+                        anim.Play("Molotov");
+                        StartCoroutine(WaitSecond());
                     }
                 }
                 else
                 {
-                    used = true;
+                    anim.Play("Putin-Gun");
+                    StartCoroutine(Play3timesShoot());
                 }
+            }
+            else
+            {
+                used = true;
+            }
         }
         else if (stage == 2)
         {
@@ -95,17 +95,26 @@ public class Boss4 : MonoBehaviour, IBoss
             {
                 attack4 = true;
                 anim.Play("Stage2_Jump");
-                Vector2 v = CalculateLaunchVelocity(player.transform.position ,transform.position, 1.25f);
+                Vector2 v = CalculateLaunchVelocity(player.transform.position, transform.position, 1.25f);
                 playerX = player.transform.position.x;
                 transform.GetComponent<Rigidbody2D>().velocity = v;
                 StartCoroutine(Wait2_5Seconds());
             }
         }
     }
+    IEnumerator Play3timesShoot()
+    {
+        AudioManager.instance.PlayAK47SingleShootSfx();
+        yield return new WaitForSeconds(1);
+        AudioManager.instance.PlayAK47SingleShootSfx();
+        yield return new WaitForSeconds(1);
+        AudioManager.instance.PlayAK47SingleShootSfx();
+    }
     IEnumerator WaitSecond()
     {
         yield return new WaitForSeconds(1);
         Instantiate(molotov, transform.position, transform.rotation);
+        AudioManager.instance.PlayMolotovThrowSfx();
     }
     IEnumerator Wait1Second()
     {
@@ -142,10 +151,11 @@ public class Boss4 : MonoBehaviour, IBoss
     private float _health;
     private int _damage = 1;
     private int _phases;
+    private int _maxHealth = 20;
     public int Damage => _damage;
     public int Phases { get => _phases; set => _phases = value; }
     float IBoss.Health { get => _health; set => _health = value; }
-    public int MaxHealth { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
 
     private Vector2 CalculateLaunchVelocity(Vector2 target, Vector2 origin, float time)
     {
@@ -167,7 +177,7 @@ public class Boss4 : MonoBehaviour, IBoss
 
     public void TakeDamage(float damage)
     {
-        _health-=damage;
+        _health -= damage;
         player.GetComponent<PlayerActions>().specialLoad++;
         //Debug.Log("Boss health" + _health);
         if (_health <= 0)
