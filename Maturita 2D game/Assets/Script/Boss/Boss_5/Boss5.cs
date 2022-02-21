@@ -140,6 +140,7 @@ public class Boss5 : MonoBehaviour, IBoss
     void SpawnFireBall()
     {
         Instantiate(fireBall, flameSpawner.transform.position, Quaternion.identity);
+        AudioManager.instance.PlayFireballShootSfx();
     }
     void SpawnCarrot()
     {

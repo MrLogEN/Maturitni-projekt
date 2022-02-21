@@ -17,6 +17,7 @@ public class Coconut : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioManager.instance.PlayCoconutFallSfx();
         if (collision.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerActions>().TakeHit();
