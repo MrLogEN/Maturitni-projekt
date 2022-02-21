@@ -44,7 +44,7 @@ public class CannonBallLauncher : MonoBehaviour
         cannonBallClone = Instantiate(cannonBallGameObject, transform.position, transform.rotation);
         cannonBall = cannonBallClone.GetComponent<Rigidbody2D>();
         direction = (target.transform.position - transform.position).normalized * speed;
-        hand.position = direction;
+        //hand.position = direction;
         cannonBall.velocity = new Vector2(direction.x, direction.y);
     }
 }
