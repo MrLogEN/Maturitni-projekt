@@ -91,6 +91,7 @@ public class Boss3Script : MonoBehaviour, IBoss
         ChangeAnimationState(IDLE);
         nextRush = Time.time+3;
         Physics2D.IgnoreLayerCollision(10, 11);
+        AudioManager.instance.PlayMusicL3();
     }
     // Update is called once per frame
     void Update()

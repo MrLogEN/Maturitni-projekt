@@ -18,6 +18,7 @@ public class Boss2 : MonoBehaviour,IBoss
     {
         _health = MaxHealth;
         _phases = 1;
+        AudioManager.instance.PlayMusicL2();
     }
     void Update()
     {
