@@ -40,6 +40,7 @@ public class Boss2Movement : MonoBehaviour
             if (transform.position.y == -2.5f)
             {
                 anim.SetBool("Attack2Start", true);
+                AudioManager.instance.PlayRootGroundSfx();
                 if (spikes.Count == 0)
                 {
                     GameObject a = Instantiate(spikePrefab) as GameObject;
@@ -55,6 +56,7 @@ public class Boss2Movement : MonoBehaviour
             if (player_postion - transform.position.y <= 0.1f)
             {
                 anim.SetBool("Attack1Start", true);
+                AudioManager.instance.PlayRootHandSfx();
             }
         }
     }

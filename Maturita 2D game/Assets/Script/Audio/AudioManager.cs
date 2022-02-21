@@ -116,8 +116,12 @@ public class AudioManager : MonoBehaviour
     }
     public void PlaySwordChargeSfx()
     {
-        bossattackS.clip = rootgroundSfx;
+        bossattackS.clip = swordchargeSfx;
         bossattackS.Play();
+    }
+    public void StopSwordCharge()
+    {
+        bossattackS.Stop();
     }
     public void PlaySwordSlashSfx()
     {
