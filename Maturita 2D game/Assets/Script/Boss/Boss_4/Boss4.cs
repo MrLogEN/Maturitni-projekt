@@ -20,8 +20,8 @@ public class Boss4 : MonoBehaviour, IBoss
     float playerX;
     void Start()
     {
-
-        _health = 10;
+        Physics2D.IgnoreLayerCollision(8, 10);
+        _health = 20;
         _phases = 2;
         stage = 1;
         Hand = GameObject.FindGameObjectWithTag("BossHand");
@@ -29,6 +29,7 @@ public class Boss4 : MonoBehaviour, IBoss
         used = true;
         InvokeRepeating("RandomNumber", 1f, 2f);
         b = true;
+        AudioManager.instance.PlayMusicL4();
     }
 
     // Update is called once per frame
@@ -58,7 +59,7 @@ public class Boss4 : MonoBehaviour, IBoss
     {
         System.Random rn = new System.Random();
         int random = rn.Next(0, 2);
-        print(random);
+        //print(random);
         if (stage == 1)
         {
                 if (used == true)
@@ -138,25 +139,14 @@ public class Boss4 : MonoBehaviour, IBoss
         transform.GetComponent<Rigidbody2D>().velocity = v;
     }
 
-    private int _health;
+    private float _health;
     private int _damage = 1;
     private int _phases;
-    public int Health { get => _health; set => _health = value; }
     public int Damage => _damage;
     public int Phases { get => _phases; set => _phases = value; }
-    public void TakeDamage()
-    {
-        Health--;
-        Debug.Log("Boss health" + Health);
-        if (Health <= 0)
-        {
-            Health = 0;
-            Time.timeScale = 0;
-            SaveObject so = SaveLoad.Load();
-            so.lvl2IsCompleted = true;
-            SaveLoad.Save(so);
-        }
-    }
+    float IBoss.Health { get => _health; set => _health = value; }
+    public int MaxHealth { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     private Vector2 CalculateLaunchVelocity(Vector2 target, Vector2 origin, float time)
     {
         //target.y = -4.8f;
@@ -174,7 +164,19 @@ public class Boss4 : MonoBehaviour, IBoss
         result.y = Vy;
         return result;
     }
-   
 
-
+    public void TakeDamage(float damage)
+    {
+        _health-=damage;
+        player.GetComponent<PlayerActions>().specialLoad++;
+        //Debug.Log("Boss health" + _health);
+        if (_health <= 0)
+        {
+            _health = 0;
+            Time.timeScale = 0;
+            SaveObject so = SaveLoad.Load();
+            so.lvl2IsCompleted = true;
+            SaveLoad.Save(so);
+        }
+    }
 }

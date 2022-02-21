@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6103477138306644044}
   - component: {fileID: 9194605327952941688}
   - component: {fileID: -6811947763111739261}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spike
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

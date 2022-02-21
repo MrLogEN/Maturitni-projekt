@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1211854512152590213}
   - component: {fileID: 433458125715553979}
   - component: {fileID: 414225576912844169}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2830322199558736051}
   - component: {fileID: 1439581085381997248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lovepik-fire-png-image_401063354_wh300-modified (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -2892535786837543543}
   - component: {fileID: 4144598562194800461}
   - component: {fileID: 3707675922044219872}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Boom
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
