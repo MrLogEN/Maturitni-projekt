@@ -1279,6 +1279,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1146940130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1690.3387
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1097.8816
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1872.1782
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304256, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785384484783304258, guid: 59ca7dd0d4281eb478009646a2527afa,
+        type: 3}
+      propertyPath: m_Name
+      value: LoadingScreen
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59ca7dd0d4281eb478009646a2527afa, type: 3}
 --- !u!1 &1250063896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1464,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -2.1644545, y: -3.8960361}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1406,7 +1475,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.523627, y: 30.436691}
   m_EdgeRadius: 0
 --- !u!50 &1250063901
 Rigidbody2D:
@@ -1676,7 +1745,7 @@ MonoBehaviour:
   cannonBallGameObject: {fileID: 5122096921446846692, guid: cebf14854eae4bb44a23ab349cfd4834,
     type: 3}
   target: {fileID: 2110224904}
-  hand: {fileID: 29620764}
+  hand: {fileID: 1428355293}
   animator: {fileID: 1250063903}
   speed: 15
   timeToLive: 3
