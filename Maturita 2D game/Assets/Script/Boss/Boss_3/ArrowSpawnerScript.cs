@@ -83,7 +83,7 @@ public class ArrowSpawnerScript : MonoBehaviour
     {
         boss.ChangeAnimationState(boss.SHOOT_STREIGHT);
         await Task.Delay(630);
-        //AudioManager.instance.PlayArrowShootSfx();
+        AudioManager.instance.PlayArrowShootSfx();
         GameObject go = Instantiate(arrow, transform.position, Quaternion.identity);
         await Task.Delay(260);
         boss.ChangeAnimationState(boss.IDLE_BOW);
@@ -107,7 +107,7 @@ public class ArrowSpawnerScript : MonoBehaviour
 
         GameObject go2 = Instantiate(projectileGameobject, transform.position, Quaternion.identity);
         go2.GetComponent<Rigidbody2D>().velocity = Vo2;
-        //AudioManager.instance.PlayMultipleArrowShootSfx();
+        AudioManager.instance.PlayMultipleArrowShootSfx();
         await Task.Delay(260);
         boss.ChangeAnimationState(boss.IDLE_BOW);
     }

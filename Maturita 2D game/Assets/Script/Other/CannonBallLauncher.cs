@@ -46,6 +46,6 @@ public class CannonBallLauncher : MonoBehaviour
         direction = (target.transform.position - transform.position).normalized * speed;
         //hand.position = direction;
         cannonBall.velocity = new Vector2(direction.x, direction.y);
-        //AudioManager.instance.PlayCannonSfx();
+        AudioManager.instance.PlayCannonSfx();
     }
 }

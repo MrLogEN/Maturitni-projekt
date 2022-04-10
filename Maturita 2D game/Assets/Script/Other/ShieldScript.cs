@@ -70,6 +70,7 @@ public class ShieldScript : MonoBehaviour
         boss.ChangeAnimationState("boss3_ChangeFormBack");
         await Task.Delay(460);
         boss.transform.position = new Vector3(6.71f, -2.67f, boss.transform.position.z);
+        boss.transform.localScale = new Vector3(Mathf.Abs(boss.transform.localScale.x), boss.transform.localScale.y, boss.transform.localScale.z);
         boss.ChangeAnimationState(boss.CHANGE);
         await Task.Delay(460);
         boss.ChangeAnimationState(boss.IDLE_BOW);

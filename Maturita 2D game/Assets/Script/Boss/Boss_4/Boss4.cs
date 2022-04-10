@@ -95,7 +95,7 @@ public class Boss4 : MonoBehaviour, IBoss
             {
                 attack4 = true;
                 anim.Play("Stage2_Jump");
-                //AudioManager.instance.PlayJumpBossSfx();
+                AudioManager.instance.PlayJumpBossSfx();
                 Vector2 v = CalculateLaunchVelocity(player.transform.position, transform.position, 1.25f);
                 playerX = player.transform.position.x;
                 transform.GetComponent<Rigidbody2D>().velocity = v;
@@ -105,23 +105,23 @@ public class Boss4 : MonoBehaviour, IBoss
     }
     IEnumerator Play3timesShoot()
     {
-        //AudioManager.instance.PlayAK47SingleShootSfx();
+        AudioManager.instance.PlayAK47SingleShootSfx();
         yield return new WaitForSeconds(1);
-        //AudioManager.instance.PlayAK47SingleShootSfx();
+        AudioManager.instance.PlayAK47SingleShootSfx();
         yield return new WaitForSeconds(1);
-        //AudioManager.instance.PlayAK47SingleShootSfx();
+        AudioManager.instance.PlayAK47SingleShootSfx();
     }
     IEnumerator WaitSecond()
     {
         yield return new WaitForSeconds(1);
         Instantiate(molotov, transform.position, transform.rotation);
-        //AudioManager.instance.PlayMolotovThrowSfx();
+        AudioManager.instance.PlayMolotovThrowSfx();
     }
     IEnumerator Wait1Second()
     {
         yield return new WaitForSeconds(1);
         postion_x = 5f;
-        //AudioManager.instance.PlayGroundWaveSfx();
+        AudioManager.instance.PlayGroundWaveSfx();
         for (int i = 0; i < 20; i++)
         {
             yield return new WaitForSeconds(0.3f);
@@ -146,7 +146,7 @@ public class Boss4 : MonoBehaviour, IBoss
         yield return new WaitForSeconds(3f);
         attack4 = false;
         anim.Play("Stage2_Jump");
-        //AudioManager.instance.PlayJumpBossSfx();
+        AudioManager.instance.PlayJumpBossSfx();
         Vector2 v = CalculateLaunchVelocity(new Vector2(7.96f, -2.12f), transform.position, 1.25f);
         transform.GetComponent<Rigidbody2D>().velocity = v;
     }

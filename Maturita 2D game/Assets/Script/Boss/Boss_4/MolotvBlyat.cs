@@ -37,7 +37,7 @@ public class MolotvBlyat : MonoBehaviour
 
         if (transform.position.y == -4.5f)
         {
-            //AudioManager.instance.PlayMolotovSplashSfx();
+            AudioManager.instance.PlayMolotovSplashSfx();
             Destroy(gameObject);
             Instantiate(fire, transform.position, Quaternion.identity);
 

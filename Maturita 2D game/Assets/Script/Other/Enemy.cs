@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, ICollisonHandler
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-
 
     public void CollisionEnter(string colliderTag, GameObject other)
     {

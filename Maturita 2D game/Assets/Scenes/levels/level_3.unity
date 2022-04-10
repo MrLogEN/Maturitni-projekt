@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0c1f3d2c4ef3f4b810826f0691590e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossMaxHealth: 20
+  bossMaxHealth: 100
   isInvincible: 0
   player: {fileID: 654920014}
   animator: {fileID: 0}
