@@ -45,7 +45,7 @@ public class DeathWin : MonoBehaviour
             deathscreen.gameObject.SetActive(true);
             healthSlider.maxValue = bossHP;
             healthSlider.value = bosshealth;
-             
+
         }
     }
 }

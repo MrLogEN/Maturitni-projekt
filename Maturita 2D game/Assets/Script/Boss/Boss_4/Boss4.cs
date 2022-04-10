@@ -17,6 +17,16 @@ public class Boss4 : MonoBehaviour, IBoss
     float postion_x;
     bool b;
     float playerX;
+
+
+    private float _health;
+    private int _damage = 1;
+    private int _phases;
+    private int _maxHealth = 100;
+    public int Damage => _damage;
+    public int Phases { get => _phases; set => _phases = value; }
+    public float Health { get => _health; set => _health = value; }
+    public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
     void Start()
     {
         Physics2D.IgnoreLayerCollision(8, 10);
@@ -151,14 +161,7 @@ public class Boss4 : MonoBehaviour, IBoss
         transform.GetComponent<Rigidbody2D>().velocity = v;
     }
 
-    private float _health;
-    private int _damage = 1;
-    private int _phases;
-    private int _maxHealth = 100;
-    public int Damage => _damage;
-    public int Phases { get => _phases; set => _phases = value; }
-    float IBoss.Health { get => _health; set => _health = value; }
-    public int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
+    
 
     private Vector2 CalculateLaunchVelocity(Vector2 target, Vector2 origin, float time)
     {

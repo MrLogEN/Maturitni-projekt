@@ -80,4 +80,11 @@ public class Boss2Movement : MonoBehaviour
         Destroy(spikes[0]);
         spikes.Clear();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerActions>().TakeHit();
+        }
+    }
 }
