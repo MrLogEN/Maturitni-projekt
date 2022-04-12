@@ -548,6 +548,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2715339807672029985, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127823153038547865, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127823153038547865, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596967005441689739, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596967005441689739, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596967005441689739, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4596967005441689739, guid: 048cde13ca369c046a344f4780430d13,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -557,6 +587,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 110.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359988532125847021, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359988532125847021, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426114508998228049, guid: 048cde13ca369c046a344f4780430d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6182887701374374694, guid: 048cde13ca369c046a344f4780430d13,
         type: 3}
@@ -762,6 +807,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &956340270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3127823153038547865, guid: 048cde13ca369c046a344f4780430d13,
+    type: 3}
+  m_PrefabInstance: {fileID: 443594782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000303557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 1257773856}
   player: {fileID: 1999350203}
-  healthSlider: {fileID: 32575662}
+  healthSlider: {fileID: 956340270}
   winscreen: {fileID: 1104289117}
   deathscreen: {fileID: 1310403944}
   pa: {fileID: 1999350206}

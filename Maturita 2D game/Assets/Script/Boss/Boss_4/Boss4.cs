@@ -44,6 +44,7 @@ public class Boss4 : MonoBehaviour, IBoss
     // Update is called once per frame
     void Update()
     {
+        
         if (_health == (float)MaxHealth * 0.5f)
         {
             if (b)
@@ -185,13 +186,18 @@ public class Boss4 : MonoBehaviour, IBoss
     {
         _health -= damage;
         player.GetComponent<PlayerActions>().specialLoad++;
+        print(Health);
         //Debug.Log("Boss health" + _health);
         if (_health <= 0)
         {
             _health = 0;
             Time.timeScale = 0;
             SaveObject so = SaveLoad.Load();
-            so.lvl4IsCompleted = true;
+            if (!so.lvl4IsCompleted)
+            {
+                so.lvl4IsCompleted = true;
+                so.skillPoints++;
+            }
             SaveLoad.Save(so);
         }
     }

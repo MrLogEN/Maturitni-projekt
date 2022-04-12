@@ -24,26 +24,28 @@ public class DeathWin : MonoBehaviour
         bossS = boss.GetComponent<IBoss>();
         pa = player.GetComponent<PlayerActions>();
         bossHP = bossS.Health;
+        healthSlider.maxValue = bossHP;
+        healthSlider.minValue = 0;
         so = SaveLoad.Load();
+
     }
     void Update()
     {
         float bosshealth = bossS.Health;
 
-        if (bosshealth <= 0  )
+        if (bosshealth <= 0)
         {
             //if (bossS is Boss5) return;
             Time.timeScale = 0f;
             winscreen.gameObject.SetActive(true);
 
-           
+
         }
-        if(pa.Health <= 0  )
+        if (pa.Health <= 0)
         {
-            
             Time.timeScale = 0f;
             deathscreen.gameObject.SetActive(true);
-            healthSlider.maxValue = bossHP;
+
             healthSlider.value = bosshealth;
 
         }
