@@ -556,7 +556,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.5166667
+        time: 1.5
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -574,37 +574,37 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 6ff6b7ba945e51e4295a72b5b03cd942, type: 3}
+      value: {fileID: 21300000, guid: 51b4ea9eada60f545b18f46371921236, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: e9409f40f8f23cf45a8443cde74ac987, type: 3}
+      value: {fileID: 21300000, guid: dd30162e5b0094e46b9b0852a4f7121f, type: 3}
     - time: 0.18333334
-      value: {fileID: 21300000, guid: 61abc6e69ba15234aa69b915bbea039d, type: 3}
+      value: {fileID: 21300000, guid: 73e8b9c5a41899d44afdf6b3524c1287, type: 3}
     - time: 0.26666668
-      value: {fileID: 21300000, guid: 8a79a43e67bf9d74186b86d945cacd13, type: 3}
+      value: {fileID: 21300000, guid: 4baca8d94266ca540b15e9155d8c7070, type: 3}
     - time: 0.36666667
-      value: {fileID: 21300000, guid: 57e87ca61130e7342bea53cf2c1bc67e, type: 3}
+      value: {fileID: 21300000, guid: b6c3a96c17cdfb746a962705824c4f69, type: 3}
     - time: 0.45
-      value: {fileID: 21300000, guid: d8a124eab5054cd4db427a93245bd87d, type: 3}
+      value: {fileID: 21300000, guid: 1ef73c997aa8af74bb7d5976dac02ad8, type: 3}
     - time: 0.53333336
-      value: {fileID: 21300000, guid: 048977f96eebf754c8b2a9fb953c81e1, type: 3}
+      value: {fileID: 21300000, guid: 77b7cb5bfe87cbc49aad05d87c9cb4c3, type: 3}
     - time: 0.6333333
-      value: {fileID: 21300000, guid: 76925e0e7fca50e4895ab7e47ef2bddd, type: 3}
+      value: {fileID: 21300000, guid: 5ef679ecd24c23f41b98f7e0fd1ae751, type: 3}
     - time: 0.8333333
-      value: {fileID: 21300000, guid: 76925e0e7fca50e4895ab7e47ef2bddd, type: 3}
+      value: {fileID: 21300000, guid: 5ef679ecd24c23f41b98f7e0fd1ae751, type: 3}
     - time: 0.93333334
-      value: {fileID: 21300000, guid: 048977f96eebf754c8b2a9fb953c81e1, type: 3}
+      value: {fileID: 21300000, guid: 77b7cb5bfe87cbc49aad05d87c9cb4c3, type: 3}
     - time: 1.0166667
-      value: {fileID: 21300000, guid: d8a124eab5054cd4db427a93245bd87d, type: 3}
+      value: {fileID: 21300000, guid: 1ef73c997aa8af74bb7d5976dac02ad8, type: 3}
     - time: 1.1166667
-      value: {fileID: 21300000, guid: 57e87ca61130e7342bea53cf2c1bc67e, type: 3}
+      value: {fileID: 21300000, guid: b6c3a96c17cdfb746a962705824c4f69, type: 3}
     - time: 1.2333333
-      value: {fileID: 21300000, guid: 8a79a43e67bf9d74186b86d945cacd13, type: 3}
+      value: {fileID: 21300000, guid: 4baca8d94266ca540b15e9155d8c7070, type: 3}
     - time: 1.3166667
-      value: {fileID: 21300000, guid: 61abc6e69ba15234aa69b915bbea039d, type: 3}
+      value: {fileID: 21300000, guid: 73e8b9c5a41899d44afdf6b3524c1287, type: 3}
     - time: 1.4166666
-      value: {fileID: 21300000, guid: e9409f40f8f23cf45a8443cde74ac987, type: 3}
+      value: {fileID: 21300000, guid: dd30162e5b0094e46b9b0852a4f7121f, type: 3}
     - time: 1.5
-      value: {fileID: 21300000, guid: 6ff6b7ba945e51e4295a72b5b03cd942, type: 3}
+      value: {fileID: 21300000, guid: 51b4ea9eada60f545b18f46371921236, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -659,22 +659,22 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 6ff6b7ba945e51e4295a72b5b03cd942, type: 3}
-    - {fileID: 21300000, guid: e9409f40f8f23cf45a8443cde74ac987, type: 3}
-    - {fileID: 21300000, guid: 61abc6e69ba15234aa69b915bbea039d, type: 3}
-    - {fileID: 21300000, guid: 8a79a43e67bf9d74186b86d945cacd13, type: 3}
-    - {fileID: 21300000, guid: 57e87ca61130e7342bea53cf2c1bc67e, type: 3}
-    - {fileID: 21300000, guid: d8a124eab5054cd4db427a93245bd87d, type: 3}
-    - {fileID: 21300000, guid: 048977f96eebf754c8b2a9fb953c81e1, type: 3}
-    - {fileID: 21300000, guid: 76925e0e7fca50e4895ab7e47ef2bddd, type: 3}
-    - {fileID: 21300000, guid: 76925e0e7fca50e4895ab7e47ef2bddd, type: 3}
-    - {fileID: 21300000, guid: 048977f96eebf754c8b2a9fb953c81e1, type: 3}
-    - {fileID: 21300000, guid: d8a124eab5054cd4db427a93245bd87d, type: 3}
-    - {fileID: 21300000, guid: 57e87ca61130e7342bea53cf2c1bc67e, type: 3}
-    - {fileID: 21300000, guid: 8a79a43e67bf9d74186b86d945cacd13, type: 3}
-    - {fileID: 21300000, guid: 61abc6e69ba15234aa69b915bbea039d, type: 3}
-    - {fileID: 21300000, guid: e9409f40f8f23cf45a8443cde74ac987, type: 3}
-    - {fileID: 21300000, guid: 6ff6b7ba945e51e4295a72b5b03cd942, type: 3}
+    - {fileID: 21300000, guid: 51b4ea9eada60f545b18f46371921236, type: 3}
+    - {fileID: 21300000, guid: dd30162e5b0094e46b9b0852a4f7121f, type: 3}
+    - {fileID: 21300000, guid: 73e8b9c5a41899d44afdf6b3524c1287, type: 3}
+    - {fileID: 21300000, guid: 4baca8d94266ca540b15e9155d8c7070, type: 3}
+    - {fileID: 21300000, guid: b6c3a96c17cdfb746a962705824c4f69, type: 3}
+    - {fileID: 21300000, guid: 1ef73c997aa8af74bb7d5976dac02ad8, type: 3}
+    - {fileID: 21300000, guid: 77b7cb5bfe87cbc49aad05d87c9cb4c3, type: 3}
+    - {fileID: 21300000, guid: 5ef679ecd24c23f41b98f7e0fd1ae751, type: 3}
+    - {fileID: 21300000, guid: 5ef679ecd24c23f41b98f7e0fd1ae751, type: 3}
+    - {fileID: 21300000, guid: 77b7cb5bfe87cbc49aad05d87c9cb4c3, type: 3}
+    - {fileID: 21300000, guid: 1ef73c997aa8af74bb7d5976dac02ad8, type: 3}
+    - {fileID: 21300000, guid: b6c3a96c17cdfb746a962705824c4f69, type: 3}
+    - {fileID: 21300000, guid: 4baca8d94266ca540b15e9155d8c7070, type: 3}
+    - {fileID: 21300000, guid: 73e8b9c5a41899d44afdf6b3524c1287, type: 3}
+    - {fileID: 21300000, guid: dd30162e5b0094e46b9b0852a4f7121f, type: 3}
+    - {fileID: 21300000, guid: 51b4ea9eada60f545b18f46371921236, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -1235,7 +1235,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.5166667
+        time: 1.5
         value: 0
         inSlope: Infinity
         outSlope: Infinity
