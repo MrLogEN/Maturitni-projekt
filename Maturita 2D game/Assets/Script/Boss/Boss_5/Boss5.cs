@@ -20,7 +20,7 @@ public class Boss5 : MonoBehaviour, IBoss
     [SerializeField] private GameObject fireBall;
     [SerializeField] private Transform[] coconutSpawners;
     [SerializeField] private GameObject coconut;
-    [SerializeField] private Transform carrotSpawner;
+    [SerializeField] private Transform[] carrotSpawner;
     [SerializeField] private GameObject carrot;
     [SerializeField] private Transform bouncingSpawner;
     [SerializeField] private GameObject bouncingBomb;
@@ -144,7 +144,8 @@ public class Boss5 : MonoBehaviour, IBoss
     }
     void SpawnCarrot()
     {
-        Instantiate(carrot, carrotSpawner.transform.position, Quaternion.identity);
+        Instantiate(carrot, carrotSpawner[0].transform.position, Quaternion.identity);
+        Instantiate(carrot, carrotSpawner[1].transform.position, Quaternion.identity);
     }
     void SpawnBouncing()
     {
