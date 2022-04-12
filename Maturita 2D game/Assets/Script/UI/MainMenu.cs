@@ -63,6 +63,10 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         AudioManager.instance.PlayClickUISfx();
+        if (PlayerPrefs.HasKey("hasPlayed"))
+        {
+            PlayerPrefs.SetInt("hasPlayed", 0);
+        }
         Application.Quit();
     }
     Button[] buttons;
